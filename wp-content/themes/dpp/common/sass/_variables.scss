@@ -1,0 +1,39 @@
+// Modern browser media query support - DO NOT CHANGE!!!!
+$mediaQuerySuport : true !default;		// !default won't overwrite the variable if set in mq-fallback.scss
+$fallbackSiteWidth	: auto !default;
+
+// Grid Settings
+$columns		: 12;					// Based on the # of columns in design.
+$maxWidth 	: 940px;				// Max fluid width of site
+$minWidth 	: 940px;
+$siteGutter	: 20px;					// Padding on sides of .site-width
+$gridGutter	: 20px;					// Grid gutter spacing
+
+// Typography
+$basepx 		: 15;								// Base font size
+$latoLightStack : "LatoLight, Arial, sans-serif";
+$latoRegularStack : "LatoRegular, Arial, sans-serif";
+$bodyStack		: "Arial, sans-serif";
+
+// @media breakpoints
+$mobileLandscape	: 480px;
+$tablet	: 720px;
+$desktop	: 1000px;
+
+// Global flag to use ie filter for gradients
+$useIEFilters 	: 1;
+
+// Default Heading sizes
+$sizeH1: 30;
+$sizeH2: 22;
+$sizeH3: 22;
+$sizeH4: 18;
+$sizeH5: 16;
+
+// Site Colours
+$dppBlack : #111;
+$dppHighlight : #7f1734;
+$dppBody: #777;
+$dppLightBody: #999;
+$dppHeading: #444;
+

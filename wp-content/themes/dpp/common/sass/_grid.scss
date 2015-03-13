@@ -1,0 +1,34 @@
+// .viewport is a wrapper that hugs the browser window.
+.viewport {
+	width:100%;
+}
+
+// .site-wide is a wrapping grid structure set to the max site width
+.site-width {
+	width:980px;
+	margin:0 auto;
+	padding-left: $siteGutter;
+	padding-right: $siteGutter;
+
+}
+
+// Standard grid structure is build using .rows and .grids
+.row {
+	padding:0px;
+	@extend .clearfix;
+	margin-left:-$gridGutter;
+}
+[class^=grid] {
+	float:left;
+	padding-left:$gridGutter;
+}
+// Loop to set # of grid columns
+@for $i from 1 through $columns {
+	.grid-#{$i} {
+  		width: ($i / $columns) * 100%;
+  	}
+  	.push-#{$i} {
+		margin-right: ($i / $columns) * 100%;
+  	}
+}
+

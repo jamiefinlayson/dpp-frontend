@@ -1,0 +1,892 @@
+/*!
+Theme Name: DPP
+Theme URI:
+Description: DPP Theme (Based off HTML-Reset theme).
+Author: Numiko
+Author URI: http://numiko.com
+Version: 1
+*/
+
+/*
+* 	Compass imports
+*/
+@import "compass/utilities";
+@import "compass/css3";
+@import "compass/typography";
+
+/*
+* 	Resets, Variables, Mixins
+*/
+@import "_variables.scss";
+@import "_normalize.scss";
+@import "_mixins.scss";
+
+/*
+* 	Custom Typography
+*/
+@import "_fontface.scss";
+
+/*
+* 	Base Elements Styles
+*/
+@import "_base.scss";
+
+/*
+* 	Helper classes
+*/
+@import "_helper.scss";
+
+/*
+* 	Grid  Structure
+*/
+@import "_grid.scss";
+
+/*
+* Clean List reuable Style
+*/
+.clean-list {
+	margin:0;
+	padding:0;
+
+	> li {
+		list-style: none;
+	}
+}
+
+
+
+/*
+* Primary header
+*/
+.primary-header {
+	@extend .clearfix;
+	background: $dppBlack;;
+
+	.dpp-background {
+		background: $dppBlack url('common/img/header-bg.jpg') no-repeat right top;
+	}
+	.logo {
+		width:157px;
+		height:105px;
+		float:left;
+		margin: 30px 0 36px;
+		background: url("common/img/dpp-logo.jpg") no-repeat top left;
+		text-indent: -9999px;
+
+		a {
+			display: block;
+			width:100%;
+			height:100%;
+		}
+	}
+	.header-copy {
+		text-align: right;
+		padding:40px 0 0 0;
+
+		h2 {
+			color:#fff;
+			margin-bottom:24px;
+			font-family: #{$latoLightStack};
+			font-size: pxtoem(16, $basepx);
+		}
+	}
+}
+
+/*
+* Primary Nav
+*/
+.primary-nav {
+	@extend .clearfix;
+	background: #ededed;
+
+	.menu {
+		@include inline-block-list;
+
+		li {
+
+			a {
+				font-family: LatoLight, Arial, sans-serif;
+				font-size: pxtoem(18, $basepx);
+				padding: pxtoem(20, 18) pxtoem(30, 18);
+				display: block;
+				text-decoration: none;
+				color:$dppBody;
+			}
+			// Homepage link
+			&.menu-item-home {
+				a {
+					width:85px;
+					background: url("common/img/icons/icon-sprite.png") no-repeat center 19px;
+					text-indent: -9999px;
+				}
+			}
+			// active/hover menu item (show border)
+			&.current-menu-item,
+			&.current-page-ancestor {
+				a {
+					border-bottom:4px solid $dppHighlight;
+					padding-bottom: pxtoem(16, 18);
+				}
+
+			}
+		}
+	}
+}
+
+/*
+* Secondary Nav
+*/
+.secondary-nav {
+
+	li {
+		margin:0 0 10px 0;
+
+		a {
+			color:$dppBody;
+		}
+	}
+	> li {
+		@extend .chevron-before;
+	}
+	.children {
+		display: none;
+		margin-top:10px;
+		padding-left:25px;
+
+		li {
+			list-style: none;
+		}
+	}
+	.current_page_item,
+	.current-cat {
+
+		.children {
+			display: block;
+		}
+		> a {
+			font-weight:bold;
+		}
+	}
+	.current_page_parent {
+		.children {
+			display: block;
+		}
+	}
+}
+
+
+/*
+* Home Slider (Flexslider)
+*/
+@import "plugin-styles/flexslider.scss";
+.news-slider {
+	width:100%;
+	height:227px;
+	background: #eff6fc url(common/img/banner-bg.jpg) no-repeat top center;
+	overflow:hidden;
+
+	.slider-copy {
+		width:433px;
+		float:right;
+		padding:30px 0 0 0;
+		background: url(common/img/banner-bg-fade-fix.jpg) no-repeat top center;
+
+		h2 {
+			line-height:1.1em;
+			font-size: pxtoem(27, $basepx);
+		}
+	}
+
+
+}
+.flexslider {
+	background:transparent;
+	border:0;
+	margin:0;
+	@include boxshadow("none");
+	@include border-radius("0px");
+	height:100%;
+
+	.slides {
+		height:100%;
+
+		li {
+			height:100%;
+
+		}
+	}
+
+}
+.flex-control-nav {
+	position: absolute;
+	bottom:0;
+	width: $maxWidth;
+	left:50%;
+	margin-left:-($maxWidth/2);
+	text-align:right;
+
+	li {
+		text-align: left;
+
+		a {
+			width:9px;
+			height:9px;
+			background:#d4d4d4;
+			background-color:rgba(0,0,0,.3);
+
+			&.flex-active {
+				background-color: $dppHighlight;
+			}
+		}
+
+	}
+}
+
+
+/*
+* 2 per row List Style
+*/
+.two-per-row {
+	margin-left:-20px;
+	li {
+		width: 50%;
+		float:left;
+		padding-left:20px;
+	}
+}
+
+/*
+* Content container styles
+*/
+.padded-content {
+	padding:14px 20px 20px;
+	overflow:hidden;
+}
+.dashed-bottom {
+	border-bottom: 1px dashed #dddddd;
+}
+.dashed-top {
+	border-top: 1px dashed #dddddd;
+}
+.highlight-bottom {
+	border-bottom: 3px solid $dppHighlight;
+}
+.grey-header-box {
+	border:1px solid #e7e7e7;
+	@include border-radius(4px);
+	background:#fff;
+
+	h3 {
+		background-color:#f0f0f0;
+		margin:0;
+		padding: 15px 20px;
+	}
+}
+
+/*
+* Download list
+*/
+.download-list {
+	li {
+		@extend .dashed-bottom;
+		font-family: #{$latoRegularStack};
+		a {
+			padding:0px 20px;
+			margin: 15px 0;
+			display: inline-block;
+			*display:inline;
+			*zoom:1;
+		}
+	}
+}
+/*
+* Primary  Content
+*/
+.primary-content {
+	padding-top:30px;
+}
+
+/*
+* Primary Footer
+*/
+.primary-footer {
+	padding:30px 0;
+	margin-top:30px;
+	@include single-box-shadow(rgba(0,0,0,.02), 0, -3px, 1px, 0);
+
+	p {
+		color: $dppLightBody;
+	}
+
+	.menu {
+		li {
+			@extend .chevron-before;
+			font-size: pxtoem(13, $basepx);
+			margin-bottom:2px;
+
+			a {
+				color:$dppBody;
+			}
+		}
+	}
+}
+.small-text {
+	font-size: pxtoem(13, $basepx);
+}
+.footer-logos {
+	text-align:right;
+
+	li {
+		display: inline-block;
+		vertical-align: middle;
+		margin:0 0 25px 45px;
+
+		a {
+			display: block;
+		}
+	}
+}
+
+.block-articles {
+	@extend .clearfix;
+	margin-bottom: pxtoem(20, $basepx);
+
+	> li {
+	 	margin-bottom:30px;
+	}
+	> li:last-child {
+		margin-bottom:0;		// Remove margin on last item
+
+		.for-members {
+			border-bottom:0;	// Remove the border on last item of members list style
+		}
+	}
+}
+
+/*
+* Block content Styles (inside <li>'s in 'the loop')
+*/
+.block-content {
+	overflow: hidden;
+
+	.meta-date {
+		font-style:italic;
+		font-size: pxtoem(13, $basepx);
+	}
+
+	&.outlined-box {
+		background-color:#f3f3f3;
+		border:1px solid #e7e7e7;
+		@include border-radius(4px);
+	}
+	&.standard-block {
+		min-height:362px;
+	}
+
+	// Side thumbnail version (shared)
+	&.thumbnail-on-left  {
+
+		.thumbnail-wrap {
+			float:left;
+		}
+		.highlight-bottom {
+			border:0;
+		}
+		.padded-content {
+			padding-bottom:14px;
+		}
+		p {
+			font-size:pxtoem(13, $basepx);
+		}
+
+		.more-link {
+			font-size: pxtoem(13,$basepx);
+		}
+		.chevron-before {
+			padding-left:15px;
+
+			&:before {
+				top:-4px;
+			}
+		}
+		.meta-date {
+			font-weight:bold;
+		}
+
+	}
+
+	// Downloads version
+	&.for-downloads {
+		@extend .dashed-bottom;
+
+		.thumbnail-wrap {
+			width:140px;
+			height:auto;
+			padding-top:18px;
+			margin-bottom:30px;
+
+			img {
+				display: block;
+				margin:0 auto;
+			}
+		}
+		.padded-content {
+			padding-top:0;
+			padding-bottom:30px;
+		}
+	}
+
+
+	// Members version
+	&.for-members {
+		@extend .dashed-bottom;
+
+		.thumbnail-wrap {
+			background-color:#fff;
+			padding:20px;
+			border:1px solid #e9e9e9;
+		}
+		.member-position {
+			font-style: italic;
+			margin-bottom:1em;
+		}
+		.profile-default {
+			width:96px;
+		}
+	}
+
+}
+
+/*
+* Single page Styles
+*/
+.first-title {
+	position: relative;
+	margin-bottom: pxtoem(32, $basepx);
+	h1, p {
+		max-width: 80%;
+	}
+	p {
+		margin-bottom:pxtoem(10, 30);
+	}
+}
+.single-thumbnail-wrap {
+	margin-bottom: pxtoem(15, $basepx);
+}
+
+/*
+* Link Styles
+*/
+.chevron-before {
+	padding-left:20px;
+	position: relative;
+	;
+	&:hover {
+		text-decoration: none;
+	}
+	span:hover {
+		text-decoration: underline;
+	}
+	&:before {
+		content: "\00BB"; // eqivilient of &raquo;
+		color:$dppHighlight;
+		font-size: pxtoem(21, $basepx);
+		// margin-right:5px;
+		position: absolute;
+		left:0;
+		top:-2px;
+	}
+}
+a.chevron-before {
+	color:$dppBody;
+}
+.more-downloads {
+	text-align:right;
+}
+
+/*
+* Btn Styles
+*/
+.btn,
+.btn:link,
+.btn:visited {
+	@include inline-block;
+	@include border-radius(4px);
+	@include transition-property(background);
+  	@include transition-duration(.2s);
+  	@include transition-timing-function(ease-in);
+	background-color: $dppHighlight;
+	color:#fff;
+	padding: pxtoem(10, 18) pxtoem(20, 18);
+	font-family: #{$latoRegularStack};
+	font-size: pxtoem(18, $basepx);
+	text-decoration:none;
+	margin-bottom: pxtoem(10, 18);
+
+	&:hover {
+		background-color: lighten($dppHighlight, 5%);
+	}
+}
+
+
+/*
+* Sidebar / Widget Styles
+*/
+.sidebar {
+	padding-top:8px;
+
+	h2 {
+		padding-top:4px;
+		margin-bottom: pxtoem(20, $sizeH3)
+	}
+	.chevron-before {
+		float:right;
+	}
+	.widget {
+		margin-bottom: 40px;
+		@extend .clearfix;
+	}
+	.textwidget {
+		@extend .clearfix;
+	}
+}
+/* Twitter - styles for both minitwitter widget http://wordpress.org/plugins/mini-twitter-feed/ */
+// .minitwitter-widget {
+
+// 	h2 {
+// 		background: url(common/img/icons/icon-sprite.png) no-repeat right -31px;
+// 	}
+
+// 	.tweets {
+// 		background: transparent;
+// 		border:0;
+// 		font-size:1em;
+// 		color: $dppBody;
+// 		font-family: #{$bodyStack};
+// 		line-height: pxtoem(21, 16);
+
+// 		a {
+// 			text-decoration: none;
+// 			color:#777777!important;
+
+// 			&:hover {
+// 				text-decoration: none;
+// 			}
+// 			&:hover span {
+// 				text-decoration: underline;
+// 			}
+// 		}
+
+// 		.tweet {
+// 			padding:0;
+// 			margin:0 0 40px 0;
+// 			border: 1px solid #E7E7E7;
+// 			background:#fff;
+// 			border-radius: 4px;
+
+// 			a:hover {
+// 				text-decoration: underline;
+// 			}
+// 			.time {
+// 				text-align: left;
+// 				line-height: 1.3em;
+// 				font-size:pxtoem(12, $basepx);
+// 				float:none;
+// 				padding:10px 20px 12px;
+// 				line-height: 1.3em;
+// 				position: relative;
+
+// 				&:after {
+// 					content:"";
+// 					width:21px;
+// 					height:21px;
+// 					background: url(common/img/misc-sprite.png) no-repeat 0 -43px;
+// 					position: absolute;
+// 					bottom:-21px;
+// 					left:20px;
+
+// 				}
+
+// 				.timetext {
+// 					color:$dppHighlight;
+// 				}
+// 			}
+// 		}
+// 	}
+// 	.avatar,
+// 	.mt_header,
+// 	.mt_footer {
+// 		display: none;
+// 	}
+// 	.mt_text {
+// 		padding:20px;
+// 		@extend .dashed-bottom;
+// 	}
+// 	.follow-us {
+// 		overflow: hidden;
+// 		margin-top:10px;
+// 	}
+// }
+
+/* Twitter - styles for http://wordpress.org/plugins/display-tweets-php/ */
+.widget_displaytweetswidget {
+
+		h2 {
+			background: url(common/img/icons/icon-sprite.png) no-repeat right -31px;
+		}
+		.tweet  {
+			
+			margin:0 0 40px 0;
+			border: 1px solid #E7E7E7;
+			background:#fff;
+			border-radius: 4px;
+
+			p {
+				margin:0;
+				padding:15px;
+				border-bottom:1px dashed #E7E7E7;
+			}
+			small {
+				display:block;
+				text-align:right;
+				position:relative;
+				padding:10px 15px;
+
+				&:after {
+					content:"";
+					width:21px;
+					height:21px;
+					background: url(common/img/misc-sprite.png) no-repeat 0 -43px;
+					position: absolute;
+					bottom:-21px;
+					left:20px;
+
+				}
+			}
+		}
+		
+}
+
+/* Linked in widget */
+.widget-linkedin {
+	h2 {
+		background: url(common/img/icons/icon-sprite.png) no-repeat right -72px;
+	}
+}
+/* Share Btns */
+.share-btns {
+	position: absolute;
+	top:15px;
+	right:0;
+
+	li {
+		float:left;
+	}
+	li.twitter-share {
+		width:95px;
+	}
+	li.twitter-follow {
+		width:auto;
+		margin-right:20px;
+	}
+	> iframe,
+	> span {
+		vertical-align: middle!important;
+	}
+}
+
+
+/*
+*	Skip to Nav
+*/
+.back-to-top {
+	width:50px;
+	height:47px;
+	display:block;
+	background: $dppHighlight url(common/img/misc-sprite.png) no-repeat 17px 10px;
+	text-indent:-9999px;
+	float:right;
+	@include border-radius("4px 4px 0 0");
+
+
+	&:active,
+	&:focus {
+		outline:0;
+		-moz-outline-style: none;
+	}
+}
+
+/*
+* Entry WYSIWYG
+*/
+.entry {
+
+	.edit-link {
+		clear:both;
+		padding-top:20px;
+
+		a {
+			font-weight: bold;
+		}
+	}
+	img.alignright {
+		float:right;
+		margin:0 0 15px 15px;
+	}
+	img.alignleft {
+		float:left;
+		margin:0 15px 15px 0px;
+	}
+	blockquote {
+		font-style: italic;
+	}
+	h2, h3, h4, h5 {
+		margin-top:1.3em;
+
+		&:first-child {
+			margin-top:0;
+		}
+	}
+	h3 {
+		font-size: pxtoem(19, $basepx);
+	}
+
+
+} /* end .entry */
+
+/*
+* SS downloads (resetting hence needed some !importants)
+*/
+html #ss-downloads {
+	border:0;
+	background-color:transparent;
+	padding:0;
+	margin:0;
+
+	h3 {
+		display: none;
+	}
+
+	form .input-text {
+		padding:  7px;
+	}
+
+	.btn-ss-downloads {
+		background:none;
+		height:auto;
+		min-height: 0;
+		padding:0;
+
+		a {
+			background:none;
+		    color: #777 !important;
+		    cursor: pointer;
+		    display: block;
+		    font-weight: bold !important;
+		    height: auto;
+		    line-height: normal;
+		    margin: 0;
+		    min-height: 0;
+		    padding: 0;
+		    text-decoration: none !important;
+
+		    &:hover {
+		    	color:inherit!important;
+		    }
+		}
+	}
+}
+
+
+/*
+* Form Styling
+*/
+form {
+	@extend .clearfix;
+
+	input[type="text"],
+	input[type="email"],
+	input[type="number"],
+	input[type="password"],
+	textarea {
+		padding:7px;
+		background:#fff;
+		border:1px solid #777777;
+		@include border-radius("4px");
+	}
+
+	input[type="submit"] {
+		text-transform: capitalize;
+		padding:7px 10px;
+		background-color:#ededed;
+		border:1px solid #777777;
+		@include border-radius("4px");
+	}
+
+}
+.error {
+	color: $dppHighlight;
+}
+.form-item {
+	margin-bottom: 1em;
+
+	label,
+	p.label {
+		display: block;
+		margin:0 0 0.5em 0;
+		font-weight: bold;
+	}
+	.wpcf7-list-item {
+		display: block;
+		margin:0 0 5px 0;
+	}
+	.mailchimp-opt-in .wpcf7-list-item {
+		@include inline-block;
+	}
+}
+.form-right,
+.form-left {
+	width:45%;
+
+	.form-item,
+	input[type="text"],
+	input[type="email"],
+	input[type="number"],
+	input[type="password"],
+	textarea {
+		width: 100%;
+	}
+}
+.form-left{
+	float:left;
+}
+.form-right {
+	float:right;
+}
+
+/* Contact Form 7 overwrites */
+.wpcf7-response-output {
+	clear: both;
+	float:left;
+	font-weight:bold;
+}
+.wpcf7-validation-errors {
+	display:none!important;
+}
+.wpcf7-mail-sent-ok {
+	display:none!important;
+}
+body span.wpcf7-not-valid-tip {
+	position: static;
+	display:block!important;
+	opacity:1!important;
+	border:0;
+	color: $dppHighlight;
+	background:transparent;
+}
+
+
+/* === Print Styles === */
+@import "_print.scss";
+
+

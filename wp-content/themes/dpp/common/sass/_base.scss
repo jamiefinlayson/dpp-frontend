@@ -1,0 +1,71 @@
+* ,
+*:before,
+*:after{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+body, .likeBody {
+	font-size: pxtoem($basepx, 16);
+	font-family: #{$bodyStack};
+	line-height: pxtoem(21, 16);
+	color:#777777;
+	background: #fafafa url("common/img/body-noise.jpg") repeat 0 0;
+}
+.likeBody {
+	background:transparent;
+	font-weight:normal;
+}
+h1, h2, h3, h4, h5 {
+	font-family: #{$latoLightStack};
+	margin-top:0;
+	margin-bottom: 0.5em;
+	font-weight: normal;
+	color:$dppHeading;
+
+	a:link,
+	a:visited {
+		color:inherit;
+	}
+}
+h1, .likeh1 {
+	font-family: #{$latoRegularStack};
+	font-size: pxtoem(30, $basepx);
+	line-height: pxtoem(47, 30);
+	color:$dppHeading;
+}
+h2, .likeh2 {
+	font-size: pxtoem($sizeH2, $basepx);
+	line-height: pxtoem(30, $sizeH2);
+}
+h3, .likeh3 {
+	font-size: pxtoem($sizeH3, $basepx);
+	line-height: pxtoem(30, $sizeH3);
+	margin-bottom: pxtoem(8, $sizeH3);
+}
+h4, .likeh4 {
+	font-size: pxtoem($sizeH4, $basepx);
+	line-height: pxtoem(23, $sizeH4);
+}
+h5, .likeh5 {
+	font-size: pxtoem($sizeH5, $basepx);
+	line-height: pxtoem(23, $sizeH5);
+}
+p {
+	margin-top:0;
+
+}
+a:link,
+a:visited {
+	text-decoration: none;
+	color: $dppHighlight;
+}
+a:hover {
+	text-decoration:underline;
+}
+img {
+	max-width:100%;
+	width:auto;
+	height:auto;
+}
