@@ -41,7 +41,7 @@ else if ($_SERVER['REMOTE_ADDR']=='http://www.dpp-dev.co.uk'){
 else {
     define('WP_ENV', 'live');
 
-    define('DB_NAME', 'mydb-live');
+    define('DB_NAME', 'dpp_dev');
     define('DB_USER', 'username');
     define('DB_PASSWORD', 'password');
     define('DB_HOST', 'localhost');
@@ -94,8 +94,6 @@ define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST'] . '/wordpress');
 define('WP_CONTENT_DIR', realpath(ABSPATH . '../wp-content/'));
 define('WP_CONTENT_URL', WP_HOME . '/wp-content');
 define('UPLOADS', '../uploads');
-
-echo(WP_CONTENT_DIR);
 
 /* That's all, stop editing! Happy blogging. */
 
