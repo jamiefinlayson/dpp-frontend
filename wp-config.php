@@ -14,39 +14,40 @@
  * @package WordPress
  */
 
+$host = $_SERVER['SERVER_NAME'] ;
+ 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-if ($_SERVER['REMOTE_ADDR']=='127.0.0.1') {
-    define('WP_ENV', 'development');
-} 
-else if ($_SERVER['REMOTE_ADDR']=='http://www.dpp-dev.co.uk'){
-    define('WP_ENV', 'production');
-}
-else {
-    define('WP_ENV', 'live');
-}
 
-// MySQL settings - You can get this info from your web host //
-if (WP_ENV == 'development') {
+if ($host=='dpp-local') {
+ 
+    define('WP_ENV', 'development');
+
     define('DB_NAME', 'mydb-dev');
     define('DB_USER', 'root');
     define('DB_PASSWORD', 'root');
     define('DB_HOST', 'localhost');
 } 
-else if (WP_ENV == 'production') {
+
+else if ($_SERVER['REMOTE_ADDR']=='http://www.dpp-dev.co.uk'){
+    define('WP_ENV', 'production');
+
     define('DB_NAME', 'mydb-prod');
     define('DB_USER', 'root');
     define('DB_PASSWORD', 'root');
     define('DB_HOST', 'localhost');
-} 
+}
 
 else {
+    define('WP_ENV', 'live');
+
     define('DB_NAME', 'mydb-live');
     define('DB_USER', 'username');
-    define('DB_PASSWORD', 'pasdword');
+    define('DB_PASSWORD', 'password');
     define('DB_HOST', 'localhost');
-} 
+}
 
+ 
 /**#@+
  * Authentication Unique Keys and Salts.
  *
