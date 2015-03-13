@@ -94,7 +94,12 @@ if ( !defined('ABSPATH') )
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
 
-define('WP_SITEURL', 'http://' . $_SERVER['SERVER_NAME'] . '/wordpress');
-define('WP_HOME',    'http://' . $_SERVER['SERVER_NAME']);
-define('WP_CONTENT_DIR', $_SERVER['DOCUMENT_ROOT'] . '/wp-content');
-define('WP_CONTENT_URL', 'http://' . $_SERVER['SERVER_NAME'] . '/wp-content');
+/** Absolute path to the WordPress directory. */
+if ( !defined('ABSPATH') )
+  define('ABSPATH', dirname(__FILE__) . '/wordpress/');
+
+define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST']);
+define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST'] . '/wordpress');
+define('WP_CONTENT_DIR', realpath(ABSPATH . '../wp-content/'));
+define('WP_CONTENT_URL', WP_HOME . '/wp-content');
+define('UPLOADS', '../uploads');
