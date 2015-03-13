@@ -6,7 +6,7 @@ Author: Numiko
 Author URI: http://numiko.com
 Version: 1
 */
-
+ 
 /*
 * 	Compass imports
 */
@@ -17,29 +17,34 @@ Version: 1
 /*
 * 	Resets, Variables, Mixins
 */
-@import "_variables.scss";
-@import "_normalize.scss";
-@import "_mixins.scss";
+@import "components/_variables.scss"; 
+@import "components/_normalize.scss"; 
+@import "components/_mixins.scss"; 
 
 /*
 * 	Custom Typography
 */
-@import "_fontface.scss";
+@import "components/_fontface.scss"; 
 
 /*
 * 	Base Elements Styles
 */
-@import "_base.scss";
+@import "components/_base.scss"; 
 
 /*
 * 	Helper classes
 */
-@import "_helper.scss";
+@import "components/_helper.scss"; 
 
 /*
 * 	Grid  Structure
 */
-@import "_grid.scss";
+@import "components/_grid.scss"; 
+
+/*
+* 	FOUNDATION Grid  Structure
+*/
+@import "components/_foundation-grid.scss"; 
 
 /*
 * Clean List reuable Style
@@ -887,6 +892,6 @@ body span.wpcf7-not-valid-tip {
 
 
 /* === Print Styles === */
-@import "_print.scss";
+@import "components/_print.scss";
 
 
