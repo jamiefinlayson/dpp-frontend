@@ -93,7 +93,7 @@
             set_post_thumbnail_size( 178, 178, true ); // add [,true] for crop mode
     }
     if ( function_exists( 'add_image_size' ) ) {
-        add_image_size( 'medium', 338, 190, true );
+        add_image_size( 'medium', 343, 193, true );
         add_image_size( 'members', 96, 9999 );
     }
 
