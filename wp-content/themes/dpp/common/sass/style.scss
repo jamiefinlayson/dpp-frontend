@@ -118,7 +118,8 @@ Version: 1
 				color:$dppBody;
 			}
 			// Homepage link
-			&.menu-item-home {
+			&.menu-item-home,
+			&.menu-item-951 {
 				a {
 					width:85px;
 					background: url("common/img/icons/icon-sprite.png") no-repeat center 19px;
