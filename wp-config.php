@@ -18,7 +18,7 @@ $host = $_SERVER['SERVER_NAME'] ;
  
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-
+echo ($host);
 if ($host=='dpp-local') {
  
     define('WP_ENV', 'development');
@@ -29,7 +29,7 @@ if ($host=='dpp-local') {
     define('DB_HOST', 'localhost');
 } 
 
-else if ($_SERVER['REMOTE_ADDR']=='http://www.dpp-dev.co.uk'){
+else if ($_SERVER['REMOTE_ADDR']=='dpp-dev.co.uk'){
     define('WP_ENV', 'production');
 
     define('DB_NAME', 'dppdevco_prod');
