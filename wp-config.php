@@ -18,20 +18,17 @@ $host = $_SERVER['SERVER_NAME'] ;
  
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-echo ($host);
-if ($host=='dpp-local') {
  
+if ($host=='dpp-local') {
     define('WP_ENV', 'development');
-
     define('DB_NAME', 'mydb-dev');
     define('DB_USER', 'root');
     define('DB_PASSWORD', 'root');
     define('DB_HOST', 'localhost');
 } 
 
-else if ($_SERVER['REMOTE_ADDR']=='dpp-dev.co.uk'){
+else if ($_SERVER['REMOTE_ADDR']=='86.27.82.111') {
     define('WP_ENV', 'production');
-
     define('DB_NAME', 'dppdevco_prod');
     define('DB_USER', 'dppdevco_prod');
     define('DB_PASSWORD', 'D$fng95dckEi');
@@ -40,13 +37,25 @@ else if ($_SERVER['REMOTE_ADDR']=='dpp-dev.co.uk'){
 
 else {
     define('WP_ENV', 'live');
-
     define('DB_NAME', 'dpp_dev');
     define('DB_USER', 'username');
     define('DB_PASSWORD', 'password');
     define('DB_HOST', 'localhost');
 }
+ 
+define('DB_CHARSET', 'utf8'); 
+define('DB_COLLATE', '');
+ 
+/** Absolute path to the WordPress directory. */
+if ( !defined('ABSPATH') )
+  define('ABSPATH', dirname(__FILE__) . '/wordpress/');
 
+define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST']);
+define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST'] . '/wordpress');
+define('WP_CONTENT_DIR', realpath(ABSPATH . '../wp-content/'));
+define('WP_CONTENT_URL', WP_HOME . '/wp-content');
+define('UPLOADS', '../uploads');
+ 
  
 /**#@+
  * Authentication Unique Keys and Salts.
@@ -85,15 +94,6 @@ $table_prefix  = 'wp_';
  */
 define('WP_DEBUG', false);
 
-/** Absolute path to the WordPress directory. */
-if ( !defined('ABSPATH') )
-  define('ABSPATH', dirname(__FILE__) . '/wordpress/');
-
-define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST']);
-define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST'] . '/wordpress');
-define('WP_CONTENT_DIR', realpath(ABSPATH . '../wp-content/'));
-define('WP_CONTENT_URL', WP_HOME . '/wp-content');
-define('UPLOADS', '../uploads');
 
 /* That's all, stop editing! Happy blogging. */
 
