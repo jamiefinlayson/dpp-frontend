@@ -9,9 +9,17 @@
 	<!-- Home Slider -->
 	<?php get_template_part( 'includes/inc/slider', 'home'); ?>
 
-	<div class="primary-content site-width">
+ 
+
+
+
+
+
+
+
+											 
 		<div class="row">
-			<div class="grid-9" role="main">
+			<div class="small-12 medium-9 columns" role="main">
 				<section >
 
 					<h2 class="likeh1">Quick Links</h2>
@@ -28,26 +36,26 @@
 					            'compare' => 'LIKE'
 					        )
 					    )
-					); ?>
+					); ?> 
 
-					<ul class="clean-list block-articles two-per-row">
+					<div class="row">
 						<?php query_posts($quickLinks); ?>
 						<?php $i = 1; ?>
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 							<!-- Clear first item in row -->
 							<?php if($i%2 == 0) : ?>
-								<li class="">
+								<div class="small-12 medium-6 columns">
 							<?php else : ?>
-								<li class="clear">
+								<div class="small-12 medium-6 columns">
 							<?php endif; ?>
 
 								<!-- Block style contnet -->
 								<?php get_template_part( 'includes/inc/content', 'block'); ?>
-							</li>
+							 	</div>
 							<?php $i++; ?>
 						<?php endwhile; ?>
-					</ul>
-
+					 
+					</div>
 					<?php else : ?>
 
 						<h2>Not Workstream posts found</h2>
@@ -61,12 +69,11 @@
 
 
 
-			<div class="grid-3">
+			<div class="small-12 medium-3 columns">
 				<aside  role="complementary">
 					<?php get_sidebar(); ?>
 				</aside>
 			</div>
-		</div>
-	</div>
+		</div> 
 
 <?php get_footer(); ?>
