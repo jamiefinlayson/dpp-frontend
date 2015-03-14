@@ -4,6 +4,8 @@
 
 
 @import 'foundation-global';
+
+$include-xl-html-grid-classes: true; 
  
 //
 // @variables
@@ -114,7 +116,7 @@ $last-child-float: $opposite-direction !default;
   // (use $collapse:null to do nothing)
   @else if $collapse == false {
     padding-left: ($column-gutter / 2);
-    padding-right: ($column-gutter / 2);
+    padding-right: ($column-gutter / 2); 
   }
 
   // If a column number is given, calculate width
@@ -284,3 +286,4 @@ $last-child-float: $opposite-direction !default;
     }
   }
 }
+
