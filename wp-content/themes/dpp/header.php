@@ -105,7 +105,7 @@
 
 			<div class="dpp-background">
 				<div class="row">
-					<div class="small-4 medium-4 x-large-4 push-3 columns">
+					<div class="small-4 medium-4 x-large-4 columns">
 						<div class="logo">
 							<a href="<?php echo get_option('home'); ?>/">
 							<!-- Site name on homepage in <h1>-->
