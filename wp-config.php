@@ -34,7 +34,7 @@ else if ($_SERVER['REMOTE_ADDR']=='dpp-dev.co.uk'){
 
     define('DB_NAME', 'dppdevco_prod');
     define('DB_USER', 'dppdevco_prod');
-    define('DB_PASSWORD', '._?B#f$LTKVT');
+    define('DB_PASSWORD', 'D$fng95dckEi');
     define('DB_HOST', 'localhost');
 }
 
