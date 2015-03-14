@@ -32,9 +32,9 @@ if ($host=='dpp-local') {
 else if ($_SERVER['REMOTE_ADDR']=='http://www.dpp-dev.co.uk'){
     define('WP_ENV', 'production');
 
-    define('DB_NAME', 'mydb-prod');
-    define('DB_USER', 'root');
-    define('DB_PASSWORD', 'root');
+    define('DB_NAME', 'dppdevco_prod');
+    define('DB_USER', 'dppdevco_prod');
+    define('DB_PASSWORD', '._?B#f$LTKVT');
     define('DB_HOST', 'localhost');
 }
 
