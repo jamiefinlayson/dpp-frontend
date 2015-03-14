@@ -19,7 +19,7 @@
 
 											 
 		<div class="row">
-			<div class="small-12 medium-9 columns" role="main">
+			<div class="small-12 medium-9 xlarge-9 columns" role="main">
 				<section >
 
 					<h2 class="likeh1">Quick Links</h2>
@@ -44,9 +44,9 @@
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 							<!-- Clear first item in row -->
 							<?php if($i%2 == 0) : ?>
-								<div class="small-12 medium-6 columns">
+								<div class="small-12 medium-6 large-6 columns">
 							<?php else : ?>
-								<div class="small-12 medium-6 columns">
+								<div class="small-12 medium-6 large-6 columns">
 							<?php endif; ?>
 
 								<!-- Block style contnet -->
@@ -69,7 +69,7 @@
 
 
 
-			<div class="small-12 medium-3 columns">
+			<div class="small-12 medium-3 large-3 columns">
 				<aside  role="complementary">
 					<?php get_sidebar(); ?>
 				</aside>
