@@ -45,12 +45,7 @@ Version: 1
 * 	FOUNDATION Grid  Structure
 */
 @import "components/_foundation-grid.scss"; 
- 
-/*
-* 	FOUNDATION Off canvas
-*/
-@import "components/_foundation-offcanvas.scss"; 
-
+  
 /*
 * Clean List reuable Style
 */
@@ -120,10 +115,13 @@ Version: 1
   html #wpadminbar {
     top: 0 !important;
     z-index: 2;
+    background: black;
   }
-  body.admin-bar .shiftnav {
+  body.admin-bar .shiftnav-wrap {
   	z-index: 1000;
-  	display: block
+  	display: block;
+  	padding-top: 45px !important;
+
 
   }
 }

@@ -57,9 +57,7 @@
 
 			</div> <!-- /grid-9 -->
 
-
-
-test
+ 
 			<div class="small-12 medium-12 large-3 xlarge-3 columns">
 				<aside >
 					<?php get_sidebar(); ?>
