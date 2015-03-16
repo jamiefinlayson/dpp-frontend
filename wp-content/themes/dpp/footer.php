@@ -2,7 +2,7 @@
     <footer> 
             <div class="row">
 
-                <div class="small-5 medium-5 xlarge-5 columns">
+                <div class="small-12 medium-5 xlarge-5 columns">
                     <p class="small-text">The partnership is funded by ITV, BBC and Channel 4 with representation from Channel 5, Sky, S4/C, UKTV, BT Sport and the Independent sector on its working groups.</p>
                     <p class="small-text">DPP is a registered trademark in the UK.</p>
                     <!-- Spit out hte top-menu (user editable in CMS) -->
@@ -11,14 +11,12 @@
 
                 </div> <!-- /grid-5 -->
 
-                <div class="small-7 medium-7 xlarge-5 columns">
+                <div class="small-12 medium-7 xlarge-7 columns">
                     <ul class="clean-list footer-logos">
                       <li class="first-item"><a target="_blank" href="http://www.bbc.co.uk"><img src="<?php bloginfo('template_directory'); ?>/common/img/logos/bbc.png" alt="BBC" /></a></li>
                       <li><a target="_blank" href="http://www.itv.com/"><img src="<?php bloginfo('template_directory'); ?>/common/img/logos/itv.png" alt="ITV" /></a></li>
                       <li><a target="_blank" href="http://www.channel4.com"><img src="<?php bloginfo('template_directory'); ?>/common/img/logos/channel4.png" alt="Channel 4" /></a></li>
-                      </ul>
-
-                      <ul class="clean-list footer-logos">
+                      
                       <li class="first-item"><a target="_blank" href="https://www.btsport.com/"><img src="<?php bloginfo('template_directory'); ?>/common/img/logos/bbc-sport.png" alt="BBC Sport" /></a></li>
                       <li><a target="_blank" href="http://www.channel5.com/"><img src="<?php bloginfo('template_directory'); ?>/common/img/logos/channel-5.png" alt="Channel 5" /></a></li>
                        <li><a target="_blank" href="http://www.s4c.co.uk/hafan/c_index.shtml"><img src="<?php bloginfo('template_directory'); ?>/common/img/logos/s4.png" alt="S4/C" /></a></li>

@@ -1,5 +1,5 @@
 <div class="news-slider">
-		<div class="flexslider">
+		<div class="flexslider row">
 			<ul class="slides">
 
 
@@ -15,19 +15,19 @@
 			// The Loop
 			while ( $newsSlider->have_posts() ) :  $newsSlider->the_post(); ?>
 
-				<li>
-					<div class="site-width">
+				<li> 
 						<section>
 							<div class="slider-copy">
+
+			<div class="column">
 								<header>
 									<h2 class="likeh1"><?php the_title(); ?></h2>
 								</header>
 								<p><?php echo excerpt(120); ?></p>
 								<a href="<?php the_permalink(); ?>" class="btn"><span><?php the_field('custom-readmore');?></span></a>
-							</div>
+							</div></div>
 						</section>
-
-					</div>
+ 
 
 				</li>
 
@@ -44,4 +44,5 @@
 
 			</ul>
 		</div> <!-- /flexslider -->
+	 
 </div> <!-- /news-slider-->

@@ -117,4 +117,43 @@ $(document).ready(function (){
 	smoothScroll.init();
 	events.init();
 	archiveHighlight.init();
+	pluginClasses.init();
+	//equalHeight.init($(".equal")); 
 });
+
+$(window).resize(function() {
+     setTimeout(function() { 
+    }, 500);
+});
+
+
+
+var equalHeight = {
+ 
+	init: function(group) {
+	   tallest = 0;
+	   group.each(function() {
+	      thisHeight = $(this).height();
+	      if(thisHeight > tallest) {
+	         tallest = thisHeight;
+	      }
+	   });
+	   group.height(tallest);
+	} 
+
+}
+
+
+var pluginClasses = {
+ 
+	init: function() {
+		$('.widget').addClass('small-12 medium-6 large-12 xlarge-12 columns');
+		//$('.tweet').wrapInner('<div class="bubble"></div>');
+		//$('.widget-linkedin h2').addClass('small-12 medium-6 large-12 xlarge-12 columns'); 
+		//$('.textwidget').addClass('clear'); 
+		//$('.widget_displaytweetswidget h2').addClass('medium-12 columns'); 
+	} 
+
+}
+
+ 

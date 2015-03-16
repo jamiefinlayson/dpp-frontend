@@ -246,7 +246,8 @@ $last-child-float: $opposite-direction !default;
     .column,
     .columns { @include grid-column($columns:$total-columns); }
 
-    [class*="column"] + [class*="column"]:last-child { float: $last-child-float; }
+    //[class*="column"] + [class*="column"]:last-child { float: $last-child-float; } 
+     .last:last-child { float: $last-child-float; }  
     [class*="column"] + [class*="column"].end { float: $default-float; }
 
     @media #{$small-up} {
@@ -286,4 +287,6 @@ $last-child-float: $opposite-direction !default;
     }
   }
 }
+
+
 

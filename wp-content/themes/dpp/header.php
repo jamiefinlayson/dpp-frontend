@@ -105,7 +105,7 @@
 
 			<div class="dpp-background">
 				<div class="row">
-					<div class="small-4 medium-4 x-large-4 columns">
+					<div class="small-12 medium-4 x-large-4 columns">
 						<div class="logo">
 							<a href="<?php echo get_option('home'); ?>/">
 							<!-- Site name on homepage in <h1>-->
@@ -124,7 +124,7 @@
 						</div> <!-- /logo -->
 					</div> <!-- /grid-4 -->
 
-					<div class="small-5 medium-5 xlarge-5 columns">
+					<div class="small-12 medium-6 xlarge-5 columns last">
 						<div class="header-copy">
 							<h2>The Digital Production Partnership (DPP) is<br /> an initiative formed by the UK's public service broadcasters to help producers and broadcasters maximise the potential of digital production.</h2>
 						</div>
@@ -133,12 +133,12 @@
 			</div>
 
 			<nav class="primary-nav"> 
-						<div class="row">
-							<div class="small-12 medium-12 xlarge-12">
-								<!-- Navigation -->
-								<?php wp_nav_menu( array( 'theme_location' =>'top-menu' )); ?>
-							</div>
-						</div>
+				<div class="row">
+					<div class="small-12 medium-12 xlarge-12">
+						<!-- Navigation -->
+						<?php wp_nav_menu( array( 'theme_location' =>'top-menu' )); ?>
+					</div>
+				</div>
  
 
 			</nav>
