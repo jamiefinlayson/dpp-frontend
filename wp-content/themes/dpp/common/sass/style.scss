@@ -151,6 +151,10 @@ Version: 1
 				font-family: LatoLight, Arial, sans-serif;
 				font-size: pxtoem(18, $basepx);
 				padding: pxtoem(20, 18) pxtoem(30, 18);
+				@media #{$medium-down} { 
+					padding-left: 16px;  
+					padding-right: 16px;  
+				} 
 				display: block;
 				text-decoration: none;
 				color:$dppBody;
@@ -250,7 +254,7 @@ Version: 1
 	overflow:hidden;
 	@media (max-width: 850px) { 
 		 height: auto;
-		 min-height: 280px;
+		 min-height: 240px;
 	} 
 	@media #{$small-only} { 
 		 height: auto;
@@ -441,6 +445,7 @@ Version: 1
 	text-align:right;
 	@media #{$small-only} {
          text-align: left;
+         margin-top: 30px;
     }
 	li {
 		display: inline-block;
@@ -666,7 +671,12 @@ a.chevron-before {
 
 	h2 {
 		padding-top:4px;
-		margin-bottom: pxtoem(20, $sizeH3)
+		margin-bottom: pxtoem(20, $sizeH3);
+		@media #{$medium-down} { 
+			display: inline;
+			padding-right: 40px;
+		}
+
 	}
 	.chevron-before {
 		float:right;
@@ -765,6 +775,9 @@ a.chevron-before {
 
 		h2 {
 			background: url(common/img/icons/icon-sprite.png) no-repeat right -31px;
+			@media #{$medium-down} { 
+				background-position: right -36px;
+			}	
 		}
 		.tweet  {
 			
@@ -802,7 +815,10 @@ a.chevron-before {
 /* Linked in widget */
 .widget-linkedin {
 	h2 {
-		background: url(common/img/icons/icon-sprite.png) no-repeat right -72px;
+		background: url(common/img/icons/icon-sprite.png) no-repeat right -71px;
+		@media #{$medium-down} { 
+			background-position: right -75px;
+		}
 	}
 }
 /* Share Btns */
