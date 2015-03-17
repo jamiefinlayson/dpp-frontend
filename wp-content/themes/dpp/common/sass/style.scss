@@ -348,8 +348,23 @@ Version: 1
 * Content container styles
 */
 .padded-content {
-	padding:14px 20px 20px;
+	padding:14px 20px 0;
 	overflow:hidden;
+	&.columns { 
+		@media screen and (max-width: 320px) {
+			width: 100%;
+		}
+	}
+}
+.padded-text {
+	padding:0 20px 20px;
+	overflow:hidden;
+
+	&.columns { 
+		@media screen and (min-width: 320px) and (max-width: 480px) {
+			padding-top: 20px;
+		}
+	}
 }
 .dashed-bottom {
 	border-bottom: 1px dashed #dddddd;
@@ -477,18 +492,32 @@ Version: 1
 		@include border-radius(4px);
 	}
 	&.standard-block {
-		min-height:362px;
+		min-height:355px;
+		@media #{$small-only} { 
+			min-height: 0 !important;
+		}
 	}
 	img {
 		width: 100%;
 	}
 
+	.thumbnail-wrap {  
+			padding: 0;
+		 
+		@media screen and (max-width: 320px) {
+			width: 100%; 
+		}
+	}
 	// Side thumbnail version (shared)
 	&.thumbnail-on-left  {
 
+	 	.thumbnail-wrap.columns {
+	 		padding: 0;
+	 	}
 		.thumbnail-wrap {
-			float:left;
+			float:left;	 
 		}
+
 		.highlight-bottom {
 			border:0;
 		}

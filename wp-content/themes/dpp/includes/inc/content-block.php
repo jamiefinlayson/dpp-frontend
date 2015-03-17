@@ -1,14 +1,14 @@
 <div class="block-content outlined-box standard-block">
 	<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
 
-		<div class="thumbnail-wrap inner">
+		<div class="thumbnail-wrap inner small-5 medium-12 columns">
 			<?php if ( has_post_thumbnail() ) { ?>
 				<a href="<?php the_permalink() ?>"> <?php the_post_thumbnail( 'medium', array( 'class'	=> "highlight-bottom")); ?></a>
 			<?php } else { ?>
 				<a href="<?php the_permalink() ?>"> <img class="highlight-bottom" src="<?php bloginfo('template_directory');?>/common/img/thumbnail-medium-default.jpg" alt=""/></a>
 			<?php } ?>
 		</div>
-		<div class="padded-content inner">
+		<div class="padded-content inner small-7 medium-12 columns">
 			<header>
 				<h2 class="likeH3"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
 
@@ -20,7 +20,11 @@
 						 	echo $post_date;
 						  ?>
 				 <?php } ?>
-			</header>
+			</header> 
+	
+		</div>
+		<div class="padded-text inner small-12 medium-12 columns">
+			 
 			<p><?php echo excerpt(120); ?></p>
 			<a class="more-link chevron-before" href="<?php the_permalink();?>"><span><?php the_field('custom-readmore'); ?></span></a>
 		</div>
