@@ -65,6 +65,12 @@ Version: 1
 	}
 }
 
+.rwd-break {
+	display: block;
+	@media #{$medium-down} { 
+		display: none;
+	} 
+}
 
 
 /*
@@ -354,6 +360,12 @@ Version: 1
 .padded-content {
 	padding:14px 20px 0;
 	overflow:hidden;
+
+	@media screen and (min-width: 320px) and (max-width: 480px) {
+		h2 {
+			padding-bottom: 0;
+		}
+	}
 	&.columns { 
 		@media screen and (max-width: 320px) {
 			width: 100%;

@@ -126,7 +126,7 @@
 
 					<div class="small-12 medium-6 xlarge-5 columns last">
 						<div class="header-copy">
-							<h2>The Digital Production Partnership (DPP) is<br /> an initiative formed by the UK's public service broadcasters to help producers and broadcasters maximise the potential of digital production.</h2>
+							<h2>The Digital Production Partnership (DPP) is<br class="rwd-break" /> an initiative formed by the UK's public service broadcasters to help producers and broadcasters maximise the potential of digital production.</h2>
 						</div>
 					</div>
 				</div> <!-- /row -->
