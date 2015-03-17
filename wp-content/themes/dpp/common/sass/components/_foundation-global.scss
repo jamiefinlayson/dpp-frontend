@@ -412,24 +412,9 @@ $cursor-text-value: text !default;
     *:before,
     *:after {
       @include box-sizing(inherit);
-    }
+    }  
 
-    html,
-    body { font-size: $base-font-size; }
-
-    // Default body styles
-    body {
-      background: $body-bg;
-      color: $body-font-color;
-      cursor: $cursor-auto-value;
-      font-family: $body-font-family;
-      font-style: $body-font-style;
-      font-weight: $body-font-weight;
-      line-height: $base-line-height; // Set to $base-line-height to take on browser default of 150%
-      margin: 0;
-      padding: 0;
-      position: relative;
-    }
+    
 
   a:hover { cursor: $cursor-pointer-value; }
 
