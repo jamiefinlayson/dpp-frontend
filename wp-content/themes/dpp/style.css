@@ -678,20 +678,20 @@ meta.foundation-mq-small {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/dpp-frontend\/wp-content\/themes\/dpp\/common\/sass\/components\/_foundation-global\.scss}line{font-family:\00003358}}
 meta.foundation-mq-small-only {
-  font-family: "/only screen and (max-width: 480px)/";
+  font-family: "/only screen and (max-width: 320px)/";
   width: 0;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/dpp-frontend\/wp-content\/themes\/dpp\/common\/sass\/components\/_foundation-global\.scss}line{font-family:\00003363}}
 meta.foundation-mq-medium {
-  font-family: "/only screen and (min-width:481px)/";
-  width: 481px;
+  font-family: "/only screen and (min-width:320px)/";
+  width: 320px;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/dpp-frontend\/wp-content\/themes\/dpp\/common\/sass\/components\/_foundation-global\.scss}line{font-family:\00003368}}
 meta.foundation-mq-medium-only {
-  font-family: "/only screen and (min-width:481px) and (max-width:1023px)/";
-  width: 481px;
+  font-family: "/only screen and (min-width:320px) and (max-width:1023px)/";
+  width: 320px;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/dpp-frontend\/wp-content\/themes\/dpp\/common\/sass\/components\/_foundation-global\.scss}line{font-family:\00003373}}
@@ -1266,7 +1266,7 @@ select {
     float: left;
   }
 }
-@media only screen and (min-width: 481px) {
+@media only screen and (min-width: 320px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/dpp-frontend\/wp-content\/themes\/dpp\/common\/sass\/components\/_foundation-grid\.scss}line{font-family:\00003158}}
   .medium-push-0 {
     position: relative;
@@ -3096,7 +3096,7 @@ select {
   text-align: right;
   padding: 40px 0 0 0;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 320px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/dpp-frontend\/wp-content\/themes\/dpp\/common\/sass\/style\.scss}line{font-family:\0000397}}
   .primary-header .header-copy {
     text-align: left;
@@ -3239,17 +3239,17 @@ select {
 
 /*
 .inner {  
-	 @media only screen and (max-width: 480px) and (orientation: portrait) { 
+	 @media only screen and (max-width: 320px) and (orientation: portrait) { 
 	    @include grid-column(12);
 		padding: 0;
 	  } 
-	 @media only screen and (max-width: 480px) and (orientation: landscape) { 
+	 @media only screen and (max-width: 320px) and (orientation: landscape) { 
 	    @include grid-column(6);
 		padding: 0;
 	  } 
  }
  */
-@media only screen and (min-width: 481px) and (max-width: 1023px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 1023px) and (orientation: landscape) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/dpp-frontend\/wp-content\/themes\/dpp\/common\/sass\/style\.scss}line{font-family:\00003236}}
   .medium-6.columns {
     padding-left: 0.9375rem;
@@ -3550,7 +3550,7 @@ html[xmlns] .slides {
     min-height: 280px;
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 320px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/dpp-frontend\/wp-content\/themes\/dpp\/common\/sass\/style\.scss}line{font-family:\00003246}}
   .news-slider {
     height: auto;
@@ -3749,7 +3749,7 @@ html[xmlns] .slides {
 .footer-logos {
   text-align: right;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 320px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/dpp-frontend\/wp-content\/themes\/dpp\/common\/sass\/style\.scss}line{font-family:\00003425}}
   .footer-logos {
     text-align: left;
@@ -3761,7 +3761,7 @@ html[xmlns] .slides {
   vertical-align: middle;
   margin: 0 0 25px 45px;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 320px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/dpp-frontend\/wp-content\/themes\/dpp\/common\/sass\/style\.scss}line{font-family:\00003430}}
   .footer-logos li {
     margin: 0 30px 25px 0;
@@ -3771,7 +3771,7 @@ html[xmlns] .slides {
 .footer-logos li a {
   display: block;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 320px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/dpp-frontend\/wp-content\/themes\/dpp\/common\/sass\/style\.scss}line{font-family:\00003440}}
   .footer-logos li img {
     width: 75%;
