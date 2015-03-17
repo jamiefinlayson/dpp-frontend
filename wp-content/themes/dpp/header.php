@@ -89,7 +89,7 @@
 	<script src="<?php bloginfo('template_directory'); ?>/common/js/modernizr-1.7.min.js"></script>
 
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php //if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 
 	<?php wp_head(); ?>

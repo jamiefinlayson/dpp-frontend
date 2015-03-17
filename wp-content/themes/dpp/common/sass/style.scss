@@ -45,7 +45,14 @@ Version: 1
 * 	FOUNDATION Grid  Structure
 */
 @import "components/_foundation-grid.scss"; 
-  
+
+
+@-ms-viewport {
+    zoom: 1.0;
+    width: extend-to-zoom;
+}
+
+
 /*
 * Clean List reuable Style
 */
