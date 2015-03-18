@@ -10,7 +10,7 @@
 				$queryYear = $current_year;
 			}
 		?>
-	<div class="primary-content site-width">
+	<div class="primary-content">
 
 		<div class="row">
 			<div class="grid-12">
@@ -56,7 +56,7 @@
 		<div class="row">
 
 			<!-- Sidebar -->
-			<div class="grid-3" role="complementary">
+			<div class="small-12 medium-12 large-3 xlarge-3 columns">
 				<ul class="clean-list secondary-nav" id="news-archive-menu">
 
 					<?php
@@ -102,7 +102,7 @@
 
 			<!-- Main content -->
 
-			<div class="grid-9" role="main">
+			<div class="small-12 medium-12 large-9 xlarge-9 columns">
 
 
 				<?php

@@ -10,7 +10,7 @@
 				$queryYear = $current_year;
 			}
 		?>
-	<div class="primary-content site-width">
+	<div class="primary-content">
 
 		<div class="row">
 			<div class="grid-12">
@@ -56,7 +56,7 @@
 		<div class="row">
 
 			<!-- Sidebar -->
-			<div class="grid-3" role="complementary">
+			<div class="small-12 medium-12 large-3 xlarge-3 columns">
 				<ul class="clean-list secondary-nav" id="news-archive-menu">
 					<!-- Uses plugin specific call to get monthly archives -->
 					<?php wp_get_post_type_archives('news', array('type' => 'yearly', 'show_post_count' => false)); ?>
@@ -67,7 +67,7 @@
 
 			<!-- Main content -->
 
-			<div class="grid-9" role="main">
+			<div class="small-12 medium-12 large-9 xlarge-9 columns">
 
 
 				<?php
@@ -81,22 +81,20 @@
 				<?php query_posts( $args ); ?>
 				<?php if (have_posts()) : ?>
 
+					<?php include (TEMPLATEPATH . '/includes/inc/nav.php' ); ?>
 
+					 
+						<?php while (have_posts()) : the_post(); ?>
 
-							<?php include (TEMPLATEPATH . '/includes/inc/nav.php' ); ?>
+								  
+									<!-- Block style contnet -->
+									<?php get_template_part( 'includes/inc/content', 'block-side-thumb'); ?>
+								 
 
-							<ul class="clean-list block-articles">
-								<?php while (have_posts()) : the_post(); ?>
+						<?php endwhile; ?>
+					 
 
-										<li>
-											<!-- Block style contnet -->
-											<?php get_template_part( 'includes/inc/content', 'block-side-thumb'); ?>
-										</li>
-
-								<?php endwhile; ?>
-							</ul>
-
-							<?php include (TEMPLATEPATH . '/includes/inc/nav.php' ); ?>
+					<?php include (TEMPLATEPATH . '/includes/inc/nav.php' ); ?>
 
 					<?php else : ?>
 

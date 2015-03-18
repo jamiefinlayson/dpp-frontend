@@ -5,7 +5,7 @@ Template Name: Download Archive Template
 ?>
 <?php get_header(); ?>
 
-	<div class="primary-content site-width">
+	<div class="primary-content">
 
 		<div class="row">
 			<div class="grid-12">
@@ -23,7 +23,7 @@ Template Name: Download Archive Template
 		<div class="row">
 
 			<!-- Sidebar -->
-			<div class="grid-3" role="complementary">
+			<div class="small-12 medium-12 large-3 xlarge-3 columns">
 
 					<?php
 						//list terms in a given taxonomy using wp_list_categories (also useful as a widget if using a PHP Code plugin)
@@ -46,7 +46,7 @@ Template Name: Download Archive Template
 			</div>
 
 			<!-- Main content -->
-			<div class="grid-9" role="main">
+			<div class="small-12 medium-12 large-9 xlarge-9 columns">
 
 				<?php
 				$args2 = array(
@@ -55,12 +55,11 @@ Template Name: Download Archive Template
 
 					$tax_terms = get_terms('download-categories', $args2);
 					?>
-
-					<ul class="clean-list two-per-row block-articles clearfix">
+ 
 						<?php
 						foreach ($tax_terms as $tax_term) {?>
 						<?php// var_dump($tax_term); exit;?>
-						<li>
+						 
 							<div class="block-content outlined-box">
 								<article>
 									<div class="thumbnail-wrap">
@@ -82,10 +81,10 @@ Template Name: Download Archive Template
 									</div>
 								</article>
 							</div>
-						</li>
+						 
 						<?php } ?>
 
-					</ul>
+					 
 
 
 

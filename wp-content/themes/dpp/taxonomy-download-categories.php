@@ -1,7 +1,7 @@
 
 <?php get_header(); ?>
 
-	<div class="primary-content site-width">
+	<div class="primary-content">
 
 		<div class="row">
 			<div class="grid-12">
@@ -21,7 +21,7 @@
 		<div class="row">
 
 			<!-- Sidebar -->
-			<div class="grid-3" role="complementary">
+			<div class="small-12 medium-12 large-3 xlarge-3 columns">
 					<?php
 						//list terms in a given taxonomy using wp_list_categories (also useful as a widget if using a PHP Code plugin)
 
@@ -51,7 +51,7 @@
 
 			<!-- Main content -->
 
-			<div class="grid-9" role="main">
+			<div class="small-12 medium-12 large-9 xlarge-9 columns">
 				<?php //query_posts($args2); ?>
 				<?php global $query_string; // required
 				$posts = query_posts($query_string.'&orderby=menu_order&order=ASC'); // exclude category 9 ?>

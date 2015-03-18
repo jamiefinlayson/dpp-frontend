@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="primary-content site-width">
+<div class="primary-content">
 
 		<div class="row">
 			<div class="grid-12">

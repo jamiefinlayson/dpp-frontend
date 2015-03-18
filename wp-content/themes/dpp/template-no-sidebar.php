@@ -6,10 +6,10 @@ Template Name: No Sidebar
 
 <?php get_header(); ?>
 
-<div class="primary-content site-width">
+<div class="primary-content">
 
 		<div class="row">
-			<div class="grid-12">
+			<div class="medium-12 column">
 				<div class="first-title dashed-bottom">
 					<h1><?php the_title(); ?></h1>
 
@@ -24,7 +24,7 @@ Template Name: No Sidebar
 
 
 			<!-- Main content -->
-			<div class="grid-12" role="main">
+			<div class="medium-12 column">
 
 
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>

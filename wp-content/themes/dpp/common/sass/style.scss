@@ -1004,9 +1004,8 @@ form {
 		@include inline-block;
 	}
 }
-.form-right,
-.form-left {
-	width:45%;
+form .column,
+form .columns{ 
 
 	.form-item,
 	input[type="text"],

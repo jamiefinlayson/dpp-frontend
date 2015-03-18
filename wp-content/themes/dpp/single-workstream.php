@@ -2,7 +2,7 @@
 
 
 
-	<div class="primary-content site-width">
+	<div class="primary-content">
 
 		<div class="row">
 			<div class="grid-12">
@@ -20,7 +20,7 @@
 		<div class="row">
 
 			<!-- Sidebar -->
-			<div class="grid-3" role="complementary">
+			<div class="small-12 medium-12 large-3 xlarge-3 columns">
 				<nav>
 					<ul class="clean-list secondary-nav">
 						<?php $args1 = array(
@@ -48,7 +48,7 @@
 			</div>
 
 			<!-- Main content -->
-			<div class="grid-6" role="main">
+			<div class="small-12 medium-6 large-6 xlarge-6 columns">
 
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -71,7 +71,7 @@
 				<?php endwhile; endif; ?>
 			</div> <!-- /grid-6 -->
 
-			<div class="grid-3">
+			<div class="small-12 medium-3 large-3 xlarge-3 columns">
 				<aside>
 					<?php
 						// Find connected downloads

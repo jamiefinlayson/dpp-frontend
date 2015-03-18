@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-	<div class="primary-content site-width">
+	<div class="primary-content">
 
 		<div class="row">
 			<div class="grid-12">
@@ -28,7 +28,8 @@
 				); ?>
 
 			<!-- Sidebar -->
-			<div class="grid-3" role="complementary">
+			<div class="small-12 medium-12 large-3 xlarge-3 columns">
+				 
 				<ul class="clean-list secondary-nav">
 					<?php query_posts($args2); ?>
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -40,39 +41,44 @@
 
 					<?php endwhile; ?>
 
-				<?php else : ?>
+					<?php else : ?>
 
-					<h2>Not Found</h2>
+						<h2>Not Found</h2>
 
-				<?php endif; ?>
+					<?php endif; ?>
 				</ul>
 			</div>
 
 			<!-- Main content -->
-			<div class="grid-9" role="main">
+			<div class="small-12 medium-12 large-9 xlarge-9 columns">
 
+				<div class="row">
 
+					<?php query_posts($args2); ?>
+					 	<?php $i = 1; ?>
+						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+							<!-- Clear first item in row -->
+							<?php if($i%2 == 0) : ?>
+								<div class="small-12 medium-6 large-6 equal columns">
+							<?php else : ?>
+								<div class="clear small-12 medium-6 large-6 equal columns">
+							<?php endif; ?>
 
-				<?php query_posts($args2); ?>
-				<ul class="clean-list two-per-row block-articles clearfix">
-					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-							<li>
 								<!-- Block style content -->
 								<?php get_template_part( 'includes/inc/content', 'block'); ?>
-							</li>
+							 	</div>
+							<?php $i++; ?>
+						<?php endwhile; ?>
+					 
 
-					<?php endwhile; ?>
-				</ul>
+					<?php else : ?>
 
-				<?php else : ?>
+						<h2>Not Found</h2>
 
-					<h2>Not Found</h2>
+					<?php endif;
 
-				<?php endif;
-
-				?>
-
+					?>
+				</div>
 
 			</div> <!-- /grid-9 -->
 
