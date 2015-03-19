@@ -5,7 +5,7 @@
 	<div class="primary-content">
 
 		<div class="row">
-			<div class="grid-12">
+			<div class="small-12 medium-12 large-12 xlarge-12 columns">
 				<div class="first-title dashed-bottom">
 					<p class="likeh1">
 						What we do
