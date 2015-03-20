@@ -571,6 +571,10 @@ Version: 1
 			padding-top:18px;
 			margin-bottom:30px;
 
+			@media #{$small-only} { 
+				  width: 90px; 
+				  padding-top: 2px; 
+			}
 			img {
 				display: block;
 				margin:0 auto;
@@ -591,6 +595,10 @@ Version: 1
 			background-color:#fff;
 			padding:20px;
 			border:1px solid #e9e9e9;
+	 
+			@media #{$small-only} {
+				padding: 10px;
+			}
 		}
 		.member-position {
 			font-style: italic;
@@ -598,7 +606,43 @@ Version: 1
 		}
 		.profile-default {
 			width:96px;
+		}	 
+		.padded-content { 
+	 
+			@media screen and (max-width: 320px) {
+				padding-left: 0;
+			} 
+		} 
+		.padded-text { 
+	 
+			@media #{$small-only} {
+				width: 100%;
+				float: none;
+				padding: 20px 0;
+			} 
+			@media screen and (max-width: 320px) {
+				padding-top: 0;
+			} 
 		}
+	 
+	}
+
+
+	// News version
+	&.for-news.thumbnail-on-left {
+
+		.padded-content { 
+			padding-bottom: 0;
+		} 
+
+		@media #{$small-only} {
+			.padded-text {
+				clear: left;
+				float: none;
+				padding-top: 20px;
+			}
+		}
+	 
 	}
 
 }
@@ -618,6 +662,12 @@ Version: 1
 }
 .single-thumbnail-wrap {
 	margin-bottom: pxtoem(15, $basepx);
+	img {
+		@media #{$small-only} {
+			width: 100%;
+			float: none;
+		}
+	} 
 }
 
 /*
@@ -839,6 +889,14 @@ a.chevron-before {
 	top:15px;
 	right:0;
 
+	@media #{$small-only} { 
+		position: relative;
+		top: 0;
+		right: auto;
+		margin: 20px 0; 
+		float: left;
+	}
+
 	li {
 		float:left;
 	}
@@ -896,7 +954,12 @@ a.chevron-before {
 	img.alignleft {
 		float:left;
 		margin:0 15px 15px 0px;
+
+		@media screen and (max-width: 600px) {
+			width: 100%;
+		}
 	}
+
 	blockquote {
 		font-style: italic;
 	}

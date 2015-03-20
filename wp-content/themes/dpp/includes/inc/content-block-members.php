@@ -15,6 +15,9 @@
 						<h3 class="likeBody member-position"><?php the_field('member_position'); ?></h3>
 				</hgroup>
 			</header>
+		</div>
+		<div class="padded-text">
+			
 			<?php the_content(); ?>
 		</div>
 

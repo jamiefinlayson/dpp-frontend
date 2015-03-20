@@ -71,7 +71,7 @@
 				<?php endwhile; endif; ?>
 			</div> <!-- /grid-6 -->
 
-			<div class="small-12 medium-3 large-3 xlarge-3 columns">
+			<div class="small-12 medium-6 large-3 xlarge-3 columns">
 				<aside>
 					<?php
 						// Find connected downloads

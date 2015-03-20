@@ -28,6 +28,8 @@
 				</p>
 			</header>
 
+		</div>
+		<div class="padded-text">
 			<p><?php echo excerpt(150); ?></p>
 			<a class="more-link chevron-before" href="<?php the_permalink();?>"><span><?php the_field('custom-readmore'); ?></span></a>
 		</div>

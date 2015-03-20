@@ -46,50 +46,57 @@ Template Name: Download Archive Template
 			</div>
 
 			<!-- Main content -->
-			<div class="small-12 medium-12 large-9 xlarge-9 columns">
+			<div class="small-12 medium-12 large-9 xlarge-9 equal columns">
+				
+		<div class="row"> 
 
-				<?php
-				$args2 = array(
-				    'hide_empty'    => false,
-				);
+					<?php
+					$args2 = array(
+					    'hide_empty'    => false,
+					);
 
-					$tax_terms = get_terms('download-categories', $args2);
-					?>
- 
-						<?php
-						foreach ($tax_terms as $tax_term) {?>
-						<?php// var_dump($tax_term); exit;?>
+						$tax_terms = get_terms('download-categories', $args2);
+						?>
+	 
+							<?php
+							foreach ($tax_terms as $tax_term) {?>
+							<?php// var_dump($tax_term); exit;?>
+							 
+				<div class="small-12 medium-6 large-6 equal columns">
+								<div class="block-content outlined-box">
+									<article>
+										<div class="thumbnail-wrap">
+
+											<?php
+											// Get the medium thumbnail associated with each taxonomy term
+											$term_id = $tax_term->term_id;
+											$image=wp_get_attachment_image_src(get_field('taxonomy_image' , 'download-categories_'  . $term_id), 'medium' );
+											?>
+
+
+											<?php echo '<a href="'. esc_attr(get_term_link($tax_term, $taxonomy)) . '">'; ?> <img src=" <?php echo $image[0] ;?>" /> </a>
+										</div>
+
+										<div class="padded-content">
+											<header><h2><?php echo '<a href="'. esc_attr(get_term_link($tax_term, $taxonomy)) . '">'; ?>  <?php echo $tax_term->name ?></a></h2></header>
+											<p><?php echo $tax_term->description ?></p>
+											<?php echo '<a class="chevron-before" href="'. esc_attr(get_term_link($tax_term, $taxonomy)) . '">'; ?><span>Find out more</span></a>
+										</div>
+									</article>
+								</div>
+							 
+
 						 
-							<div class="block-content outlined-box">
-								<article>
-									<div class="thumbnail-wrap">
 
-										<?php
-										// Get the medium thumbnail associated with each taxonomy term
-										$term_id = $tax_term->term_id;
-										$image=wp_get_attachment_image_src(get_field('taxonomy_image' , 'download-categories_'  . $term_id), 'medium' );
-										?>
+				</div>
+
+							<?php } ?>
 
 
-										<?php echo '<a href="'. esc_attr(get_term_link($tax_term, $taxonomy)) . '">'; ?> <img src=" <?php echo $image[0] ;?>" /> </a>
-									</div>
-
-									<div class="padded-content">
-										<header><h2><?php echo '<a href="'. esc_attr(get_term_link($tax_term, $taxonomy)) . '">'; ?>  <?php echo $tax_term->name ?></a></h2></header>
-										<p><?php echo $tax_term->description ?></p>
-										<?php echo '<a class="chevron-before" href="'. esc_attr(get_term_link($tax_term, $taxonomy)) . '">'; ?><span>Find out more</span></a>
-									</div>
-								</article>
-							</div>
-						 
-						<?php } ?>
-
-					 
-
-
-
-
+				</div>
 			</div> <!-- /grid-9 -->
+
+
 
 
 		</div>
