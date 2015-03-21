@@ -56,6 +56,8 @@ define('WP_CONTENT_DIR', realpath(ABSPATH . '../wp-content/'));
 define('WP_CONTENT_URL', WP_HOME . '/wp-content');
 define('UPLOADS', '../uploads');
  
+/* Multisite */
+define( 'WP_ALLOW_MULTISITE', true ); 
  
 /**#@+
  * Authentication Unique Keys and Salts.
