@@ -298,10 +298,32 @@ Version: 1
 			}
 		}
 	} 	
-}    
-
-
-
+}   
+ 
+@media #{$large-up} { 
+.mini-menus {
+	background: #ccc;
+	font-size: 11px;
+}
+#item-body{
+	padding: 0;
+}
+#item-body.mini-menus {
+	background: #fff; 
+	border-bottom: 2px solid #999;
+	font-size: 14px;
+	form,
+	.activity {
+		padding: 0 0.9375rem 0 0.9375rem !important;
+	}
+	.item-list-tabs { 
+		padding: 0 0.9375rem 0 0.9375rem;
+		border-top: 1px solid #999;
+		border-bottom: 1px solid #999;
+		font-size: inherit;
+	}
+}
+}
 nav {
 	z-index:103;
 	position: relative;
@@ -316,8 +338,11 @@ nav {
 
 a.current,
 #buddypress div.item-list-tabs ul li.selected a, #buddypress div.item-list-tabs ul li.current a {
-	  background-color: #eee;
+	  background-color: #fff;
   color: #555;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  border-bottom: none;
 }
 
 #buddypress #item-body form#whats-new-form {
@@ -348,6 +373,8 @@ a.current,
  #item-body .activity, {
  	width: 100%; 
  }
+
+
 /*
 .inner {  
 	 @media #{$small-only} and (orientation: portrait) { 

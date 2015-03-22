@@ -120,7 +120,9 @@ $(document).ready(function (){
 	pluginClasses.init();
 	//equalHeight.init($(".equal"));  
 
-	var subMenus = $('#item-body').add('#item-nav').add('.sub-nav');
+	$('#item-body').add('#item-nav').addClass('mini-menus');
+ 
+	var subMenus = $('.mini-menus').add('.sub-nav');
 	var subMChild = subMenus.children('div.item-list-tabs'); 
 	subMChild.prepend('<span class="drop"><i></i></span>').wrapInner("<ul><li></li></ul>"); 
 	$('.sub-nav .drop').prepend('Submenu'); 
@@ -138,7 +140,7 @@ $(document).ready(function (){
 		$(this).parent().children('ul ul').toggleClass( "dropdown-on" );
 		e.preventDefault();
 	});	 
-
+ 
 
 });
 
