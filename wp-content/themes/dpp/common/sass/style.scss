@@ -251,10 +251,18 @@ Version: 1
 					position: absolute;
 					li {
 						display: none; 
-						 transition: background 0.2s ease, padding 0.8s linear;
+						 transition: background 0.2s ease linear;
 					}	
+					&.dropdown-on {
+						@media #{$small-only} { 
+							width: 100%;		
+						}
+					}
 					&.dropdown-on > li {
 						display: block;
+						@media #{$small-only} { 
+							width: 100%;		
+						}
 					}
 				}
 				li {
@@ -266,6 +274,21 @@ Version: 1
 	} 	
 }    
   
+.drop {
+
+}
+ .drop i {
+ 	width: 0; 
+	height: 0; 
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 10px solid #fff;
+	float: right;
+	&.toggle-arrow {
+		border-top: 0;
+		border-bottom: 10px solid #fff;
+	}
+ } 
 /*
 .inner {  
 	 @media #{$small-only} and (orientation: portrait) { 
