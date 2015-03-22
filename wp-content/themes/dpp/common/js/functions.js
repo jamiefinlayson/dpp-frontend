@@ -118,10 +118,17 @@ $(document).ready(function (){
 	events.init();
 	archiveHighlight.init();
 	pluginClasses.init();
-	//equalHeight.init($(".equal")); 
-$('#item-body div.item-list-tabs').prepend('<a href="#">Member\'s subnav</a>').wrapInner("<ul><li></li></ul>");
-	$('#item-nav div.item-list-tabs').prepend('<a href="#">Member\'s navigation</a>').wrapInner("<ul><li></li></ul>");
-	
+	//equalHeight.init($(".equal"));  
+
+	 
+	$('body').on('click', '#item-nav .drop, #item-body .drop', function() { 
+		$('#item-nav ul ul').add('#item-body ul ul').toggleClass( "dropdown-on" );
+		e.preventDefault();
+	});	 
+	  
+	$('#item-body div.item-list-tabs').prepend('<span class="drop">Member\'s subnavigation</span>').wrapInner("<ul><li></li></ul>");
+	$('#item-nav div.item-list-tabs').prepend('<span class="drop">Member\'s navigation</span>').wrapInner("<ul><li></li></ul>");
+
 });
 
 $(window).resize(function() {

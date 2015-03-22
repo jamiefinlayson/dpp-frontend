@@ -251,14 +251,15 @@ Version: 1
 					position: absolute;
 					li {
 						display: none; 
+						 transition: background 0.2s ease, padding 0.8s linear;
 					}	
+					&.dropdown-on > li {
+						display: block;
+					}
 				}
 				li {
 					position: relative;
-					float: none !important;
-					&:hover > ul li {
-						display: block;
-					}
+					float: none !important; 
 				}
 			}
 		}
