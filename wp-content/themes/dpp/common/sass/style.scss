@@ -230,6 +230,61 @@ Version: 1
 		}
 	}
 }
+
+
+#item-nav {
+
+
+	@media #{$medium-down} { 
+		overflow: visible !important;
+		z-index: 10;
+		position: relative;
+		display: block;
+	} 	
+}
+#item-nav ul li, 
+.secondary-nav li{
+	position: relative;
+}
+
+#buddypress div.item-list-tabs {
+
+	@media #{$medium-down} { 
+		overflow: visible !important;
+		z-index: 10;
+		position: relative;
+		display: block;
+	} 
+
+}
+
+#item-nav ul ul, 
+.secondary-nav ul {
+
+	@media #{$medium-down} { 
+		display: none;
+		position: absolute;
+		li {
+			float: none;
+		}	
+	} 
+}
+
+#buddypress div.item-list-tabs ul li {
+
+	@media #{$medium-down} { 
+		li {
+			float: none;
+		}	
+	} 
+}
+#item-nav ul li:hover > ul,
+.secondary-nav li:hover > ul {
+	display: block;
+
+}
+
+
 /*
 .inner {  
 	 @media #{$small-only} and (orientation: portrait) { 

@@ -119,6 +119,9 @@ $(document).ready(function (){
 	archiveHighlight.init();
 	pluginClasses.init();
 	//equalHeight.init($(".equal")); 
+
+	$('#item-nav div').prepend('<a href="#">Member\'s navigation</a>').wrapInner("<ul><li></li></ul>");
+	$('#item-body div').prepend('<a href="#">Member\'s subnav</a>').wrapInner("<ul><li></li></ul>");
 });
 
 $(window).resize(function() {
