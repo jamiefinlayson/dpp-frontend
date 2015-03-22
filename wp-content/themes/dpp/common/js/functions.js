@@ -119,12 +119,21 @@ $(document).ready(function (){
 	archiveHighlight.init();
 	pluginClasses.init();
 	//equalHeight.init($(".equal"));  
-	  
-	$('#item-body div.item-list-tabs').prepend('<span class="drop">Member\'s subnavigation <i></i></span>').wrapInner("<ul><li></li></ul>");
-	$('#item-nav div.item-list-tabs').prepend('<span class="drop">Member\'s navigation <i></i></span>').wrapInner("<ul><li></li></ul>");
+
+	var subMenus = $('#item-body').add('#item-nav').add('.sub-nav');
+	var subMChild = subMenus.children('div.item-list-tabs'); 
+	subMChild.prepend('<span class="drop"><i></i></span>').wrapInner("<ul><li></li></ul>"); 
+	$('.sub-nav .drop').prepend('Submenu'); 
+	$('#item-nav .drop').prepend('Member\'s menu');
+	$('#item-body .drop').prepend('Actions'); 
+	var subMCFirstLi = subMChild.children('li:first-child');
+	var subMCFirstLiInnerLi = subMChild.children('ul li:nth-child(2)');
+	var headTxt = subMCFirstLiInnerLi.text(); 
+	subMenus.addClass('small-12 medium-12 large-12 xlarge-12 columns');
+	 
 
 	 
-	$('body').on('click', '#item-nav .drop, #item-body .drop', function() { 
+	$('body').on('click', '#item-nav .drop, #item-body .drop, .sub-nav .drop', function() { 
 		$(this).children('i').toggleClass( "toggle-arrow" );
 		$(this).parent().children('ul ul').toggleClass( "dropdown-on" );
 		e.preventDefault();

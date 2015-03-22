@@ -234,35 +234,61 @@ Version: 1
 
 #item-nav,
 #item-body, 
-.secondary-nav {
+.sub-nav {
+	float: none !important;
+	clear: left;
 	@media #{$medium-down} { 
 		overflow: visible !important;
 		z-index: 100;
 		position: relative;
 		display: block;
+		padding: 0 !important;
+		margin-bottom: 10px;
 		div.item-list-tabs { 
 			overflow: visible !important; 
 			z-index: 100 !important;
 			position: relative;
+			width: 50%;
+			max-width: 150px;
 			display: block;
+			margin-top: 0 !important;
+			@media #{$medium-down} { 	
+				max-width: 999px;
+			}
 			ul {
 				background: #ccc; 
 				ul {	  
 					position: absolute;
 					li {
 						display: none; 
-						 transition: background 0.2s ease linear;
-					}	
-					&.dropdown-on {
-						@media #{$small-only} { 
-							width: 100%;		
+						transition: background 0.2s ease linear;
+						&:first-child {
+							//display: block; 
+							cursor: pointer;
+							i {
+							 	width: 0; 
+								height: 0; 
+								border-left: 10px solid transparent;
+								border-right: 10px solid transparent;
+								border-top: 10px solid #fff;
+								float: right;
+								&.toggle-arrow {
+									border-top: 0;
+									border-bottom: 10px solid #fff;
+								}
+							}
+
+							@media #{$medium-down} { 	
+								//display: block !important;
+							}
 						}
+					}	
+					&.dropdown-on { 
+							width: 100%;	 
 					}
 					&.dropdown-on > li {
-						display: block;
-						@media #{$small-only} { 
-							width: 100%;		
-						}
+						display: block; 
+						width: 100%; 
 					}
 				}
 				li {
@@ -273,9 +299,37 @@ Version: 1
 		}
 	} 	
 }    
-  
-.drop {
 
+
+
+nav {
+	z-index:103;
+	position: relative;
+}
+
+#item-nav {
+
+	z-index:102;
+	position: relative;	
+}
+
+
+a.current,
+#buddypress div.item-list-tabs ul li.selected a, #buddypress div.item-list-tabs ul li.current a {
+	  background-color: #eee;
+  color: #555;
+}
+
+#buddypress #item-body form#whats-new-form {
+	margin:50px 0 0 0 !important;
+}  
+.drop {
+	display: none !important;
+	cursor: pointer;
+	padding: 5px 10px;
+	@media #{$medium-down} { 	
+		display: block !important;
+	}
 }
  .drop i {
  	width: 0; 
@@ -289,6 +343,11 @@ Version: 1
 		border-bottom: 10px solid #fff;
 	}
  } 
+
+ #item-body form,
+ #item-body .activity, {
+ 	width: 100%; 
+ }
 /*
 .inner {  
 	 @media #{$small-only} and (orientation: portrait) { 
