@@ -232,59 +232,42 @@ Version: 1
 }
 
 
-#item-nav {
-
-
+#item-nav,
+#item-body, 
+.secondary-nav {
 	@media #{$medium-down} { 
 		overflow: visible !important;
-		z-index: 10;
+		z-index: 100;
 		position: relative;
 		display: block;
+		div { 
+			overflow: visible !important; 
+			z-index: 100;
+			position: relative;
+			display: block;
+			ul {
+				background: #ccc; 
+				ul {	  
+					position: absolute;
+					li {
+						display: none; 
+					}	
+				}
+				li {
+					position: relative;
+					float: none !important;
+					&:hover > ul li {
+						display: block;
+					}
+				}
+			}
+		}
 	} 	
-}
-#item-nav ul li, 
-.secondary-nav li{
-	position: relative;
-}
-
-#buddypress div.item-list-tabs {
-
-	@media #{$medium-down} { 
-		overflow: visible !important;
-		z-index: 10;
-		position: relative;
-		display: block;
-	} 
-
-}
-
-#item-nav ul ul, 
-.secondary-nav ul {
-
-	@media #{$medium-down} { 
-		display: none;
-		position: absolute;
-		li {
-			float: none;
-		}	
-	} 
-}
-
-#buddypress div.item-list-tabs ul li {
-
-	@media #{$medium-down} { 
-		li {
-			float: none;
-		}	
-	} 
-}
-#item-nav ul li:hover > ul,
-.secondary-nav li:hover > ul {
-	display: block;
-
-}
-
-
+}   
+   #item-body {
+   	display: none;
+   }
+  
 /*
 .inner {  
 	 @media #{$small-only} and (orientation: portrait) { 
