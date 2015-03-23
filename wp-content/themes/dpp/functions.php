@@ -28,9 +28,14 @@
 		function core_mods() {
 			if ( !is_admin() ) {
 				wp_deregister_script('jquery');
-				wp_register_script('jquery', ("//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"), false);
+				wp_register_script('jquery', "//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js", array(),'2.0.3',false);
+                wp_register_script('foundation', get_template_directory_uri()."/common/js/foundation/foundation.js", array('jquery'),'5.1.1',true); 
+                wp_register_script('foundationoffcanvas', get_template_directory_uri()."/common/js/foundation/foundation.offcanvas.js", array('jquery'),'5.1.1',true); 
 				wp_enqueue_script('jquery');
-			}
+                wp_enqueue_script('foundation');
+                wp_enqueue_script('foundationoffcanvas');
+
+			} 
 		}
 		core_mods();
 	}

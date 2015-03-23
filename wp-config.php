@@ -56,7 +56,7 @@ define('WP_CONTENT_DIR', realpath(ABSPATH . '../wp-content/'));
 define('WP_CONTENT_URL', WP_HOME . '/wp-content');
 define('UPLOADS', '../uploads');
  
-/* Multisite */
+/* Multisite 
 define( 'WP_ALLOW_MULTISITE', true );
 define('MULTISITE', true);
 define('SUBDOMAIN_INSTALL', true);
@@ -64,7 +64,7 @@ define('DOMAIN_CURRENT_SITE', 'dpp-dev.co.uk');
 define('PATH_CURRENT_SITE', '/');
 define('SITE_ID_CURRENT_SITE', 1);
 define('BLOG_ID_CURRENT_SITE', 1);
- 
+ */
  
 /**#@+
  * Authentication Unique Keys and Salts.

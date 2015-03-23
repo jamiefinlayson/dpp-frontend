@@ -46,11 +46,18 @@ Version: 1
 */
 @import "components/_foundation-grid.scss"; 
 
+/*
+* 	FOUNDATION Off Canvas  Structure
+
+@import "components/_foundation-offcanvas.scss"; 
+*/
 
 @-ms-viewport {
     zoom: 1.0;
     width: extend-to-zoom;
 }
+
+
 
 
 /*
@@ -300,6 +307,11 @@ Version: 1
 	} 	
 }   
  
+body.buddypress .sub-nav,
+body.buddypress .side-bar {
+	//display: none;
+} 
+
 @media #{$large-up} { 
 .mini-menus {
 	background: #ccc;
