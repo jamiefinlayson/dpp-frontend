@@ -126,7 +126,7 @@
 
 					<div class="small-12 medium-7 xlarge-5 columns last">
 						<div class="header-copy">
-							<h2>The Digital Production Partnership (DPP) is<br class="rwd-break" /> an initiative formed by the UK's public service broadcasters to help producers and broadcasters maximise the potential of digital production.</h2>
+							<h2>The Digital Production Partnership Ltd (DPP) is<br class="rwd-break"> a not for profit company founded by ITV, BBC and Channel 4 to enable the media industry to maximise the potential of digital in the creation and exploitation of content.</h2>
 						</div>
 						<form method="get" id="searchform" action="<?php bloginfo('home'); ?>/">
 							<div>

@@ -3,7 +3,7 @@
             <div class="row">
 
                 <div class="small-12 medium-5 xlarge-5 columns">
-                    <p class="small-text">The partnership is funded by ITV, BBC and Channel 4 with representation from Channel 5, Sky, S4/C, UKTV, BT Sport and the Independent sector on its working groups.</p>
+                    <!--<p class="small-text">The partnership is funded by ITV, BBC and Channel 4 with representation from Channel 5, Sky, S4/C, UKTV, BT Sport and the Independent sector on its working groups.</p>-->
                     <p class="small-text">DPP is a registered trademark in the UK.</p>
                     <!-- Spit out hte top-menu (user editable in CMS) -->
                      <?php wp_nav_menu( array( 'theme_location' =>'footer-menu', 'menu_class' => 'menu clean-list',)); ?>
