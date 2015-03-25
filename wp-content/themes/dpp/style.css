@@ -3216,8 +3216,8 @@ select {
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/dpp-frontend\/wp-content\/themes\/dpp\/common\/sass\/style\.scss}line{font-family:\00003192}}
-.primary-nav .menu li a.current-menu-item,
-.primary-nav .menu li a.current-page-ancestor,
+.primary-nav .menu li.current-menu-item a,
+.primary-nav .menu li.current-page-ancestor a,
 .home .menu-item-home,
 .home .menu-item-951 {
   border-bottom: 4px solid #7f1734;
@@ -3225,15 +3225,15 @@ select {
 }
 @media only screen and (max-width: 1023px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/dpp-frontend\/wp-content\/themes\/dpp\/common\/sass\/style\.scss}line{font-family:\00003192}}
-  .primary-nav .menu li a.current-menu-item,
-  .primary-nav .menu li a.current-page-ancestor,
+  .primary-nav .menu li.current-menu-item a,
+  .primary-nav .menu li.current-page-ancestor a,
   .home .menu-item-home,
   .home .menu-item-951 {
     border-bottom: none;
   }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/dpp-frontend\/wp-content\/themes\/dpp\/common\/sass\/style\.scss}line{font-family:\00003200}}
-  .primary-nav .menu li a.current-menu-item a.shiftnav-target,
-  .primary-nav .menu li a.current-page-ancestor a.shiftnav-target,
+  .primary-nav .menu li.current-menu-item a a.shiftnav-target,
+  .primary-nav .menu li.current-page-ancestor a a.shiftnav-target,
   .home .menu-item-home a.shiftnav-target,
   .home .menu-item-951 a.shiftnav-target {
     background: #7f1734;
@@ -3320,13 +3320,13 @@ select {
     overflow: visible !important;
     z-index: 100 !important;
     position: relative;
-    width: 50%;
+    width: 338px;
     max-width: 150px;
     display: block;
     margin-top: 0 !important;
   }
 }
-@media only screen and (max-width: 1023px) and (max-width: 481px) {
+@media only screen and (max-width: 1023px) and (max-width: 600px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/dpp-frontend\/wp-content\/themes\/dpp\/common\/sass\/style\.scss}line{font-family:\00003273}}
   #item-nav div.item-list-tabs,
   #item-body div.item-list-tabs,

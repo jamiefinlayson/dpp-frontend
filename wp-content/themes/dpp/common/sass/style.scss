@@ -189,8 +189,8 @@ Version: 1
 
 
 // active/hover menu item (show border)
-.primary-nav .menu li a.current-menu-item,
-.primary-nav .menu li a.current-page-ancestor,
+.primary-nav .menu li.current-menu-item a,
+.primary-nav .menu li.current-page-ancestor a,
 .home .menu-item-home,
 .home .menu-item-951 {
 	border-bottom:4px solid $dppHighlight;
@@ -274,11 +274,11 @@ Version: 1
 			overflow: visible !important; 
 			z-index: 100 !important;
 			position: relative;
-			width: 50%;
+			width: 338px;
 			max-width: 150px;
 			display: block;
 			margin-top: 0 !important;
-			@media #{$small-only} { 	
+			@media (max-width: 600px) { 	
 				width: 100%; 
 			}
 			@media #{$medium-down} { 	
