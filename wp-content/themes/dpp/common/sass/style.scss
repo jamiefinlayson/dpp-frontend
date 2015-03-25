@@ -133,7 +133,7 @@ Version: 1
     padding-bottom: 0;
   }
   html #wpadminbar {
-    top: 0 !important;
+    top: 51px !important; 
     z-index: 2;
     background: black;
   }
@@ -255,7 +255,7 @@ Version: 1
 	background-size: auto 50%;
 }
 .shiftnav .shiftnav-menu-title {
-	padding: 25px;
+	padding: 25px !important;
 }
 
 #item-nav,
@@ -286,7 +286,7 @@ Version: 1
 			}
 			.dropdown-on {
 				padding-bottom: 20px;
-				label.activity-filter-by {
+				label{  
 					margin-left: 10px;
 				}
 			}
@@ -342,8 +342,10 @@ body.buddypress .side-bar {
 
 @media #{$large-up} { 
 .mini-menus {
-	background: #ccc;
-	font-size: 11px;
+	background: #ccc; 
+}
+#activity-filter-select {
+	min-width: 240px;
 }
 #item-body{
 	padding: 0;
@@ -361,6 +363,7 @@ body.buddypress .side-bar {
 		border-top: 1px solid #999;
 		border-bottom: 1px solid #999;
 		font-size: inherit;
+		font-size: 11px;
 	}
 }
 }
@@ -387,7 +390,62 @@ a.current,
 
 #buddypress #item-body form#whats-new-form {
 	margin:50px 0 0 0 !important;
-}  
+} 
+#buddypress div.activity-meta a {
+	  display: inline-block;
+  	margin-bottom: 10px;
+} 
+
+/*
+	label.bp_simple_post_title {
+		margin-bottom: 10px;
+	}
+	label.bp_simple_post_text {
+		min-height: 125px;
+	}
+
+	*/
+
+	@media #{$medium-down} {
+	#buddypress div.item-list-tabs ul li.selected a, #buddypress div.item-list-tabs ul li.current a {
+		border: none;
+		border-radius: 0;
+	}
+}
+#buddypress {
+ 	div.dir-search {
+ 		float: left !important;
+ 		margin: -8px 0 20px 0 !important;
+ 	}
+	.messages {
+		clear: left !important;
+	}
+	div.message-search {
+	  float: left !important;
+	  margin: 20px 0 !important;
+	}
+}
+#buddypress .bp-simple-post-form {
+	/* input[type=text],
+	 textarea{
+		left: 50px;
+		position: absolute;
+	}*/
+
+	.simple-post-custom-fields {
+		display: none
+	}
+	#buddypress .standard-form label.bp-simple-post-comment-status {
+		margin-top: 0 !important;
+		margin-bottom: 20px;
+	}
+	.simple-post-taxonomies-box {
+		margin-top: 20px;
+	}
+	input[type=submit] {
+		margin-top: 20px;
+	}
+}
 .drop {
 	display: none !important;
 	cursor: pointer;
@@ -526,6 +584,23 @@ a.current,
 	}
 }
 
+#searchform {
+	text-align:	right;
+	@media #{$small-only} { 
+		text-align: left;
+	}
+}
+
+#searchform input[type="text"] {
+	padding: 9px;
+	border: none;
+	vertical-align: top;
+}
+#searchform input[type="submit"] {
+	background: #7f1734 !important;
+	padding: 8px 10px 7px;
+	border: none;
+}
 
 /*
 * 2 per row List Style

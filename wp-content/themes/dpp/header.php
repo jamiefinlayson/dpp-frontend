@@ -124,10 +124,16 @@
 						</div> <!-- /logo -->
 					</div> <!-- /grid-4 -->
 
-					<div class="small-12 medium-6 xlarge-5 columns last">
+					<div class="small-12 medium-7 xlarge-5 columns last">
 						<div class="header-copy">
 							<h2>The Digital Production Partnership (DPP) is<br class="rwd-break" /> an initiative formed by the UK's public service broadcasters to help producers and broadcasters maximise the potential of digital production.</h2>
 						</div>
+						<form method="get" id="searchform" action="<?php bloginfo('home'); ?>/">
+							<div>
+								<input type="text" size="18" value="<?php echo wp_specialchars($s, 1); ?>" name="s" id="s" />
+							    <input type="submit" id="searchsubmit" value="Search" class="btn" />
+							</div>
+						</form>
 					</div>
 				</div> <!-- /row -->
 			</div>
