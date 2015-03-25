@@ -1,6 +1,8 @@
 <?php get_header(); ?>
+<div class="primary-content">
 
 	<?php if (have_posts()) : ?>
+
 		<div class="row">
 			<div class="small-12 medium-12 large-12 xlarge-12 columns">
 				<h2>Search Results</h2>
@@ -39,6 +41,7 @@
 
 	<?php endif; ?>
 
+</div>
 <?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

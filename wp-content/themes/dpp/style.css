@@ -3212,30 +3212,29 @@ select {
   width: 85px;
   background: url("common/img/icons/icon-sprite.png") no-repeat center 22px;
   text-indent: -9999px;
-  max-height: 50px;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/dpp-frontend\/wp-content\/themes\/dpp\/common\/sass\/style\.scss}line{font-family:\00003192}}
 .primary-nav .menu li.current-menu-item a,
 .primary-nav .menu li.current-page-ancestor a,
-.home .menu-item-home,
-.home .menu-item-951 {
+.home .menu-item-home a,
+.home .menu-item-951 a {
   border-bottom: 4px solid #7f1734;
   padding-bottom: 0.88889em;
 }
-@media only screen and (max-width: 1023px) {
+@media only screen and (max-width: 481px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/dpp-frontend\/wp-content\/themes\/dpp\/common\/sass\/style\.scss}line{font-family:\00003192}}
   .primary-nav .menu li.current-menu-item a,
   .primary-nav .menu li.current-page-ancestor a,
-  .home .menu-item-home,
-  .home .menu-item-951 {
+  .home .menu-item-home a,
+  .home .menu-item-951 a {
     border-bottom: none;
   }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/dpp-frontend\/wp-content\/themes\/dpp\/common\/sass\/style\.scss}line{font-family:\00003200}}
   .primary-nav .menu li.current-menu-item a a.shiftnav-target,
   .primary-nav .menu li.current-page-ancestor a a.shiftnav-target,
-  .home .menu-item-home a.shiftnav-target,
-  .home .menu-item-951 a.shiftnav-target {
+  .home .menu-item-home a a.shiftnav-target,
+  .home .menu-item-951 a a.shiftnav-target {
     background: #7f1734;
   }
 }

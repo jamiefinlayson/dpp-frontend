@@ -179,7 +179,7 @@ Version: 1
 					width:85px;
 					background: url("common/img/icons/icon-sprite.png") no-repeat center 22px;
 					text-indent: -9999px;
-					max-height: 50px;
+					//max-height: 50px;
 				}
 			}
 
@@ -191,11 +191,11 @@ Version: 1
 // active/hover menu item (show border)
 .primary-nav .menu li.current-menu-item a,
 .primary-nav .menu li.current-page-ancestor a,
-.home .menu-item-home,
-.home .menu-item-951 {
+.home .menu-item-home a,
+.home .menu-item-951 a {
 	border-bottom:4px solid $dppHighlight;
 	padding-bottom: pxtoem(16, 18);
-	@media #{$medium-down} { 
+	@media #{$small-only} { 
 		border-bottom: none;
 		a.shiftnav-target {
 			background: #7f1734; 
