@@ -259,8 +259,17 @@ Version: 1
 			max-width: 150px;
 			display: block;
 			margin-top: 0 !important;
+			@media #{$small-only} { 	
+				width: 100%; 
+			}
 			@media #{$medium-down} { 	
 				max-width: 999px;
+			}
+			.dropdown-on {
+				padding-bottom: 20px;
+				label.activity-filter-by {
+					margin-left: 10px;
+				}
 			}
 			ul {
 				background: #ccc; 
