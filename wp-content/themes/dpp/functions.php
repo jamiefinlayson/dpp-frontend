@@ -315,7 +315,27 @@
             'epub' => 'application/epub+zip'
         ));
     }
-
+function bbg_register_member_types() {
+    bp_register_member_type( 'vendor', array(
+        'labels' => array(
+            'name'          => 'Vendors',
+            'singular_name' => 'Vendor',
+        ),
+    ) );
+    bp_register_member_type( 'consultancy', array(
+        'labels' => array(
+            'name'          => 'Consultancies',
+            'singular_name' => 'Consultancy',
+        ),
+    ) );
+    bp_register_member_type( 'broadcaster', array(
+        'labels' => array(
+            'name'          => 'Broadcasters',
+            'singular_name' => 'Broadcaster',
+        ),
+    ) );
+}
+add_action( 'bp_init', 'bbg_register_member_types' );
 
 
 ?>
