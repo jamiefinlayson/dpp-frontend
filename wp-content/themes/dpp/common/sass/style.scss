@@ -195,8 +195,20 @@ Version: 1
 .home .menu-item-951 {
 	border-bottom:4px solid $dppHighlight;
 	padding-bottom: pxtoem(16, 18);
+	@media #{$medium-down} { 
+		border-bottom: none;
+		a.shiftnav-target {
+			background: #7f1734; 
+		}
+	} 
 }
 
+	@media #{$medium-down} { 
+.shiftnav.shiftnav-nojs.shiftnav-skin-standard-dark ul.shiftnav-menu li.menu-item > .shiftnav-target:hover, .shiftnav.shiftnav-skin-standard-dark ul.shiftnav-menu li.menu-item.shiftnav-active > .shiftnav-target, .shiftnav.shiftnav-skin-standard-dark ul.shiftnav-menu li.menu-item.shiftnav-in-transition > .shiftnav-target, .shiftnav.shiftnav-skin-standard-dark ul.shiftnav-menu li.menu-item.current-menu-item > .shiftnav-target, .shiftnav.shiftnav-skin-standard-dark ul.shiftnav-menu > li.shiftnav-sub-accordion.current-menu-ancestor > .shiftnav-target, .shiftnav.shiftnav-skin-standard-dark ul.shiftnav-menu > li.shiftnav-sub-shift.current-menu-ancestor > .shiftnav-target, .shiftnav.shiftnav-skin-standard-dark ul.shiftnav-menu.shiftnav-active-highlight li.menu-item > .shiftnav-target:active, .shiftnav.shiftnav-skin-standard-dark ul.shiftnav-menu.shiftnav-active-on-hover li.menu-item > .shiftnav-target:hover {
+
+			background: #7f1734 !important; 
+}
+}
 /*
 * Secondary Nav
 */
@@ -237,7 +249,11 @@ Version: 1
 		}
 	}
 }
-
+.shiftnav-menu-title.shiftnav-site-title {
+	text-indent: -9999em;
+	background: url(http://www.dpp-dev.co.uk/wp-content/themes/dpp/common/img/dpp-logo-small.png) no-repeat 20px 20px;
+	background-size: auto 40%;
+}
 
 #item-nav,
 #item-body, 
