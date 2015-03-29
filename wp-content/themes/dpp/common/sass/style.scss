@@ -59,7 +59,6 @@ Version: 1
 
 
 
-
 /*
 * Clean List reuable Style
 */
@@ -446,6 +445,22 @@ a.current,
 		margin-top: 20px;
 	}
 }
+
+#content.widecolumn,
+#signup-welcome {  
+  margin: 0 auto;
+  max-width: 62.5rem; 
+  padding: 20px 0 0;
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+  width: 100%;
+  span.h3 {
+  	font-size: 0.9375em; 
+  }
+  p {
+  	max-width: 600px;
+  }
+ }
 .drop {
 	display: none !important;
 	cursor: pointer;
