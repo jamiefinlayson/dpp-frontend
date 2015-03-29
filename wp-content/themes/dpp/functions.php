@@ -315,8 +315,10 @@
             'epub' => 'application/epub+zip'
         ));
     }
+ /*
+
 function bbg_register_member_types() {
-    bp_register_member_type( 'vendor', array(
+   bp_register_member_type( 'vendor', array(
         'labels' => array(
             'name'          => 'Vendors',
             'singular_name' => 'Vendor',
@@ -336,6 +338,6 @@ function bbg_register_member_types() {
     ) );
 }
 add_action( 'bp_init', 'bbg_register_member_types' );
-
+*/
 
 ?>
