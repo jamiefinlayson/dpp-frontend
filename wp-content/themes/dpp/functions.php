@@ -315,6 +315,33 @@
             'epub' => 'application/epub+zip'
         ));
     }
+
+    add_action('user_register', 'wpse72788_password_nag');
+function wpse72788_password_nag( $user_id ){
+     update_user_option( $user_id, 'default_password_nag', true, true );
+}
+
+/* custom login */
+
+
+
+function custom_login_logo() {
+    echo '<style type="text/css">
+        
+        body.login {
+            background: black;
+            
+        }
+        body.login h1 a { 
+              background: url("/wp-content/themes/dpp/common/img/dpp-logo.jpg") no-repeat top left !important;
+              text-indent: -9999px;
+              width: 167px;
+        }
+    </style>';
+}
+
+add_action('login_head', 'custom_login_logo');
+
  /*
 
 function bbg_register_member_types() {
