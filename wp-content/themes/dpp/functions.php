@@ -336,12 +336,30 @@ function custom_login_logo() {
               background: url("/wp-content/themes/dpp/common/img/dpp-logo.jpg") no-repeat top left !important;
               text-indent: -9999px;
               width: 167px;
-        }
+            }
+
+        .wp-core-ui .button.button-large {
+            background: #7f1734 !important;
+              border: none;                
+              border-radius: 4px;
+        } 
     </style>';
 }
 
 add_action('login_head', 'custom_login_logo');
 
+
+/* Display user roles in buddypress */
+
+function pc_get_userrole ($user_id) {
+
+$user = new WP_User($user_id);
+
+$userclean = $user->roles[0];
+
+return $userclean;
+
+}
  /*
 
 function bbg_register_member_types() {
