@@ -146,11 +146,11 @@ $(document).ready(function (){
 
 	if ($('.side-bar nav').length >= '1') {
 		$('.side-bar nav').addClass('mini-menus');
-	 
+	 	var pageTitle = $('h1').text();
 		var subMenus = $('.mini-menus');
 		var subMChild = subMenus.children('div.item-list-tabs'); 
 		subMChild.prepend('<span class="drop"><i></i></span>').wrapInner("<ul><li></li></ul>"); 
-		$('#subnav .drop').prepend('Submenu'); 
+		$('#subnav .drop').prepend(pageTitle); 
 		var subMCFirstLi = subMChild.children('li:first-child');
 		var subMCFirstLiInnerLi = subMChild.children('ul li:nth-child(2)');
 		var headTxt = subMCFirstLiInnerLi.text(); 
