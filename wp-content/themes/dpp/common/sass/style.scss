@@ -225,6 +225,18 @@ Version: 1
 	}
 	> li {
 		@extend .chevron-before;
+		@media #{$small-only} { 
+			padding-left: 10px !important;
+		}
+
+	}
+
+	
+	
+	> li:before {
+		@media #{$small-only} { 
+			content: none !important;
+		}
 	}
 	.children {
 		display: none;
@@ -278,6 +290,7 @@ Version: 1
 			max-width: 150px;
 			display: block;
 			margin-top: 0 !important;
+			text-align: left !important;
 			@media (max-width: 600px) { 	
 				width: 100%; 
 			}
@@ -291,7 +304,10 @@ Version: 1
 				}
 			}
 			ul {
-				background: #ccc; 
+				float: left;
+				@media #{$small-only} { 
+					background: #ccc;  
+				}
 				ul {	  
 					position: absolute;
 					li {
@@ -356,7 +372,9 @@ body.buddypress .sub-nav,
 body.buddypress .side-bar {
 	display: none;
 } 
-
+.buddypress .share-btns {
+	display: none;
+}
 
 .mini-menus {
 	background: #ccc; 
@@ -419,6 +437,9 @@ a.current,
   	margin-bottom: 10px;
 } 
 
+#buddypress .search-members-form {
+	text-align: left;
+} 
 /*
 	label.bp_simple_post_title {
 		margin-bottom: 10px;
@@ -434,6 +455,12 @@ a.current,
 		border: none;
 		border-radius: 0;
 	}
+}
+#buddypress div.dir-search {
+	text-align: left !important;
+}
+#buddypress #members-directory-form #members-all {
+	display: none !important;
 }
 #buddypress {
  	div.dir-search {
@@ -1027,6 +1054,50 @@ a.chevron-before {
 	}
 }
 
+#buddypress div.dir-search input[type=text], #buddypress li.groups-members-search input[type=text] {
+  padding: 5px 9px !important;
+  border: none;
+  vertical-align: top;
+   padding: 7px;
+   font-size: 100% !important;
+  background: #fff;
+  border: 1px solid #777777;
+  border-radius: 4px;
+  font-size: 1em !important;
+}
+
+#buddypress button, #buddypress a.button, #buddypress input[type=submit], #buddypress input[type=button], #buddypress input[type=reset], #buddypress ul.button-nav li a, #buddypress div.generic-button a, #buddypress .comment-reply-link, a.bp-title-button {
+background: #7f1734 !important;
+  padding: 5px 9px !important;
+  border: none; 
+  text-transform: capitalize;
+	display: inline-block;
+  border-radius: 4px;
+  -moz-transition-property: background;
+  -o-transition-property: background;
+  -webkit-transition-property: background;
+  transition-property: background;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -moz-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  -webkit-transition-timing-function: ease-in;
+  transition-timing-function: ease-in; 
+  color: #fff !important; 
+  font-family: LatoRegular, Arial, sans-serif;
+  font-size: 1.2em !important;
+  text-decoration: none; 
+  line-height: normal; 
+}
+#buddypress div#item-header img.avatar {
+	margin: 0 !important
+}
+
+#buddypress #members-order-select {
+	display: none;
+}
 
 /*
 * Sidebar / Widget Styles
