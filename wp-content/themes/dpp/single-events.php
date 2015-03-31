@@ -15,15 +15,20 @@
 
 		<div class="row">
 			<!-- Sidebar -->
-			<div class="small-12 medium-12 large-3 xlarge-3 columns">
-				<ul class="clean-list secondary-nav">
-					<!-- List pages of slug 'events'-->
-					<?php
-					if ( $page = get_page_by_path( 'events' ) ){
-					  wp_list_pages( 'orderby=name&depth=1&order=DESC&show_count=0&child_of=' .$page->ID . '&title_li=' );
-					}
-					?>
-				</ul>
+						<!-- Sidebar -->
+			<div class="side-bar small-12 medium-12 large-3 xlarge-3 columns">
+				<nav> 
+					<div class="item-list-tabs no-ajax" id="subnav" role="navigation">
+						<ul class="clean-list secondary-nav">
+							<!-- List pages of slug 'events'-->
+							<?php
+							if ( $page = get_page_by_path( 'events' ) ){
+							  wp_list_pages( 'orderby=name&depth=1&order=DESC&show_count=0&child_of=' .$page->ID . '&title_li=' );
+							}
+							?>
+						</ul>
+					</div>
+				</nav>
 			</div>
 
 

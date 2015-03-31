@@ -56,48 +56,52 @@
 		<div class="row">
 
 			<!-- Sidebar -->
-			<div class="small-12 medium-12 large-3 xlarge-3 columns">
-				<ul class="clean-list secondary-nav" id="news-archive-menu">
+			<div class="side-bar small-12 medium-12 large-3 xlarge-3 columns">
+				<nav> 
+					<div class="item-list-tabs no-ajax" id="subnav" role="navigation">
+						<ul class="clean-list secondary-nav" id="news-archive-menu">
 
-					<?php
-						// Get the id of the top level parent post
-						// if ($post->post_parent)	{
-						// 	$ancestors=get_post_ancestors($post->ID);
-						// 	$root=count($ancestors)-1;
-						// 	$parent = $ancestors[$root];
-						// } else {
-						// 	$parent = $post->ID;
-						// }
+							<?php
+								// Get the id of the top level parent post
+								// if ($post->post_parent)	{
+								// 	$ancestors=get_post_ancestors($post->ID);
+								// 	$root=count($ancestors)-1;
+								// 	$parent = $ancestors[$root];
+								// } else {
+								// 	$parent = $post->ID;
+								// }
 
-						// Use parent id to create the page list
-						$args1 = array(
-							'depth'        => 0,
-							'show_date'    => '',
-							'date_format'  => get_option('date_format'),
-							'child_of'     => 162,
-							'exclude'      => '',
-							'include'      => '',
-							'title_li'     => __(''),
-							'echo'         => 1,
-							'authors'      => '',
-							'sort_column'  => 'menu_order',
-							'sort_order'   => 'ASC',
-							'link_before'  => '',
-							'link_after'   => '',
-							'walker'       => '',
-							'post_type'    => 'page',
-						    'post_status'  => 'publish'
-						);
+								// Use parent id to create the page list
+								$args1 = array(
+									'depth'        => 0,
+									'show_date'    => '',
+									'date_format'  => get_option('date_format'),
+									'child_of'     => 162,
+									'exclude'      => '',
+									'include'      => '',
+									'title_li'     => __(''),
+									'echo'         => 1,
+									'authors'      => '',
+									'sort_column'  => 'menu_order',
+									'sort_order'   => 'ASC',
+									'link_before'  => '',
+									'link_after'   => '',
+									'walker'       => '',
+									'post_type'    => 'page',
+								    'post_status'  => 'publish'
+								);
 
-						// List pages based on $args
-						 wp_list_pages( $args1 ); ?>
-						<!-- Uses plugin specific call to get monthly archives -->
-						<?php wp_get_post_type_archives('events', array('type' => 'yearly', 'show_post_count' => false)); ?>
-
-
+								// List pages based on $args
+								 wp_list_pages( $args1 ); ?>
+								<!-- Uses plugin specific call to get monthly archives -->
+								<?php wp_get_post_type_archives('events', array('type' => 'yearly', 'show_post_count' => false)); ?>
 
 
-				</ul>
+
+
+						</ul>
+					</div>
+				</nav>
 			</div>
 
 			<!-- Main content -->

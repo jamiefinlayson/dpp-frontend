@@ -20,30 +20,34 @@
 		<div class="row">
 
 			<!-- Sidebar -->
-			<div class="small-12 medium-12 large-3 xlarge-3 columns">
-				<nav>
-					<ul class="clean-list secondary-nav">
-						<?php $args1 = array(
-							'depth'        => 0,
-							'show_date'    => '',
-							'date_format'  => get_option('date_format'),
-							'child_of'     => 0,
-							'exclude'      => '',
-							'include'      => '',
-							'title_li'     => __(''),
-							'echo'         => 1,
-							'authors'      => '',
-							'sort_column'  => 'menu_order',
-							'sort_order'   => 'ASC',
-							'link_before'  => '',
-							'link_after'   => '',
-							'walker'       => '',
-							'post_type'    => 'workstream',
-						    'post_status'  => 'publish'
-						); ?>
-						<?php wp_list_pages( $args1 ); ?>
+						<!-- Sidebar -->
+			<div class="side-bar small-12 medium-12 large-3 xlarge-3 columns">
+				<nav> 
+					<div class="item-list-tabs no-ajax" id="subnav" role="navigation">
+					 
+						<ul class="clean-list secondary-nav">
+							<?php $args1 = array(
+								'depth'        => 0,
+								'show_date'    => '',
+								'date_format'  => get_option('date_format'),
+								'child_of'     => 0,
+								'exclude'      => '',
+								'include'      => '',
+								'title_li'     => __(''),
+								'echo'         => 1,
+								'authors'      => '',
+								'sort_column'  => 'menu_order',
+								'sort_order'   => 'ASC',
+								'link_before'  => '',
+								'link_after'   => '',
+								'walker'       => '',
+								'post_type'    => 'workstream',
+							    'post_status'  => 'publish'
+							); ?>
+							<?php wp_list_pages( $args1 ); ?>
 
-					</ul>
+						</ul>
+					</div>
 				</nav>
 			</div>
 

@@ -28,25 +28,30 @@
 				); ?>
 
 			<!-- Sidebar -->
-			<div class="small-12 medium-12 large-3 xlarge-3 columns">
+						<!-- Sidebar -->
+			<div class="side-bar small-12 medium-12 large-3 xlarge-3 columns">
+				<nav> 
+					<div class="item-list-tabs no-ajax" id="subnav" role="navigation">
 				 
-				<ul class="clean-list secondary-nav">
-					<?php query_posts($args2); ?>
-					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+						<ul class="clean-list secondary-nav">
+							<?php query_posts($args2); ?>
+							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-							<li>
-								<!-- Block style content -->
-								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-							</li>
+									<li>
+										<!-- Block style content -->
+										<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+									</li>
 
-					<?php endwhile; ?>
+							<?php endwhile; ?>
 
-					<?php else : ?>
+							<?php else : ?>
 
-						<h2>Not Found</h2>
+								<h2>Not Found</h2>
 
-					<?php endif; ?>
-				</ul>
+							<?php endif; ?>
+						</ul>
+					</div>
+				</nav>
 			</div>
 
 			<!-- Main content -->

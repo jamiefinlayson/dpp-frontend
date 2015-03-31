@@ -56,13 +56,18 @@
 		<div class="row">
 
 			<!-- Sidebar -->
-			<div class="small-12 medium-12 large-3 xlarge-3 columns">
-				<ul class="clean-list secondary-nav" id="news-archive-menu">
-					<!-- Uses plugin specific call to get monthly archives -->
-					<?php wp_get_post_type_archives('news', array('type' => 'yearly', 'show_post_count' => false)); ?>
+						<!-- Sidebar -->
+			<div class="side-bar small-12 medium-12 large-3 xlarge-3 columns">
+				<nav> 
+					<div class="item-list-tabs no-ajax" id="subnav" role="navigation">
+						<ul class="clean-list secondary-nav" id="news-archive-menu">
+							<!-- Uses plugin specific call to get monthly archives -->
+							<?php wp_get_post_type_archives('news', array('type' => 'yearly', 'show_post_count' => false)); ?>
 
 
-				</ul>
+						</ul>
+					</div>
+				</nav>
 			</div>
 
 			<!-- Main content -->
