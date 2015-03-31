@@ -120,27 +120,51 @@ $(document).ready(function (){
 	pluginClasses.init();
 	//equalHeight.init($(".equal"));  
 
-	$('#item-body').add('#item-nav').addClass('mini-menus');
- 
-	var subMenus = $('.mini-menus').add('.sub-nav');
-	var subMChild = subMenus.children('div.item-list-tabs'); 
-	subMChild.prepend('<span class="drop"><i></i></span>').wrapInner("<ul><li></li></ul>"); 
-	$('.sub-nav .drop').prepend('Submenu'); 
-	$('#item-nav .drop').prepend('Member\'s menu');
-	$('#item-body .drop').prepend('Actions'); 
-	var subMCFirstLi = subMChild.children('li:first-child');
-	var subMCFirstLiInnerLi = subMChild.children('ul li:nth-child(2)');
-	var headTxt = subMCFirstLiInnerLi.text(); 
-	subMenus.addClass('small-12 medium-12 large-12 xlarge-12 columns');
-	 
 
+	if ($('#item-body').length >= '1') {
+		$('#item-body').add('#item-nav').addClass('mini-menus');
 	 
-	$('body').on('click', '#item-nav .drop, #item-body .drop, .sub-nav .drop', function() { 
-		$(this).children('i').toggleClass( "toggle-arrow" );
-		$(this).parent().children('ul ul').toggleClass( "dropdown-on" );
-		e.preventDefault();
-	});	 
- 
+		var subMenus = $('.mini-menus').add('.sub-nav');
+		var subMChild = subMenus.children('div.item-list-tabs'); 
+		subMChild.prepend('<span class="drop"><i></i></span>').wrapInner("<ul><li></li></ul>"); 
+		$('.sub-nav .drop').prepend('Submenu'); 
+		$('#item-nav .drop').prepend('Member\'s menu');
+		$('#item-body .drop').prepend('Actions'); 
+		var subMCFirstLi = subMChild.children('li:first-child');
+		var subMCFirstLiInnerLi = subMChild.children('ul li:nth-child(2)');
+		var headTxt = subMCFirstLiInnerLi.text(); 
+		subMenus.addClass('small-12 medium-12 large-12 xlarge-12 columns');
+		 
+
+		 
+		$('body').on('click', '#item-nav .drop, #item-body .drop, .sub-nav .drop', function() { 
+			$(this).children('i').toggleClass( "toggle-arrow" );
+			$(this).parent().children('ul ul').toggleClass( "dropdown-on" );
+			e.preventDefault();
+		});	 
+	}
+
+	if ($('.side-bar nav').length >= '1') {
+		$('.side-bar nav').addClass('mini-menus');
+	 
+		var subMenus = $('.mini-menus');
+		var subMChild = subMenus.children('div.item-list-tabs'); 
+		subMChild.prepend('<span class="drop"><i></i></span>').wrapInner("<ul><li></li></ul>"); 
+		$('#subnav .drop').prepend('Submenu'); 
+		var subMCFirstLi = subMChild.children('li:first-child');
+		var subMCFirstLiInnerLi = subMChild.children('ul li:nth-child(2)');
+		var headTxt = subMCFirstLiInnerLi.text(); 
+		subMenus.addClass('small-12 medium-12 large-12 xlarge-12 columns');
+		 
+
+		 
+		$('body').on('click', '#subnav .drop', function() { 
+			$(this).children('i').toggleClass( "toggle-arrow" );
+			$(this).parent().children('ul ul').toggleClass( "dropdown-on" );
+			e.preventDefault();
+		});	 
+	}
+
 
 });
 

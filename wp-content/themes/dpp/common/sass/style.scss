@@ -260,9 +260,7 @@ Version: 1
 	padding: 25px !important;
 }
 
-#item-nav,
-#item-body, 
-.sub-nav {
+.mini-menus {
 	float: none !important;
 	clear: left;
 	@media #{$small-only} { 
