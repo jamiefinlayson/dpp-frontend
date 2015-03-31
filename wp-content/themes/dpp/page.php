@@ -18,8 +18,7 @@
 			<div class="side-bar small-12 medium-12 large-3 xlarge-3 columns">
  
 
-				<nav>
-				<div class="sub-nav small-12 medium-12 large-12 xlarge-12 columns">
+				<nav> 
 					<div class="item-list-tabs no-ajax" id="subnav" role="navigation">
 						<ul class="clean-list secondary-nav">
 							<?php
