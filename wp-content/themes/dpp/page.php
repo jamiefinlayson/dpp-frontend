@@ -15,7 +15,7 @@
 
 		<div class="row">
 			<!-- Sidebar -->
-			<div class="side-bar small-12 medium-12 large-3 xlarge-3 columns">
+			<div class="side-bar small-12 medium-3 large-3 xlarge-3 columns">
  
 
 				<nav> 
@@ -65,7 +65,7 @@
 			</div>
 
 			<!-- Main content -->
-			<div class="small-12 medium-12 large-9 xlarge-9 columns">
+			<div class="small-12 medium-9 large-9 xlarge-9 columns">
 
 
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>

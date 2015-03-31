@@ -16,7 +16,7 @@
 
 			<!-- Sidebar -->
 						<!-- Sidebar -->
-			<div class="side-bar small-12 medium-12 large-3 xlarge-3 columns">
+			<div class="side-bar small-12 medium-3 large-3 xlarge-3 columns">
 				<nav> 
 					<div class="item-list-tabs no-ajax" id="subnav" role="navigation">
 						<ul class="clean-list secondary-nav">
@@ -62,7 +62,7 @@
 
 			<!-- Main content -->
 
-			<div class="small-12 medium-12 large-9 xlarge-9 columns">
+			<div class="small-12 medium-9 large-9 xlarge-9 columns">
 				<?php
 					$today = date('Ymd'); //define “today” format;
 				 ?>
