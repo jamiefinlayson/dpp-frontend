@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div class="primary-content">
+<div class="primary-content search-results">
 
 	<?php if (have_posts()) : ?>
 
