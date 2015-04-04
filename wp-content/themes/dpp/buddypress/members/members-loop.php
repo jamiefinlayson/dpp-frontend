@@ -12,21 +12,11 @@
 ?>
 
 <?php do_action( 'bp_before_members_loop' ); ?>
-<?php
-if ( is_user_logged_in() ) {
-	 
-} 
-
-else {
-	echo 'Members have access to all DPP documents. If you\'re a member please sign in.';
+<?php if ( !is_user_logged_in() ) {
+	echo 'Members have access to all DPP documents. If you\'re a member please <a href="/wp-admin">sign in</a>.';
 }
-?>
-<?php if ( is_user_logged_in() ) :
+else { ?>
 
-						$user_meta = get_userdata(bp_displayed_user_id());
-						echo($user_meta->description); 
-						endif;
-					?>
 <?php if ( bp_has_members( bp_ajax_querystring( 'members' ) ) ) : ?>
 
 	<div id="pag-top" class="pagination">
@@ -46,6 +36,7 @@ else {
 	</div>
 
 	<?php do_action( 'bp_before_directory_members_list' ); ?>
+
 
 	<ul id="members-list" class="item-list" role="main">
 
@@ -134,6 +125,7 @@ else {
 		<p><?php _e( "Sorry, no members were found.", 'buddypress' ); ?></p>
 	</div>
 
-<?php endif; ?>
+<?php endif; } ?> 
+
 
 <?php do_action( 'bp_after_members_loop' ); ?>
