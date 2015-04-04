@@ -151,20 +151,7 @@ Version: 1
 		}
 	}
 }
-/*
-@media screen and (max-width: 600px) {
-  body.admin-bar #shiftnav-toggle-main,
-  body.admin-bar .shiftnav {
-    top: 0;
-    .shiftnav-toggle-main-block {
-    	padding: 16px 10px;
-    }
-  }
-  body.admin-bar .shiftnav {
-    padding-bottom: 0;
-  }
-
-  */ 
+ 
   html #wpadminbar { 
 
   	@media screen and (max-width: 600px){ 
@@ -173,16 +160,7 @@ Version: 1
   	background: black;
   }
 
-  /*
-  body.admin-bar .shiftnav-wrap {
-  	z-index: 1000;
-  	display: block;
-  	padding-top: 0 !important;
-
-
-  }
-}
-*/
+  
  /*
 * Primary Nav
 */
@@ -222,6 +200,18 @@ Version: 1
 
 		}
 	}
+}
+
+.shiftnav-loading{
+  display:none !important;
+}
+.shiftnav-menu-title.shiftnav-site-title {
+	text-indent: -9999em;
+	background: url(http://www.dpp-dev.co.uk/wp-content/themes/dpp/common/img/dpp-logo-small.png) no-repeat 25px 20px;
+	background-size: auto 50%;
+}
+.shiftnav .shiftnav-menu-title {
+	padding: 25px !important;
 }
 
 
@@ -318,14 +308,6 @@ Version: 1
 			display: block;
 		}
 	}
-}
-.shiftnav-menu-title.shiftnav-site-title {
-	text-indent: -9999em;
-	background: url(http://www.dpp-dev.co.uk/wp-content/themes/dpp/common/img/dpp-logo-small.png) no-repeat 25px 20px;
-	background-size: auto 50%;
-}
-.shiftnav .shiftnav-menu-title {
-	padding: 25px !important;
 }
 
 .submenu-title {
