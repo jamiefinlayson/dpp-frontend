@@ -147,10 +147,10 @@ $(document).ready(function (){
 	if ($('.side-bar nav').length >= '1') {
 		$('.side-bar nav').addClass('mini-menus');
 	 	var pageTitle = $('h1').text();
-		var subMenus = $('.mini-menus');
+		var subMenus = $('.side-bar nav');
 		var subMChild = subMenus.children('div.item-list-tabs'); 
-		subMChild.prepend('<span class="drop"><i></i></span>').wrapInner("<ul><li></li></ul>"); 
-		$('#subnav .drop').prepend(pageTitle); 
+		subMChild.prepend('<span class="drop"><strong><i></i></strong></span>').wrapInner("<ul><li></li></ul>"); 
+		$('#subnav .drop strong').prepend(pageTitle); 
 		var subMCFirstLi = subMChild.children('li:first-child');
 		var subMCFirstLiInnerLi = subMChild.children('ul li:nth-child(2)');
 		var headTxt = subMCFirstLiInnerLi.text(); 
@@ -204,3 +204,4 @@ var pluginClasses = {
 }
 
  
+
