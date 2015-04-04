@@ -15,14 +15,8 @@
                     <ul class="clean-list footer-logos">
                       <li class="first-item"><a target="_blank" href="http://www.bbc.co.uk"><img src="<?php bloginfo('template_directory'); ?>/common/img/logos/bbc.png" alt="BBC" /></a></li>
                       <li><a target="_blank" href="http://www.itv.com/"><img src="<?php bloginfo('template_directory'); ?>/common/img/logos/itv.png" alt="ITV" /></a></li>
-                      <li><a target="_blank" href="http://www.channel4.com"><img src="<?php bloginfo('template_directory'); ?>/common/img/logos/channel4.png" alt="Channel 4" /></a></li>
-                      
-                      <li class="first-item"><a target="_blank" href="https://www.btsport.com/"><img src="<?php bloginfo('template_directory'); ?>/common/img/logos/bbc-sport.png" alt="BBC Sport" /></a></li>
-                      <li><a target="_blank" href="http://www.channel5.com/"><img src="<?php bloginfo('template_directory'); ?>/common/img/logos/channel-5.png" alt="Channel 5" /></a></li>
-                       <li><a target="_blank" href="http://www.s4c.co.uk/hafan/c_index.shtml"><img src="<?php bloginfo('template_directory'); ?>/common/img/logos/s4.png" alt="S4/C" /></a></li>
-                      <li><a target="_blank" href="http://www.sky.com/"><img src="<?php bloginfo('template_directory'); ?>/common/img/logos/sky.png" alt="Sky" /></a></li>
-                      <li><a target="_blank" href="http://www.tg4.ie/"><img src="<?php bloginfo('template_directory'); ?>/common/img/logos/TG4-logo.png" alt="TG4" /></a></li>
-                    </ul>
+                      <li><a target="_blank" href="http://www.channel4.com"><img src="<?php bloginfo('template_directory'); ?>/common/img/logos/channel4.png" alt="Channel 4" /></a></li>     
+                     </ul>
                 </div>
 
             </div> 
