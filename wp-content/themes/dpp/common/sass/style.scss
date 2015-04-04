@@ -150,6 +150,7 @@ Version: 1
 		}
 	}
 }
+/*
 @media screen and (max-width: 600px) {
   body.admin-bar #shiftnav-toggle-main,
   body.admin-bar .shiftnav {
@@ -174,8 +175,8 @@ Version: 1
 
   }
 }
-
-/*
+*/
+ /*
 * Primary Nav
 */
 .primary-nav {
@@ -265,21 +266,14 @@ Version: 1
 		@media #{$small-only} { 
 			content: none !important;
 		}
-	}
-
-	li.selected a, 
-	li.current a { 
-
-
-	}
-
+	} 
 
 	li a,
 	li span {
 	  @media #{$small-only} { 
-	  display: block;
-	  padding: 5px 10px;
-	  text-decoration: none;
+		  display: block;
+		  padding: 5px 10px;
+		  text-decoration: none;
 	  }
 	} 
 
@@ -293,13 +287,12 @@ Version: 1
 		}
 	}
 	.current_page_item,
-	.current-cat {
-		@media #{$small-only} { 
-			display: none !important;  
-		}
+	.current-cat { 
+
 		.children {
 			display: block;
 		}
+		
 		> a {
 			font-weight:bold;
 				  @media #{$small-only} { 
@@ -328,8 +321,12 @@ Version: 1
 	padding: 25px !important;
 }
 
-.mini-menus {
-	//float: none !important;
+.submenu-title {
+	display: none;
+}
+ 
+.mini-menus { 
+	//float: none !important; 
 	clear: left;
 	@media #{$small-only} { 
 		overflow: visible !important;
@@ -408,9 +405,7 @@ Version: 1
 	} 	
 }   
 
-#wpadminbar .ab-icon, #wpadminbar .ab-item:before, #wpadminbar>#wp-toolbar>#wp-admin-bar-root-default .ab-icon {
-	display: none;
-}
+ 
 .buddypress .small-12.medium-12.large-9.xlarge-9.columns {
 	width: 100%; 
 }
@@ -441,18 +436,25 @@ body.buddypress .side-bar {
 	background: #ccc; 
 }
 
-#item-body.mini-menus {
-	background: #fff;  
-
+ 
+#buddypress .bp-widget.base h4 {
+	padding-left: 8px;
 }
+
 @media #{$large-up} { 
 #activity-filter-select {
 	min-width: 240px;
 }
-#item-body{
-	padding: 0;
+#item-body,
+#item-nav{
+	
+	.item-list-tabs {
+		@media #{$medium-down} {
+			display: none; 
+		}
+	}
 }
-#item-body.mini-menus {
+#item-body {
 	background: #fff; 
 	border-bottom: 2px solid #999;
 	font-size: 14px;
@@ -472,12 +474,6 @@ body.buddypress .side-bar {
 nav {
 	z-index:103;
 	position: relative;
-}
-
-#item-nav {
-
-	z-index:102;
-	position: relative;	
 }
 
 
