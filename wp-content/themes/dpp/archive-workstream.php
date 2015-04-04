@@ -5,7 +5,7 @@
 		<div class="row">
 			<div class="small-12 medium-12 large-12 xlarge-12 columns">
 				<div class="first-title dashed-bottom">
-					<h1> What we do</h1>
+					<h1>What we do</h1>
 
 					<!-- Include share buttons -->
 					<?php include'includes/inc/share-btns.php'; ?>
@@ -31,6 +31,7 @@
 						<!-- Sidebar -->
 			<div class="side-bar small-12 medium-3 large-3 xlarge-3 columns">
 				<nav> 
+					<h3 class="submenu-title">What we do</h3>
 					<div class="item-list-tabs no-ajax" id="subnav" role="navigation">
 				 
 						<ul class="clean-list secondary-nav">

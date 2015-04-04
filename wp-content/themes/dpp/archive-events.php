@@ -58,6 +58,18 @@
 			<!-- Sidebar -->
 			<div class="side-bar small-12 medium-3 large-3 xlarge-3 columns">
 				<nav> 
+					<?php
+						if($post->post_parent) {
+							$children = wp_list_pages("title_li=&child_of=".$post->post_parent."&echo=0&depth=2");
+						}
+						else {
+							$children = wp_list_pages("title_li=&child_of=".$post->ID."&echo=0&depth=2");
+						}
+						if ($children) {
+							$parent_title = get_the_title($post->post_parent);
+						}
+					?>
+					<h3 class="submenu-title"><?php echo $parent_title;?></h3>
 					<div class="item-list-tabs no-ajax" id="subnav" role="navigation">
 						<ul class="clean-list secondary-nav" id="news-archive-menu">
 

@@ -27,7 +27,10 @@
 		<div class="row">
 
 			<!-- Sidebar -->
-			<div class="small-12 medium-12 large-3 xlarge-3 columns">
+			<div class="side-bar small-12 medium-3 large-3 xlarge-3 columns">
+				<nav>  
+					<h3 class="submenu-title">Downloads</h3>
+					<div class="item-list-tabs no-ajax" id="subnav" role="navigation"> 
 					<?php
 						//list terms in a given taxonomy using wp_list_categories (also useful as a widget if using a PHP Code plugin)
 
@@ -53,6 +56,8 @@
 						<ul class="clean-list secondary-nav">
 						<?php wp_list_categories( $args ); ?>
 						</ul>
+					</div>
+				</nav>	
 			</div>
 
 			<!-- Main content -->

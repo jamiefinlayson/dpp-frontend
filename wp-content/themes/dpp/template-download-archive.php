@@ -23,30 +23,34 @@ Template Name: Download Archive Template
 		<div class="row">
 
 			<!-- Sidebar -->
-			<div class="small-12 medium-12 large-3 xlarge-3 columns">
+			<div class="side-bar small-12 medium-3 large-3 xlarge-3 columns">
+				<nav>  
+					<h3 class="submenu-title">Downloads</h3>
+					<div class="item-list-tabs no-ajax" id="subnav" role="navigation"> 
+						<?php
+							//list terms in a given taxonomy using wp_list_categories (also useful as a widget if using a PHP Code plugin)
 
-					<?php
-						//list terms in a given taxonomy using wp_list_categories (also useful as a widget if using a PHP Code plugin)
-
-						$args = array(
-						  'taxonomy'     => 'download-categories',
-						  'show_count'   => 0,
-						  'pad_counts'   => 0,
-						  'hierarchical' => 1,
-						  'title_li'     => '',
-						  'hide_empty'   => 0
-						);
+							$args = array(
+							  'taxonomy'     => 'download-categories',
+							  'show_count'   => 0,
+							  'pad_counts'   => 0,
+							  'hierarchical' => 1,
+							  'title_li'     => '',
+							  'hide_empty'   => 0
+							);
 
 
-						  ?>
+							  ?>
 
-				<ul class="clean-list secondary-nav">
-					<?php wp_list_categories( $args ); ?>
-				</ul>
+						<ul class="clean-list secondary-nav">
+							<?php wp_list_categories( $args ); ?>
+						</ul>
+					</div>
+				</nav>
 			</div>
 
 			<!-- Main content -->
-			<div class="small-12 medium-12 large-9 xlarge-9 equal columns">
+			<div class="small-12 medium-9 large-9 xlarge-9 equal columns">
 				
 		<div class="row"> 
 
