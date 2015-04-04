@@ -1,8 +1,8 @@
 <?php
 
-    @ini_set( 'upload_max_size' , '64M' );
-    @ini_set( 'post_max_size', '64M');
-    @ini_set( 'max_execution_time', '300' );
+@ini_set( 'upload_max_size' , '64M' );
+@ini_set( 'post_max_size', '64M');
+@ini_set( 'max_execution_time', '300' );
 
     /*
     * Translations can be filed in the /languages/ directory
@@ -31,46 +31,46 @@
 				wp_register_script('jquery', "//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js", array(),'2.0.3',false);
                 wp_register_script('foundation', get_template_directory_uri()."/common/js/foundation/foundation.js", array('jquery'),'5.1.1',true); 
                 wp_register_script('foundationoffcanvas', get_template_directory_uri()."/common/js/foundation/foundation.offcanvas.js", array('jquery'),'5.1.1',true); 
-				wp_enqueue_script('jquery');
+                wp_enqueue_script('jquery');
                 wp_enqueue_script('foundation');
                 wp_enqueue_script('foundationoffcanvas');
 
-			} 
-		}
-		core_mods();
-	}
+            } 
+        }
+        core_mods();
+    }
 
 	/*
     * Clean up the <head>
     */
 	function removeHeadLinks() {
-    	remove_action('wp_head', 'rsd_link');
-    	remove_action('wp_head', 'wlwmanifest_link');
-    }
-    add_action('init', 'removeHeadLinks');
-    remove_action('wp_head', 'wp_generator');
+       remove_action('wp_head', 'rsd_link');
+       remove_action('wp_head', 'wlwmanifest_link');
+   }
+   add_action('init', 'removeHeadLinks');
+   remove_action('wp_head', 'wp_generator');
 
-    if (function_exists('register_sidebar')) {
-    	register_sidebar(array(
-    		'name' => __('Sidebar Widgets' ),
-    		'id'   => 'sidebar-widgets',
-    		'description'   => __( 'These are widgets for the sidebar.' ),
-    		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-    		'after_widget'  => '</div>',
-    		'before_title'  => '<h2>',
-    		'after_title'   => '</h2>'
-    	));
+   if (function_exists('register_sidebar')) {
+       register_sidebar(array(
+          'name' => __('Sidebar Widgets' ),
+          'id'   => 'sidebar-widgets',
+          'description'   => __( 'These are widgets for the sidebar.' ),
+          'before_widget' => '<div id="%1$s" class="widget %2$s">',
+          'after_widget'  => '</div>',
+          'before_title'  => '<h2>',
+          'after_title'   => '</h2>'
+          ));
 
-        register_sidebar(array(
-            'name' => __('404' ),
-            'id'   => 'widget-404',
-            'description'   => __( 'These is the 404 error descrition.' ),
-            'before_widget' => '<div id="%1$s" class="widget %2$s">',
-            'after_widget'  => '</div>',
-            'before_title'  => '<h2>',
-            'after_title'   => '</h2>'
+       register_sidebar(array(
+        'name' => __('404' ),
+        'id'   => 'widget-404',
+        'description'   => __( 'These is the 404 error descrition.' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2>',
+        'after_title'   => '</h2>'
         ));
-    }
+   }
 
     /*
     * Add post format support
@@ -85,8 +85,8 @@
             array(
                 'top-menu' => __( 'Top Menu' ),
                 'footer-menu' => __( 'Footer Menu' )
-            )
-        );
+                )
+            );
     }
     add_action( 'init', 'register_my_menus' );
 
@@ -94,26 +94,26 @@
     * Add Thumbnail support and additional sizes
     */
     if ( function_exists( 'add_theme_support' ) ) {
-    add_theme_support( 'post-thumbnails' );
+        add_theme_support( 'post-thumbnails' );
             set_post_thumbnail_size( 178, 178, true ); // add [,true] for crop mode
-    }
-    if ( function_exists( 'add_image_size' ) ) {
-        add_image_size( 'medium', 343, 193, true );
-        add_image_size( 'members', 96, 9999 );
-    }
+        }
+        if ( function_exists( 'add_image_size' ) ) {
+            add_image_size( 'medium', 343, 193, true );
+            add_image_size( 'members', 96, 9999 );
+        }
 
     /*
     * Enable excerpt on Pages
     */
     add_action( 'init', 'my_add_excerpts_to_pages' );
     function my_add_excerpts_to_pages() {
-         add_post_type_support( 'page', 'excerpt' );
-    }
+       add_post_type_support( 'page', 'excerpt' );
+   }
 
     /*
     * Include custom post types/taxonomies
     */
-     include ('functions/custom-post-types.php');
+    include ('functions/custom-post-types.php');
 
     /*
     * Custom function for variable excerpt/content lengths
@@ -130,27 +130,27 @@
       // return $excerpt;
         $text = get_the_excerpt();
         if(mb_strlen($text, 'UTF-8') > $limit){
-         $split_pos = mb_strpos(wordwrap($text, $limit), "\n", 0, 'UTF-8');
-         $text = mb_substr($text, 0, $split_pos, 'UTF-8');
-         $text = $text . "...";
-        }
+           $split_pos = mb_strpos(wordwrap($text, $limit), "\n", 0, 'UTF-8');
+           $text = mb_substr($text, 0, $split_pos, 'UTF-8');
+           $text = $text . "...";
+       }
 
-        return $text;
-    }
+       return $text;
+   }
 
-    function content($limit) {
+   function content($limit) {
       $content = explode(' ', get_the_content(), $limit);
       if (count($content)>=$limit) {
         array_pop($content);
         $content = implode(" ",$content).'...';
-      } else {
+    } else {
         $content = implode(" ",$content);
-      }
-      $content = preg_replace('/\[.+\]/','', $content);
-      $content = apply_filters('the_content', $content);
-      $content = str_replace(']]>', ']]&gt;', $content);
-      return $content;
     }
+    $content = preg_replace('/\[.+\]/','', $content);
+    $content = apply_filters('the_content', $content);
+    $content = str_replace(']]>', ']]&gt;', $content);
+    return $content;
+}
 
 
 
@@ -174,7 +174,7 @@
             'name' => 'workstream_to_downloads',
             'from' => 'downloads',
             'to' => 'workstream'
-        ) );
+            ) );
     }
     add_action( 'p2p_init', 'my_connection_types' );
 
@@ -248,7 +248,7 @@
     */
     function wpcf7_send_to_mailchimp($cfdata) {
 
-    $formdata = $cfdata->posted_data;
+        $formdata = $cfdata->posted_data;
 
         if( $formdata['mailchimp-opt-in'] ) {
 
@@ -264,7 +264,7 @@
             // Click the "settings" link for the list - the Unique Id is at the bottom of that page.
 
             // Contact list id
-             $list_id = "1e6f11a1ed";
+            $list_id = "1e6f11a1ed";
                             // Debug help
                             //  print_r($formdata);
 
@@ -293,7 +293,7 @@
                 'PHONE7'=> $formdata['your-phone'],
                 'MMERGE9'=> $formdata['comments'],
 //                'GROUPINGS' => array(array('id'=>9253, 'groups' => implode(",",$formdata['programme-category'])))
-            );
+                );
 
             // Send the form content to MailChimp List without double opt-in
             //$retval = $api->listSubscribe($list_id, $send_this_email);
@@ -313,38 +313,35 @@
             'svg' => 'image/svg+xml',
             'dmg' => 'octet-stream',
             'epub' => 'application/epub+zip'
-        ));
+            ));
     }
 
     add_action('user_register', 'wpse72788_password_nag');
-function wpse72788_password_nag( $user_id ){
-     update_user_option( $user_id, 'default_password_nag', true, true );
-}
+    function wpse72788_password_nag( $user_id ){
+       update_user_option( $user_id, 'default_password_nag', true, true );
+   }
 
-/* custom login */
+   /* custom login */
+ 
+   function custom_login_logo() {
+        echo '<style type="text/css">
 
-
-
-function custom_login_logo() {
-    echo '<style type="text/css">
-        
         body.login {
             background: black;
-            
+
         }
         body.login h1 a { 
-              background: url("/wp-content/themes/dpp/common/img/dpp-logo.jpg") no-repeat top left !important;
-              text-indent: -9999px;
-              width: 167px;
-            }
-
+            background: url("/wp-content/themes/dpp/common/img/dpp-logo.jpg") no-repeat top left !important;
+            text-indent: -9999px;
+            width: 167px;
+        }
         .wp-core-ui .button.button-large {
             background: #7f1734 !important;
-              border: none;                
-              border-radius: 4px;
+            border: none;                
+            border-radius: 4px;
         } 
-    </style>';
-}
+        </style>';
+    }
 
 add_action('login_head', 'custom_login_logo');
 
@@ -353,18 +350,16 @@ add_action('login_head', 'custom_login_logo');
 
 function pc_get_userrole ($user_id) {
 
-$user = new WP_User($user_id);
-
-$userclean = $user->roles[0];
-
-return $userclean;
+    $user = new WP_User($user_id);
+    $userclean = $user->roles[0];
+    return $userclean;
 
 }
 
 function restrict_admin()
 {
     if ( ! current_user_can( 'manage_options' ) && '/wp-admin/admin-ajax.php' != $_SERVER['PHP_SELF'] ) {
-                wp_redirect( site_url() );
+        wp_redirect( site_url() );
     }
 }
 add_action( 'admin_init', 'restrict_admin', 1 );
