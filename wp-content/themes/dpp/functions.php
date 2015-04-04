@@ -363,6 +363,17 @@ function restrict_admin()
     }
 }
 add_action( 'admin_init', 'restrict_admin', 1 );
+
+/* Hide custom events*/
+
+add_action('tribe_get_custom_fields','tribe_hide_custom_meta', 100);
+function tribe_hide_custom_meta() {
+    //If viewing a single event, then return no data
+    if( tribe_is_event() && !is_admin() ) {
+        return '';
+    }
+}
+
  /*
 
 function bbg_register_member_types() {
