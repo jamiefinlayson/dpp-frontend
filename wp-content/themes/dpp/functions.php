@@ -360,6 +360,14 @@ $userclean = $user->roles[0];
 return $userclean;
 
 }
+
+function restrict_admin()
+{
+    if ( ! current_user_can( 'manage_options' ) && '/wp-admin/admin-ajax.php' != $_SERVER['PHP_SELF'] ) {
+                wp_redirect( site_url() );
+    }
+}
+add_action( 'admin_init', 'restrict_admin', 1 );
  /*
 
 function bbg_register_member_types() {
