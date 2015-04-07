@@ -58,60 +58,9 @@
 			<!-- Sidebar -->
 			<div class="side-bar small-12 medium-3 large-3 xlarge-3 columns">
 				<nav> 
-					<?php
-						if($post->post_parent) {
-							$children = wp_list_pages("title_li=&child_of=".$post->post_parent."&echo=0&depth=2");
-						}
-						else {
-							$children = wp_list_pages("title_li=&child_of=".$post->ID."&echo=0&depth=2");
-						}
-						if ($children) {
-							$parent_title = get_the_title($post->post_parent);
-						}
-					?>
-					<h3 class="submenu-title"><?php echo $parent_title;?></h3>
+					<h3 class="submenu-title">Events</h3>
 					<div class="item-list-tabs no-ajax" id="subnav" role="navigation">
-						<ul class="clean-list secondary-nav" id="news-archive-menu">
-
-							<?php
-								// Get the id of the top level parent post
-								// if ($post->post_parent)	{
-								// 	$ancestors=get_post_ancestors($post->ID);
-								// 	$root=count($ancestors)-1;
-								// 	$parent = $ancestors[$root];
-								// } else {
-								// 	$parent = $post->ID;
-								// }
-
-								// Use parent id to create the page list
-								$args1 = array(
-									'depth'        => 0,
-									'show_date'    => '',
-									'date_format'  => get_option('date_format'),
-									'child_of'     => 162,
-									'exclude'      => '',
-									'include'      => '',
-									'title_li'     => __(''),
-									'echo'         => 1,
-									'authors'      => '',
-									'sort_column'  => 'menu_order',
-									'sort_order'   => 'ASC',
-									'link_before'  => '',
-									'link_after'   => '',
-									'walker'       => '',
-									'post_type'    => 'page',
-								    'post_status'  => 'publish'
-								);
-
-								// List pages based on $args
-								 wp_list_pages( $args1 ); ?>
-								<!-- Uses plugin specific call to get monthly archives -->
-								<?php wp_get_post_type_archives('events', array('type' => 'yearly', 'show_post_count' => false)); ?>
-
-
-
-
-						</ul>
+						<?php wp_nav_menu( array( 'theme_location' =>'events-menu', 'menu_class' => 'menu clean-list secondary-nav', 'container' => false)); ?>
 					</div>
 				</nav>
 			</div>
