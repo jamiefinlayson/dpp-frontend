@@ -13,12 +13,20 @@
 
 <?php do_action( 'bp_before_members_loop' ); ?>
 <?php if ( !is_user_logged_in() ) {
-	echo 'Members have access to all DPP documents. If you\'re a member please <a href="/wp-admin">sign in</a>.';
+	echo 'Members have access to all DPP documents. If you\'re a member please <a href="/wp-admin">sign in</a> or apply for <a href="/register">membership</a>.';
 }
 else { ?>
 
 <?php if ( bp_has_members( bp_ajax_querystring( 'members' ) ) ) : ?>
 
+
+
+<div class="row"> 
+	<div class="small-12 medium-12 large-12 xlarge-12 columns">
+
+		<p>To view reports click <a href="/downloads">here</a> or go to your <?php echo '<a href="' . bp_loggedin_user_domain( '/' ) . '">' . __('profile') . '</a>'; ?>.</p>
+	</div> 
+</div>
 	<div id="pag-top" class="pagination">
 
 		<div class="pag-count" id="member-dir-count-top">
