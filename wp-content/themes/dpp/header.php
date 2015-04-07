@@ -105,7 +105,7 @@
 
 			<div class="dpp-background">
 				<div class="row">
-					<div class="small-6 medium-3 large-3 x-large-3 columns">
+					<div class="small-4 medium-3 large-3 x-large-3 columns">
 						<div class="logo">
 							<a href="<?php echo get_option('home'); ?>/">
 							<!-- Site name on homepage in <h1>-->
@@ -124,7 +124,7 @@
 						</div> <!-- /logo -->
 					</div> <!-- /grid-4 -->
 
-					<div class="small-6 medium-9 large-9 xlarge-9 columns last">
+					<div class="small-8 medium-9 large-9 xlarge-9 columns last">
 						<div class="header-copy">
 							<h2>The Digital Production Partnership Ltd (DPP) is a not for profit company founded by ITV, BBC and Channel 4 to enable the media industry to maximise the potential of digital in the creation and exploitation of content.</h2>
 						</div>
