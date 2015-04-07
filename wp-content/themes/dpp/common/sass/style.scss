@@ -133,7 +133,7 @@ Version: 1
 	}
 	.header-copy {
 		text-align: right;
-		padding:40px 0 0 0;
+		padding: 40px 0 0 0; 
 
 		@media #{$small-only} { 
 			text-align: left;
@@ -141,7 +141,13 @@ Version: 1
 		} 
 
 		h2 {
-			@media screen and (max-width: 650px){
+			@media screen and (max-width: 1000px){
+				font-size: 0.8em;
+			}
+			@media screen and (max-width: 850px){
+				font-size: 0.7em;
+			}
+			@media screen and (max-width: 700px){
 				display: none;
 			}
 			color:#fff;
@@ -1162,30 +1168,14 @@ select {
 #buddypress div.generic-button a, 
 #buddypress .comment-reply-link, 
 a.bp-title-button {
-	background: #7f1734 !important;
-	padding: 5px 9px !important;
-	border: none; 
-	text-transform: capitalize;
-	display: inline-block;
-	border-radius: 4px;
-	-moz-transition-property: background;
-	-o-transition-property: background;
-	-webkit-transition-property: background;
-	transition-property: background;
-	-moz-transition-duration: 0.2s;
-	-o-transition-duration: 0.2s;
-	-webkit-transition-duration: 0.2s;
-	transition-duration: 0.2s;
-	-moz-transition-timing-function: ease-in;
-	-o-transition-timing-function: ease-in;
-	-webkit-transition-timing-function: ease-in;
-	transition-timing-function: ease-in; 
-	color: #fff !important; 
-	font-family: LatoRegular, Arial, sans-serif;
+	@extend .btn; 
+	padding: 5px 9px !important; 
+	font-family: #{$latoRegularStack};
 	font-size: 1 !important;
 	text-decoration: none; 
 	line-height: normal; 
 }
+
 #buddypress div#item-header img.avatar {
 	margin: 0 !important
 }
@@ -1548,9 +1538,11 @@ form .columns{
 		width: 100%;
 	}
 }
+
 .form-left{
 	float:left;
 }
+
 .form-right {
 	float:right;
 }
@@ -1561,9 +1553,11 @@ form .columns{
 	float:left;
 	font-weight:bold;
 }
+
 .wpcf7-validation-errors {
 	display:none!important;
 } 
+
 div.wpcf7-mail-sent-ok {
 	border: 1px solid #7f1734 !important;
 	border-radius: 4px !important;
