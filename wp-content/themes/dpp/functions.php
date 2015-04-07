@@ -84,6 +84,7 @@
         register_nav_menus(
             array(
                 'top-menu' => __( 'Top Menu' ),
+                'events-menu' => __( 'Events Menu' ),
                 'footer-menu' => __( 'Footer Menu' )
                 )
             );
@@ -374,18 +375,19 @@ function tribe_hide_custom_meta() {
     }
 }
 
+/*
+
 // Filter wp_nav_menu() to add profile link
 add_filter( 'wp_nav_menu_items', 'my_nav_menu_profile_link' );
 function my_nav_menu_profile_link($menu) {  
     if (!is_user_logged_in())
         return $menu;
     else
-        $profilelink = '<li><a href="' . bp_loggedin_user_domain( '/' ) . '">' . __('Visit your Awesome Profile') . '</a></li>';
+        $profilelink = '<li><a href="' . bp_loggedin_user_domain( '/' ) . '">' . __('Profile') . '</a></li>';
         $menu = $menu . $profilelink;
         return $menu;
 }
- /*
-
+ 
 function bbg_register_member_types() {
    bp_register_member_type( 'vendor', array(
         'labels' => array(
