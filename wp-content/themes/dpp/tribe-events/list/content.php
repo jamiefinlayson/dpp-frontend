@@ -19,48 +19,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="row">
 
 			<!-- Sidebar -->
+<!-- Sidebar -->
 			<div class="side-bar small-12 medium-3 large-3 xlarge-3 columns">
-
-				<!-- List Footer -->
-				<?php do_action( 'tribe_events_before_footer' ); ?>
-				<div id="tribe-events-footer">
-
-					<!-- Footer Navigation -->
-					<?php do_action( 'tribe_events_before_footer_nav' ); ?>
-					<?php tribe_get_template_part( 'list/nav', 'footer' ); ?>
-					<?php do_action( 'tribe_events_after_footer_nav' ); ?>
-
-				</div>
-				<!-- #tribe-events-footer -->
-				<?php do_action( 'tribe_events_after_footer' ) ?>
-
-			</div> 
+				<nav> 
+					<h3 class="submenu-title">Events</h3>
+					<div class="item-list-tabs no-ajax" id="subnav" role="navigation">
+						<?php wp_nav_menu( array( 'theme_location' =>'events-menu', 'menu_class' => 'menu clean-list secondary-nav',)); ?>
+					</div>
+				</nav>
+			</div>
 
 			<!-- Main content -->
 			<div class="small-12 medium-12 large-9 xlarge-9 columns">
-
-
-				<!-- List Title -->
-				<?php do_action( 'tribe_events_before_the_title' ); ?>
-				<h2 class="tribe-events-page-title"><?php echo tribe_get_events_title() ?></h2>
-				<?php do_action( 'tribe_events_after_the_title' ); ?>
-
-				<!-- Notices -->
-				<?php tribe_events_the_notices() ?>
-
-				<!-- List Header -->
-				<?php do_action( 'tribe_events_before_header' ); ?>
-				<div id="tribe-events-header" <?php tribe_events_the_header_attributes() ?>>
-
-					<!-- Header Navigation -->
-					<?php do_action( 'tribe_events_before_header_nav' ); ?>
-					<?php tribe_get_template_part( 'list/nav', 'header' ); ?>
-					<?php do_action( 'tribe_events_after_header_nav' ); ?>
-
-				</div>
-				<!-- #tribe-events-header -->
-				<?php do_action( 'tribe_events_after_header' ); ?>
-
+  
 
 				<!-- Events Loop -->
 				<?php if ( have_posts() ) : ?>
