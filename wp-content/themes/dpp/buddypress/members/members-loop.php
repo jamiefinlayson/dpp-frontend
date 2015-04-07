@@ -13,7 +13,7 @@
 
 <?php do_action( 'bp_before_members_loop' ); ?>
 <?php if ( !is_user_logged_in() ) {
-	echo 'Members have access to all DPP documents. If you\'re a member please <a href="/wp-admin">sign in</a> or apply for <a href="/register">membership</a>.';
+	echo 'Members have access to all DPP documents. If you\'re a member please <a href="/wp-admin">sign in</a> or apply for <a href="/contact-us?membership">membership</a>.';
 }
 else { ?>
 
