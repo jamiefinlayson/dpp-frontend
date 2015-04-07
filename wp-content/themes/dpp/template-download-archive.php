@@ -10,9 +10,9 @@ Template Name: Download Archive Template
 		<div class="row">
 			<div class="small-12 medium-12 large-12 xlarge-12 columns">
 				<div class="first-title dashed-bottom">
-					<h1>
+					<p class="likeh1">
 						Downloads
-					</h1>
+					</p>
 
 					<!-- Include share buttons -->
 					<?php include'includes/inc/share-btns.php'; ?>
