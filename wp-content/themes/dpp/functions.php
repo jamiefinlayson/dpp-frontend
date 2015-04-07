@@ -375,6 +375,23 @@ function tribe_hide_custom_meta() {
     }
 }
 
+// membership name for enquiry form
+function parameter_queryvars( $qvars ) {
+    $qvars[] = 'membership';
+    return $qvars;
+}
+add_filter('query_vars', 'parameter_queryvars' );
+
+function echo_membership() {
+    global $wp_query;
+        if (isset($wp_query->query_vars['membership']))
+        {
+            print $wp_query->query_vars['membership'];
+        }
+}
+
+
+
 /*
 
 // Filter wp_nav_menu() to add profile link
