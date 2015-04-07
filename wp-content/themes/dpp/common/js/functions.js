@@ -149,7 +149,7 @@ var subNav= {
 			var headTxt = subMCFirstLiInnerLi.text(); 
 			subMenus.addClass('small-12 medium-12 large-12 xlarge-12 columns');
 			  
-			$('body').on('click', '#subnav .drop', function() { 
+			$('body').on('click', '#subnav .drop', function(e) { 
 				$(this).children('i').toggleClass( "toggle-arrow" );
 				$(this).parent().children('ul ul').toggleClass( "dropdown-on" );
 				e.preventDefault();
