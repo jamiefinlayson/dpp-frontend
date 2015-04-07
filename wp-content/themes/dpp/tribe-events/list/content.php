@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<nav> 
 					<h3 class="submenu-title">Events</h3>
 					<div class="item-list-tabs no-ajax" id="subnav" role="navigation">
-						<?php wp_nav_menu( array( 'theme_location' =>'events-menu', 'menu_class' => 'menu clean-list secondary-nav',)); ?>
+						<?php wp_nav_menu( array( 'theme_location' =>'events-menu', 'menu_class' => 'menu clean-list secondary-nav', 'container' => false)); ?>
 					</div>
 				</nav>
 			</div>
