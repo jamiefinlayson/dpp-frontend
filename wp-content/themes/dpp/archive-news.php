@@ -73,7 +73,7 @@
 
 			<!-- Main content -->
 
-			<div class="small-12 medium-3 large-9 xlarge-9 columns">
+			<div class="small-12 medium-9 large-9 xlarge-9 columns">
 
 
 				<?php
