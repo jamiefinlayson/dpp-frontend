@@ -103,7 +103,7 @@ Version: 1
 			height: auto;  
 			background-size: auto 100%;
 			height: auto;
-			margin: 20 0 25px;
+			margin: 10px 0;
 			@media screen and (max-width: 320px){
 				width: 157px;
 				height: 105px;
@@ -484,7 +484,7 @@ nav {
 #searchform {
 	text-align:	right;
 	@media #{$small-only} { 
-		padding-top: 12%;
+		padding-top: 12px;
 		text-align: left;
 		float: right;
 		@media screen and (max-width: 320px){
@@ -549,6 +549,9 @@ nav {
 			width: 100%;
 		}
 	}
+}
+.page-template-template-download-archive .padded-content {
+	padding-bottom: 20px;
 }
 .padded-text {
 	padding:0 20px 20px;
