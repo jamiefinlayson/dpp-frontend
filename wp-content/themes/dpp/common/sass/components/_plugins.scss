@@ -19,7 +19,13 @@
 	}
 }
 
+.tribe-events-list-separator-month+.type-tribe_events.tribe-events-first {
+	padding-top: 0 !important;
+}
 
+.tribe-events-list-separator-month {
+	display: none !important;
+}
 
 /* Buddypress */
 #field-visibility-settings-toggle-1,

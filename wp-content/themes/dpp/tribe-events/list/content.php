@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="row">
 
 			<!-- Sidebar -->
-<!-- Sidebar -->
+ 
 			<div class="side-bar small-12 medium-3 large-3 xlarge-3 columns">
 				<nav> 
 					<h3 class="submenu-title">Events</h3>
@@ -37,6 +37,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<?php if ( have_posts() ) : ?>
 					<?php do_action( 'tribe_events_before_loop' ); ?>
 					<?php tribe_get_template_part( 'list/loop' ) ?>
+					<?php the_field('eventbrite'); ?>
 					<?php do_action( 'tribe_events_after_loop' ); ?>
 				<?php endif; ?>
 
