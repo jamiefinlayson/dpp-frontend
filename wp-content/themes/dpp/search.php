@@ -1,18 +1,17 @@
 <?php get_header(); ?>
 <div class="primary-content search-results">
 <div class="row">
-			<div class="small-12 medium-12 large-12 xlarge-12 columns">
-				<div class="first-title dashed-bottom">
-					<h1>Search Results</h1>
-				</div> 
+	<div class="small-12 medium-12 large-12 xlarge-12 columns">
+		<div class="first-title dashed-bottom">
+			<h1>Search Results</h1>
+		</div> 
 			 
+		<?php if(have_posts()) : ?>
 			<div class="small-12 medium-12 large-9 xlarge-9 columns">
 
 				<?php if ( !is_user_logged_in() ) {
 					echo '<p><a href="/wp-admin">Sign in</a> for more search results.</p>';
-				} ?> 
-
-				<?php if (have_posts()) : ?>
+				} ?>  
 	 
 				<?php include (TEMPLATEPATH . '/includes/inc/nav.php' ); ?>
 
@@ -41,7 +40,12 @@
 		<?php else : ?>
 
 			<div class="small-12 medium-12 large-9 xlarge-9 columns">
-				<h2>No results</h2>
+				<p>Your search has returned no results.
+
+				<?php if ( !is_user_logged_in() ) {
+					echo ' <a href="/wp-admin">Sign in</a> for more search results.';
+				} ?> 
+				</p>
 			</div> 
 
 		<?php endif; ?>
