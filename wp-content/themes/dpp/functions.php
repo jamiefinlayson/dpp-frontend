@@ -44,24 +44,24 @@
     * Clean up the <head>
     */
 	function removeHeadLinks() {
-       remove_action('wp_head', 'rsd_link');
-       remove_action('wp_head', 'wlwmanifest_link');
-   }
-   add_action('init', 'removeHeadLinks');
-   remove_action('wp_head', 'wp_generator');
+     remove_action('wp_head', 'rsd_link');
+     remove_action('wp_head', 'wlwmanifest_link');
+ }
+ add_action('init', 'removeHeadLinks');
+ remove_action('wp_head', 'wp_generator');
 
-   if (function_exists('register_sidebar')) {
-       register_sidebar(array(
-          'name' => __('Sidebar Widgets' ),
-          'id'   => 'sidebar-widgets',
-          'description'   => __( 'These are widgets for the sidebar.' ),
-          'before_widget' => '<div id="%1$s" class="widget %2$s">',
-          'after_widget'  => '</div>',
-          'before_title'  => '<h2>',
-          'after_title'   => '</h2>'
-          ));
+ if (function_exists('register_sidebar')) {
+     register_sidebar(array(
+      'name' => __('Sidebar Widgets' ),
+      'id'   => 'sidebar-widgets',
+      'description'   => __( 'These are widgets for the sidebar.' ),
+      'before_widget' => '<div id="%1$s" class="widget %2$s">',
+      'after_widget'  => '</div>',
+      'before_title'  => '<h2>',
+      'after_title'   => '</h2>'
+      ));
 
-       register_sidebar(array(
+     register_sidebar(array(
         'name' => __('404' ),
         'id'   => 'widget-404',
         'description'   => __( 'These is the 404 error descrition.' ),
@@ -70,7 +70,7 @@
         'before_title'  => '<h2>',
         'after_title'   => '</h2>'
         ));
-   }
+ }
 
     /*
     * Add post format support
@@ -108,8 +108,8 @@
     */
     add_action( 'init', 'my_add_excerpts_to_pages' );
     function my_add_excerpts_to_pages() {
-       add_post_type_support( 'page', 'excerpt' );
-   }
+     add_post_type_support( 'page', 'excerpt' );
+ }
 
     /*
     * Include custom post types/taxonomies
@@ -131,26 +131,26 @@
       // return $excerpt;
         $text = get_the_excerpt();
         if(mb_strlen($text, 'UTF-8') > $limit){
-           $split_pos = mb_strpos(wordwrap($text, $limit), "\n", 0, 'UTF-8');
-           $text = mb_substr($text, 0, $split_pos, 'UTF-8');
-           $text = $text . "...";
-       }
+         $split_pos = mb_strpos(wordwrap($text, $limit), "\n", 0, 'UTF-8');
+         $text = mb_substr($text, 0, $split_pos, 'UTF-8');
+         $text = $text . "...";
+     }
 
-       return $text;
-   }
+     return $text;
+ }
 
-   function content($limit) {
-      $content = explode(' ', get_the_content(), $limit);
-      if (count($content)>=$limit) {
-        array_pop($content);
-        $content = implode(" ",$content).'...';
-    } else {
-        $content = implode(" ",$content);
-    }
-    $content = preg_replace('/\[.+\]/','', $content);
-    $content = apply_filters('the_content', $content);
-    $content = str_replace(']]>', ']]&gt;', $content);
-    return $content;
+ function content($limit) {
+  $content = explode(' ', get_the_content(), $limit);
+  if (count($content)>=$limit) {
+    array_pop($content);
+    $content = implode(" ",$content).'...';
+} else {
+    $content = implode(" ",$content);
+}
+$content = preg_replace('/\[.+\]/','', $content);
+$content = apply_filters('the_content', $content);
+$content = str_replace(']]>', ']]&gt;', $content);
+return $content;
 }
 
 
@@ -319,30 +319,30 @@
 
     add_action('user_register', 'wpse72788_password_nag');
     function wpse72788_password_nag( $user_id ){
-       update_user_option( $user_id, 'default_password_nag', true, true );
-   }
+     update_user_option( $user_id, 'default_password_nag', true, true );
+ }
 
-   /* custom login */
+ /* custom login */
  
-   function custom_login_logo() {
-        echo '<style type="text/css">
+ function custom_login_logo() {
+    echo '<style type="text/css">
 
-        body.login {
-            background: black;
+    body.login {
+        background: black;
 
-        }
-        body.login h1 a { 
-            background: url("/wp-content/themes/dpp/common/img/dpp-logo.jpg") no-repeat top left !important;
-            text-indent: -9999px;
-            width: 167px;
-        }
-        .wp-core-ui .button.button-large {
-            background: #7f1734 !important;
-            border: none;                
-            border-radius: 4px;
-        } 
-        </style>';
     }
+    body.login h1 a { 
+        background: url("/wp-content/themes/dpp/common/img/dpp-logo.jpg") no-repeat top left !important;
+        text-indent: -9999px;
+        width: 167px;
+    }
+    .wp-core-ui .button.button-large {
+        background: #7f1734 !important;
+        border: none;                
+        border-radius: 4px;
+    } 
+</style>';
+}
 
 add_action('login_head', 'custom_login_logo');
 
@@ -356,6 +356,15 @@ function pc_get_userrole ($user_id) {
     return $userclean;
 
 }
+
+/* Hide register link from admin bar */
+function mytheme_admin_bar_render() {
+    global $wp_admin_bar;
+    $wp_admin_bar->remove_menu('register');
+    
+}
+
+add_action( 'wp_before_admin_bar_render', 'mytheme_admin_bar_render' );
 
 function restrict_admin()
 {
@@ -384,10 +393,10 @@ add_filter('query_vars', 'parameter_queryvars' );
 
 function echo_membership() {
     global $wp_query;
-        if (isset($wp_query->query_vars['membership']))
-        {
-            print $wp_query->query_vars['membership'];
-        }
+    if (isset($wp_query->query_vars['membership']))
+    {
+        print $wp_query->query_vars['membership'];
+    }
 }
 
 
