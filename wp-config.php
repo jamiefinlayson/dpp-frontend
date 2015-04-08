@@ -14,35 +14,12 @@
  * @package WordPress
  */
 
-$host = $_SERVER['SERVER_NAME'] ;
  
-// ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
- 
-if ($host=='dpp-local') {
     define('WP_ENV', 'development');
     define('DB_NAME', 'mydb-dev');
     define('DB_USER', 'root');
     define('DB_PASSWORD', 'root');
-    define('DB_HOST', 'localhost');
-} 
-
-else if ($_SERVER['REMOTE_ADDR']=='86.27.82.111') {
-    define('WP_ENV', 'production');
-    define('DB_NAME', 'dppdevco_prod');
-    define('DB_USER', 'dppdevco_prod');
-    define('DB_PASSWORD', 'D$fng95dckEi');
-    define('DB_HOST', 'localhost');
-}
-
-else {
-    define('WP_ENV', 'live');
-    define('DB_NAME', 'dpp_dev');
-    define('DB_USER', 'username');
-    define('DB_PASSWORD', 'password');
-    define('DB_HOST', 'localhost');
-}
- 
+    define('DB_HOST', 'localhost'); 
 define('DB_CHARSET', 'utf8'); 
 define('DB_COLLATE', '');
  
