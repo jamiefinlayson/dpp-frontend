@@ -356,6 +356,14 @@ function pc_get_userrole ($user_id) {
     return $userclean;
 
 }
+ 
+/* Admin default page */ 
+
+function admin_default_page() {
+  return '/members';
+}
+
+add_filter('login_redirect', 'admin_default_page');
 
 /* Hide register link from admin bar */
 function mytheme_admin_bar_render() {
@@ -365,6 +373,13 @@ function mytheme_admin_bar_render() {
 }
 
 add_action( 'wp_before_admin_bar_render', 'mytheme_admin_bar_render' );
+
+add_action( 'login_head', 'hide_login_nav' );
+
+function hide_login_nav()
+{
+    ?><style>#nav {color: black;} #nav a:first-child {display:none;}</style><?php
+}
 
 function restrict_admin()
 {
