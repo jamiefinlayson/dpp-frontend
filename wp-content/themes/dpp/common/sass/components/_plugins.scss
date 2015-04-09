@@ -347,6 +347,13 @@ body span.wpcf7-not-valid-tip {
 	background:transparent;
 }
 
+.wpcf7-list-item.first, 
+.wpcf7-list-item.last {
+	display: block;
+	float: none;
+	margin-bottom: 5px;
+	clear: left; 
+}
 
 
 /* Shiftnav */
