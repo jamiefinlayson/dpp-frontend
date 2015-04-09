@@ -27,6 +27,45 @@
 	display: none !important;
 }
 
+#tribe-events-pg-template {
+	dt {
+		display: inline-block;
+		float: left;
+	}
+	dd {
+		margin-left: 57px;
+	}
+}
+.tribe-events-calendar td.tribe-events-present div[id*=tribe-events-daynum-] {
+  background-color: #7f1734 !important;
+}
+
+.tribe-events-button { 
+	  display: inline-block  !important;
+  border-radius: 4px !important;
+  -moz-transition-property: background;
+  -o-transition-property: background;
+  -webkit-transition-property: background;
+  transition-property: background;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -moz-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  -webkit-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+  background-color: #7f1734 !important;
+  color: #fff !important; 
+  font-family: LatoRegular, Arial, sans-serif !important;
+  text-decoration: none;
+  margin-bottom: 0.55556em !important;
+	padding: 5px 9px !important;  
+	font-size: 0.8em !important;
+	text-decoration: none !important; 
+	line-height: normal !important; 
+}
+
 /* Buddypress */
 #field-visibility-settings-toggle-1,
 .field-visibility-settings-notoggle {
