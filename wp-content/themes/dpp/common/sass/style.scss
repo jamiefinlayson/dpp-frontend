@@ -152,6 +152,13 @@ Version: 1
   	background: black;
   }
 
+.login-username,
+.login-password {
+	label {
+		display: inline-block;
+		min-width: 75px;
+	}
+}
   
 /*
 * Primary Nav
@@ -187,6 +194,13 @@ Version: 1
 					width:85px;
 					background: url("common/img/icons/icon-sprite.png") no-repeat center 22px;
 					text-indent: -9999px; 
+				}
+			}
+			&.menu-item-129 {
+				margin-left: 6%;
+
+				@media (max-width: 900px) { 
+					margin-left: 15%;
 				}
 			}
 
@@ -550,9 +564,17 @@ nav {
 		}
 	}
 }
-.page-template-template-download-archive .padded-content {
-	padding-bottom: 20px;
+
+.page-template-template-download-archive { 
+	.columns .columns:nth-child(odd) { 
+		clear: left;
+	}
+	
+	.padded-content {
+		padding-bottom: 20px;
+	}
 }
+
 .padded-text {
 	padding:0 20px 20px;
 	overflow:hidden;
