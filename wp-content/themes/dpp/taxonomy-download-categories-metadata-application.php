@@ -47,6 +47,7 @@
 						  'orderby'      => $orderby,
 						  'show_count'   => $show_count,
 						  'pad_counts'   => $pad_counts,
+						  'exclude' 	=> 24,
 						  'hierarchical' => $hierarchical,
 						  'title_li'     => $title,
 						  'hide_empty'   => $hide_empty
@@ -61,7 +62,7 @@
 			</div>
 
 			<!-- Main content -->
-			<div class="small-12 medium-12 large-9 xlarge-9 columns">
+			<div class="small-12 medium-9 large-9 xlarge-9 columns">
 				<div class="entry">
 					<?php if (have_posts()) : ?>
 

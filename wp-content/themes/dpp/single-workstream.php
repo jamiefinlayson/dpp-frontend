@@ -21,7 +21,7 @@
 
 			<!-- Sidebar -->
 						<!-- Sidebar -->
-			<div class="side-bar small-12 medium-3 large-3 xlarge-3 columns">
+			<div class="side-bar small-12 medium-5 large-3 xlarge-3 columns">
 				<nav> 
 					<div class="item-list-tabs no-ajax" id="subnav" role="navigation">
 					 
@@ -52,7 +52,7 @@
 			</div>
 
 			<!-- Main content -->
-			<div class="small-12 medium-6 large-6 xlarge-6 columns">
+			<div class="small-12 medium-7 large-6 xlarge-6 columns">
 
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -75,7 +75,7 @@
 				<?php endwhile; endif; ?>
 			</div> <!-- /grid-6 -->
 
-			<div class="small-12 medium-3 large-3 xlarge-3 columns">
+			<div class="small-12 medium-7 large-3 xlarge-3 columns pull-right">
 				<aside>
 					<?php
 						// Find connected downloads

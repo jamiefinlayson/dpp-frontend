@@ -35,6 +35,7 @@ Template Name: Download Archive Template
 							  'show_count'   => 0,
 							  'pad_counts'   => 0,
 							  'hierarchical' => 1,
+								'exclude'      => 24,
 							  'title_li'     => '',
 							  'hide_empty'   => 0
 							);

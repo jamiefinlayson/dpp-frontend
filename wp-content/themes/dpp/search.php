@@ -10,7 +10,7 @@
 			<div class="small-12 medium-12 large-9 xlarge-9 columns">
 
 				<?php if ( !is_user_logged_in() ) {
-					echo '<p><a href="/wp-admin">Sign in</a> for more search results.</p>';
+					echo '<p><a href="/members">Sign in</a> for more search results.</p>';
 				} ?>  
 	 
 				<?php include (TEMPLATEPATH . '/includes/inc/nav.php' ); ?>
@@ -43,7 +43,7 @@
 				<p>Your search has returned no results.
 
 				<?php if ( !is_user_logged_in() ) {
-					echo ' <a href="/wp-admin">Sign in</a> for more search results.';
+					echo ' <a href="/members">Sign in</a> for more search results.';
 				} ?> 
 				</p>
 			</div> 

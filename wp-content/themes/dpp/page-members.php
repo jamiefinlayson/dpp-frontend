@@ -35,12 +35,12 @@
 				
 				<?php if ( !is_user_logged_in() ) {
 
-					echo '<p>Members have access to all DPP documents. If you\'re a member please sign in or apply for <a href="/contact-us?membership">membership</a>.</p>';
+					echo '<p>Members have access to all DPP documents.</p><p>If you\'re a member please sign in below or <a href="/contact-us?membership">apply for membership</a>.</p>';
 					 wp_login_form();
 				} 
 				else {
 					wp_get_current_user();
-					echo 'Welcome, ' . $current_user->display_name . '. You are logged in and have access to the full range of DPP documents in the <a href="/downloads">downloads</a> area. </p>';
+					echo 'Welcome, ' . $current_user->display_name . '. You are logged in and have access to the full range of DPP documents in the <a href="/downloads">downloads</a> area.</p>';
 				}
 
 				?>
