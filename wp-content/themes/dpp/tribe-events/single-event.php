@@ -67,6 +67,12 @@ $event_id = get_the_ID();
 						<?php do_action( 'tribe_events_single_event_before_the_content' ) ?>
 						<div class="tribe-events-single-event-description tribe-events-content entry-content description">
 							<?php the_content(); ?>
+							<?php if ( is_user_logged_in() ) {
+								the_field('eventbrite'); 
+								echo '<p></p>';
+							} 
+
+							?>
 						</div>
 						<!-- .tribe-events-single-event-description -->
 						<?php do_action( 'tribe_events_single_event_after_the_content' ) ?>
@@ -89,7 +95,7 @@ $event_id = get_the_ID();
 						<?php do_action( 'tribe_events_single_event_after_the_meta' ) ?>
 					</div> <!-- #post-x -->
 					<?php if ( get_post_type() == TribeEvents::POSTTYPE && tribe_get_option( 'showComments', false ) ) comments_template() ?>
-					<?php the_field('eventbrite'); ?>
+
 				<?php endwhile; ?>
 
 				<!-- Event footer -->
