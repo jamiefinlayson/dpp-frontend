@@ -119,7 +119,7 @@ $(document).ready(function (){
 	archiveHighlight.init();
 	pluginClasses.init();
 	subNav.init();
-
+	//populateMembers.init();
 });
 
 $(window).resize(function() {
@@ -127,6 +127,13 @@ $(window).resize(function() {
     }, 500);
 });
 
+var populateMembers = {
+	init: function() {
+		var membership = $('#signupboxes')
+		 
+	}
+
+}
 
 var subNav= {
 	init: function() {
