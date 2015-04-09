@@ -357,13 +357,7 @@ function pc_get_userrole ($user_id) {
 
 }
  
-/* Admin default page */ 
-
-function admin_default_page() {
-  return '/members';
-}
-
-add_filter('login_redirect', 'admin_default_page');
+ 
 
 /* Hide register link from admin bar */
 function mytheme_admin_bar_render() {
@@ -381,6 +375,7 @@ function hide_login_nav()
     ?><style>#nav {color: black;} #nav a:first-child {display:none;}</style><?php
 }
 
+/*
 function restrict_admin()
 {
     if ( ! current_user_can( 'manage_options' ) && '/wp-admin/admin-ajax.php' != $_SERVER['PHP_SELF'] ) {
@@ -388,6 +383,8 @@ function restrict_admin()
     }
 }
 add_action( 'admin_init', 'restrict_admin', 1 );
+
+*/
 
 /* Hide custom events*/
 
@@ -414,6 +411,67 @@ function echo_membership() {
     }
 }
 
+add_action( 'admin_bar_menu', 'wp_admin_bar_my_custom_account_menu', 11 );
+
+function wp_admin_bar_my_custom_account_menu( $wp_admin_bar ) {
+$user_id = get_current_user_id();
+$current_user = wp_get_current_user();
+$profile_url = get_edit_profile_url( $user_id );
+
+if ( 0 != $user_id ) {
+/* Add the "My Account" menu */
+$avatar = get_avatar( $user_id, 28 );
+$howdy = sprintf( __('Welcome, %1$s'), $current_user->display_name );
+$class = empty( $avatar ) ? '' : 'with-avatar';
+
+$wp_admin_bar->add_menu( array(
+'id' => 'my-account',
+'parent' => 'top-secondary',
+'title' => $howdy . $avatar,
+'href' => $profile_url,
+'meta' => array(
+'class' => $class,
+),
+) );
+
+}
+}
+
+add_action( 'admin_init', 'redirect_non_admin_users' );
+/**
+ * Redirect non-admin users to home page
+ *
+ * This function is attached to the 'admin_init' action hook.
+ */
+function redirect_non_admin_users() {
+    if ( ! current_user_can( 'manage_options' ) && '/wp-admin/admin-ajax.php' != $_SERVER['PHP_SELF'] ) {
+        wp_redirect( '/members');
+        exit;
+    }
+}
+
+
+/* 
+
+function function_new_user($user_id) { 
+   add_user_meta( $user_id, '_new_user', '1' );
+}
+add_action( 'user_register', 'function_new_user');
+ 
+
+function function_check_login_redirect($user_login, $user) {
+   $logincontrol = get_user_meta($user->ID, '_new_user', 'TRUE');
+   if ( $logincontrol ) {
+      //set the user to old
+      update_user_meta( $user->ID, '_new_user', '0' );
+
+      //Do the redirects or whatever you need to do for the first login
+      wp_redirect( 'http://www.example.com', 302 ); exit;
+   }
+}
+add_action('wp_login', 'function_check_login_redirect', 10, 2);
+
+*/
 
 
 /*
