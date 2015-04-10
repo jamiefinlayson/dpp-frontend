@@ -15,13 +15,19 @@
 
 		<div class="row">
 			<!-- Sidebar -->
-						<!-- Sidebar -->
-<div class="side-bar small-12 medium-3 large-3 xlarge-3 columns">
-				<nav> 
+			<div class="side-bar small-12 medium-3 large-3 xlarge-3 columns">
+
+				<nav class="mini-menus small-12 medium-12 large-12 xlarge-12 columns"> 
 					<h3 class="submenu-title">Events</h3>
-					<div class="item-list-tabs no-ajax" id="subnav" role="navigation">
-						<?php wp_nav_menu( array( 'theme_location' =>'events-menu', 'menu_class' => 'menu clean-list secondary-nav', 'container' => false)); ?>
-					</div>
+					<div class="item-list-tabs no-ajax" id="subnav" role="navigation"><ul><li><span class="drop"><strong>Events<i></i></strong></span> 
+						<ul class="clean-list secondary-nav">
+						<li class="page_item page-item-164"><a href="/events/upcoming-events/">Upcoming Events</a></li>
+							<li class="page_item page-item-168"><a href="/events/past-events/">Previous Events</a></li>
+
+
+
+						</ul>
+					</li></ul></div>
 				</nav>
 			</div>
 

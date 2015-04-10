@@ -4168,10 +4168,6 @@ html[xmlns] .slides {
 .block-content.thumbnail-on-left .padded-content {
   padding-bottom: 14px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/dpp-frontend\/wp-content\/themes\/dpp\/common\/sass\/style\.scss}line{font-family:\00003747}}
-.block-content.thumbnail-on-left p {
-  font-size: 0.86667em;
-}
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/dpp-frontend\/wp-content\/themes\/dpp\/common\/sass\/style\.scss}line{font-family:\00003751}}
 .block-content.thumbnail-on-left .more-link {
   font-size: 0.86667em;
