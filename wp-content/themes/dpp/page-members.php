@@ -16,19 +16,7 @@
 		</div> <!-- /row-->
 
 		<div class="row">
-			<!-- Sidebar -->
-						<!-- Sidebar -->
-			<div class="side-bar small-12 medium-3 large-3 xlarge-3 columns">
-				<nav>  
-					<h3 class="submenu-title">Members</h3>
-					<div class="item-list-tabs no-ajax" id="subnav" role="navigation">
-					 
-						<ul class="clean-list secondary-nav">
-							 
-						</ul>
-					</div>
-				</nav>
-			</div>
+ 
 
 			<!-- Main content -->
 			<div class="small-12 medium-9 large-9 xlarge-9 columns">
