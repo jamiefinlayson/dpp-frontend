@@ -58,6 +58,7 @@ Template Name: Download Archive Template
 					<?php
 					$args2 = array(
 					    'hide_empty'    => false,
+							  'exclude' 	=> 24
 					);
 
 						$tax_terms = get_terms('download-categories', $args2);

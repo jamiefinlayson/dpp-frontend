@@ -190,7 +190,20 @@ var pluginClasses = {
 
 }
 
- 
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+var prodId = getParameterByName('prodId');
+
+if ($('.page-id-31').length >= 1) {
+	if (prodId == 'membership') {
+		
+	}
+}
 	//equalHeight.init($(".equal"));  
 
 	/*
