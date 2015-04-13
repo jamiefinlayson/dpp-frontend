@@ -25,8 +25,8 @@ var newsSlider = {
 			animationSpeed: 700,            //Integer: Set the speed of animations, in milliseconds
 			initDelay: 0,                   //{NEW} Integer: Set an initialization delay, in milliseconds
 			randomize: false               //Boolean: Randomize slide order
-		  });
-	}
+		});
+}
 
 }
 
@@ -45,8 +45,8 @@ var smoothScroll = {
 		this.anchor.on("click", function(e){
 			e.preventDefault();
 			$('html, body').animate({
-		        scrollTop: $( $(this).attr('href') ).offset().top
-		    }, 500);
+				scrollTop: $( $(this).attr('href') ).offset().top
+			}, 500);
 		});
 
 
@@ -61,14 +61,14 @@ var events = {
 	*/
 	init: function(){
 		var $eventHeader = $('#event-header'),
-			fullDate = new Date(),
+		fullDate = new Date(),
 			//Convert date to same format as event date
 			twoDigitDate = fullDate.getDate()+"";if(twoDigitDate.length==1) twoDigitDate="0" +twoDigitDate,
 			twoDigitMonth = ((fullDate.getMonth().length+1) === 1)? (fullDate.getMonth()+1) : '0' + (fullDate.getMonth()+1),
 			todayDate =  fullDate.getFullYear() + twoDigitMonth + twoDigitDate;
 
 
-		if($eventHeader.length) {
+			if($eventHeader.length) {
 			// Pull the event data (on data attribute in post)
 			var eventDate = $eventHeader.data('event-date');
 
@@ -94,11 +94,11 @@ var archiveHighlight = {
 	init: function(){
 
 		var $archiveTitle = $("#archive-title"),
-			$archiveMenu = $("#news-archive-menu");
+		$archiveMenu = $("#news-archive-menu");
 
 		if($archiveTitle.length) {
 			var archiveYear = $archiveTitle.data('year'),
-				$archiveYearsList = $archiveMenu.find("li");
+			$archiveYearsList = $archiveMenu.find("li");
 
 			// Loop through each archive year and compare - add active class if match.
 			$archiveYearsList.each(function(index) {
@@ -119,18 +119,19 @@ $(document).ready(function (){
 	archiveHighlight.init();
 	pluginClasses.init();
 	subNav.init();
+	getParameter.init()
 	//populateMembers.init();
 });
 
 $(window).resize(function() {
-     setTimeout(function() { 
-    }, 500);
+	setTimeout(function() { 
+	}, 500);
 });
 
 var populateMembers = {
 	init: function() {
 		var membership = $('#signupboxes')
-		 
+
 	}
 
 }
@@ -155,7 +156,7 @@ var subNav= {
 			var subMCFirstLiInnerLi = subMChild.children('ul li:nth-child(2)');
 			var headTxt = subMCFirstLiInnerLi.text(); 
 			subMenus.addClass('small-12 medium-12 large-12 xlarge-12 columns');
-			  
+
 			$('body').on('click', '#subnav .drop', function(e) { 
 				$(this).children('i').toggleClass( "toggle-arrow" );
 				$(this).parent().children('ul ul').toggleClass( "dropdown-on" );
@@ -167,43 +168,57 @@ var subNav= {
 
 
 var equalHeight = {
- 
+
 	init: function(group) {
-	   tallest = 0;
-	   group.each(function() {
-	      thisHeight = $(this).height();
-	      if(thisHeight > tallest) {
-	         tallest = thisHeight;
-	      }
-	   });
-	   group.height(tallest);
+		tallest = 0;
+		group.each(function() {
+			thisHeight = $(this).height();
+			if(thisHeight > tallest) {
+				tallest = thisHeight;
+			}
+		});
+		group.height(tallest);
 	} 
 
 }
 
 
 var pluginClasses = {
- 
+
 	init: function() {
 		$('.widget').addClass('small-12 medium-6 large-12 xlarge-12 columns'); 
 	} 
 
 }
 
-function getParameterByName(name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
+var getParameter = {
+	init: function() {
+		var vars = [], hash;
+		var q = document.URL.split('?')[1];
+		if(q != undefined){
+			q = q.split('&');
+			for(var i = 0; i < q.length; i++){
+				hash = q[i].split('=');
+				vars.push(hash[1]);
+				vars[hash[0]] = hash[1];
+			} 
+		}
+		var signup = vars['signup'];
+		if ($('.page-id-31').length >= 1) { 
 
-var prodId = getParameterByName('prodId');
 
-if ($('.page-id-31').length >= 1) {
-	if (prodId == 'membership') {
-		
+			if (signup == 'membership') {
+				$('.checkbox-676 input:checkbox:visible:first').prop('checked', true);
+			}
+			else if (signup == 'newsletter') {
+
+				$('.checkbox-676 input:checkbox').prop('checked', true);
+				$('.checkbox-676 input:checkbox:visible:first').prop('checked', false);
+			}
+		}
 	}
 }
+
 	//equalHeight.init($(".equal"));  
 
 	/*
