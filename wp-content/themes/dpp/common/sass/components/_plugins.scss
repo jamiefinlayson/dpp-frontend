@@ -1,3 +1,10 @@
+/* Password Rest */
+
+#pippin_password_form label {
+	min-width: 125px;
+	display: inline-block;
+}
+
 
 /* Events Calendar */
 
@@ -37,29 +44,29 @@
 	}
 }
 .tribe-events-calendar td.tribe-events-present div[id*=tribe-events-daynum-] {
-  background-color: #7f1734 !important;
+	background-color: #7f1734 !important;
 }
 
 .tribe-events-button { 
-	  display: inline-block  !important;
-  border-radius: 4px !important;
-  -moz-transition-property: background;
-  -o-transition-property: background;
-  -webkit-transition-property: background;
-  transition-property: background;
-  -moz-transition-duration: 0.2s;
-  -o-transition-duration: 0.2s;
-  -webkit-transition-duration: 0.2s;
-  transition-duration: 0.2s;
-  -moz-transition-timing-function: ease-in;
-  -o-transition-timing-function: ease-in;
-  -webkit-transition-timing-function: ease-in;
-  transition-timing-function: ease-in;
-  background-color: #7f1734 !important;
-  color: #fff !important; 
-  font-family: LatoRegular, Arial, sans-serif !important;
-  text-decoration: none;
-  margin-bottom: 0.55556em !important;
+	display: inline-block  !important;
+	border-radius: 4px !important;
+	-moz-transition-property: background;
+	-o-transition-property: background;
+	-webkit-transition-property: background;
+	transition-property: background;
+	-moz-transition-duration: 0.2s;
+	-o-transition-duration: 0.2s;
+	-webkit-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+	-moz-transition-timing-function: ease-in;
+	-o-transition-timing-function: ease-in;
+	-webkit-transition-timing-function: ease-in;
+	transition-timing-function: ease-in;
+	background-color: #7f1734 !important;
+	color: #fff !important; 
+	font-family: LatoRegular, Arial, sans-serif !important;
+	text-decoration: none;
+	margin-bottom: 0.55556em !important;
 	padding: 5px 9px !important;  
 	font-size: 0.8em !important;
 	text-decoration: none !important; 
@@ -310,71 +317,71 @@ a.current,
 		width: 100%; 
 	}
 
- 
-.buddypress .block-content.for-members {
-	border: none;
-}
-
-
-/* Contact Form 7 overwrites */
-.wpcf7-response-output {
-	clear: both;
-	float:left;
-	font-weight:bold;
-}
-
-.wpcf7-validation-errors {
-	display:none!important;
-} 
-
-div.wpcf7-mail-sent-ok {
-	border: 1px solid #7f1734 !important;
-	border-radius: 4px !important;
-}
-
-div.wpcf7-response-output {
-	margin: 0 !important;
-	font-weight: normal;
-	font-size: 1em;
-}
-
-body span.wpcf7-not-valid-tip {
-	position: static;
-	display:block!important;
-	opacity:1!important;
-	border:0;
-	color: $dppHighlight;
-	background:transparent;
-}
-
-.wpcf7-list-item.first, 
-.wpcf7-list-item.last {
-	display: block;
-	float: none;
-	margin-bottom: 5px;
-	clear: left; 
-}
-
-
-/* Shiftnav */
-
-.shiftnav-loading{
-  display: none !important;
-}
-
-.shiftnav-menu-title.shiftnav-site-title {
-	text-indent: -9999em;
-	background: url("/wp-content/themes/dpp/common/img/dpp-logo-small.png") no-repeat 25px 20px;
-	background-size: auto 50%;
-}
-
-.shiftnav .shiftnav-menu-title {
-	padding: 25px !important;
-}
-
-@media #{$medium-down} { 
-	.shiftnav.shiftnav-nojs.shiftnav-skin-standard-dark ul.shiftnav-menu li.menu-item > .shiftnav-target:hover, .shiftnav.shiftnav-skin-standard-dark ul.shiftnav-menu li.menu-item.shiftnav-active > .shiftnav-target, .shiftnav.shiftnav-skin-standard-dark ul.shiftnav-menu li.menu-item.shiftnav-in-transition > .shiftnav-target, .shiftnav.shiftnav-skin-standard-dark ul.shiftnav-menu li.menu-item.current-menu-item > .shiftnav-target, .shiftnav.shiftnav-skin-standard-dark ul.shiftnav-menu > li.shiftnav-sub-accordion.current-menu-ancestor > .shiftnav-target, .shiftnav.shiftnav-skin-standard-dark ul.shiftnav-menu > li.shiftnav-sub-shift.current-menu-ancestor > .shiftnav-target, .shiftnav.shiftnav-skin-standard-dark ul.shiftnav-menu.shiftnav-active-highlight li.menu-item > .shiftnav-target:active, .shiftnav.shiftnav-skin-standard-dark ul.shiftnav-menu.shiftnav-active-on-hover li.menu-item > .shiftnav-target:hover {
-
-		background: #7f1734 !important; 
+	
+	.buddypress .block-content.for-members {
+		border: none;
 	}
-}
+
+
+	/* Contact Form 7 overwrites */
+	.wpcf7-response-output {
+		clear: both;
+		float:left;
+		font-weight:bold;
+	}
+
+	.wpcf7-validation-errors {
+		display:none!important;
+	} 
+
+	div.wpcf7-mail-sent-ok {
+		border: 1px solid #7f1734 !important;
+		border-radius: 4px !important;
+	}
+
+	div.wpcf7-response-output {
+		margin: 0 !important;
+		font-weight: normal;
+		font-size: 1em;
+	}
+
+	body span.wpcf7-not-valid-tip {
+		position: static;
+		display:block!important;
+		opacity:1!important;
+		border:0;
+		color: $dppHighlight;
+		background:transparent;
+	}
+
+	.wpcf7-list-item.first, 
+	.wpcf7-list-item.last {
+		display: block;
+		float: none;
+		margin-bottom: 5px;
+		clear: left; 
+	}
+
+
+	/* Shiftnav */
+
+	.shiftnav-loading{
+		display: none !important;
+	}
+
+	.shiftnav-menu-title.shiftnav-site-title {
+		text-indent: -9999em;
+		background: url("/wp-content/themes/dpp/common/img/dpp-logo-small.png") no-repeat 25px 20px;
+		background-size: auto 50%;
+	}
+
+	.shiftnav .shiftnav-menu-title {
+		padding: 25px !important;
+	}
+
+	@media #{$medium-down} { 
+		.shiftnav.shiftnav-nojs.shiftnav-skin-standard-dark ul.shiftnav-menu li.menu-item > .shiftnav-target:hover, .shiftnav.shiftnav-skin-standard-dark ul.shiftnav-menu li.menu-item.shiftnav-active > .shiftnav-target, .shiftnav.shiftnav-skin-standard-dark ul.shiftnav-menu li.menu-item.shiftnav-in-transition > .shiftnav-target, .shiftnav.shiftnav-skin-standard-dark ul.shiftnav-menu li.menu-item.current-menu-item > .shiftnav-target, .shiftnav.shiftnav-skin-standard-dark ul.shiftnav-menu > li.shiftnav-sub-accordion.current-menu-ancestor > .shiftnav-target, .shiftnav.shiftnav-skin-standard-dark ul.shiftnav-menu > li.shiftnav-sub-shift.current-menu-ancestor > .shiftnav-target, .shiftnav.shiftnav-skin-standard-dark ul.shiftnav-menu.shiftnav-active-highlight li.menu-item > .shiftnav-target:active, .shiftnav.shiftnav-skin-standard-dark ul.shiftnav-menu.shiftnav-active-on-hover li.menu-item > .shiftnav-target:hover {
+
+			background: #7f1734 !important; 
+		}
+	}
