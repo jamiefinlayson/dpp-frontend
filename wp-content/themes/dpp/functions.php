@@ -569,7 +569,6 @@ function redirect_non_admin_users() {
     }
 }
 
-
 /* 
 
 function function_new_user($user_id) { 
