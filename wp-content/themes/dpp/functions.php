@@ -32,10 +32,10 @@ if (!function_exists(core_mods)) {
             wp_register_script('jquery', "//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js", array(), '2.0.3', false);
             wp_register_script('foundation', get_template_directory_uri() . "/common/js/foundation/foundation.js", array(
                 'jquery'
-            ), '5.1.1', true);
+                ), '5.1.1', true);
             wp_register_script('foundationoffcanvas', get_template_directory_uri() . "/common/js/foundation/foundation.offcanvas.js", array(
                 'jquery'
-            ), '5.1.1', true);
+                ), '5.1.1', true);
             wp_enqueue_script('jquery');
             wp_enqueue_script('foundation');
             wp_enqueue_script('foundationoffcanvas');
@@ -65,7 +65,7 @@ if (function_exists('register_sidebar')) {
         'after_widget' => '</div>',
         'before_title' => '<h2>',
         'after_title' => '</h2>'
-    ));
+        ));
     
     register_sidebar(array(
         'name' => __('404'),
@@ -75,7 +75,7 @@ if (function_exists('register_sidebar')) {
         'after_widget' => '</div>',
         'before_title' => '<h2>',
         'after_title' => '</h2>'
-    ));
+        ));
 }
 
 /*
@@ -102,7 +102,7 @@ function register_my_menus()
         'top-menu' => __('Top Menu'),
         'events-menu' => __('Events Menu'),
         'footer-menu' => __('Footer Menu')
-    ));
+        ));
 }
 add_action('init', 'register_my_menus');
 
@@ -194,7 +194,7 @@ function my_connection_types()
         'name' => 'workstream_to_downloads',
         'from' => 'downloads',
         'to' => 'workstream'
-    ));
+        ));
 }
 add_action('p2p_init', 'my_connection_types');
 
@@ -282,11 +282,11 @@ add_filter('nav_menu_css_class', 'current_type_nav_class', 10, 2);
  */
 function wpcf7_send_to_mailchimp($cfdata)
 {
-    
+
     $formdata = $cfdata->posted_data;
     
     if ($formdata['mailchimp-opt-in']) {
-        
+
         $send_this_email = $formdata['your-email'];
         
         // MCAPI.class.php needs to be in theme folder
@@ -328,7 +328,7 @@ function wpcf7_send_to_mailchimp($cfdata)
             'PHONE7' => $formdata['your-phone'],
             'MMERGE9' => $formdata['comments']
             //                'GROUPINGS' => array(array('id'=>9253, 'groups' => implode(",",$formdata['programme-category'])))
-        );
+            );
         
         // Send the form content to MailChimp List without double opt-in
         //$retval = $api->listSubscribe($list_id, $send_this_email);
@@ -349,7 +349,7 @@ function add_custom_mime_types($mimes)
         'svg' => 'image/svg+xml',
         'dmg' => 'octet-stream',
         'epub' => 'application/epub+zip'
-    ));
+        ));
 }
 
 add_action('user_register', 'wpse72788_password_nag');
@@ -388,7 +388,7 @@ add_action('login_head', 'custom_login_logo');
 
 function pc_get_userrole($user_id)
 {
-    
+
     $user      = new WP_User($user_id);
     $userclean = $user->roles[0];
     return $userclean;
@@ -411,17 +411,8 @@ add_action('login_head', 'hide_login_nav');
 
 function hide_login_nav()
 {
-?><style>#nav {color: black;} #nav a:first-child {display:none;}</style><?php
+    ?><style>#nav {color: black;} #nav a:first-child {display:none;}</style><?php
 }
-
-
-function restrict_admin()
-{
-    if (!current_user_can('manage_options') && '/wp-admin/admin-ajax.php' != $_SERVER['PHP_SELF']) {
-        wp_redirect('/members');
-    }
-}
-add_action('admin_init', 'restrict_admin', 1);
 
 
 
@@ -473,8 +464,8 @@ function wp_admin_bar_my_custom_account_menu($wp_admin_bar)
             'href' => $profile_url,
             'meta' => array(
                 'class' => $class
-            )
-        ));
+                )
+            ));
         
     }
 }
@@ -488,14 +479,14 @@ function pippin_change_password_form()
         $current_url = get_permalink($post->ID);
     else:
         $pageURL = 'http';
-        if ($_SERVER["HTTPS"] == "on")
-            $pageURL .= "s";
-        $pageURL .= "://";
-        if ($_SERVER["SERVER_PORT"] != "80")
-            $pageURL .= $_SERVER["SERVER_NAME"] . ":" . $_SERVER["SERVER_PORT"] . $_SERVER["REQUEST_URI"];
-        else
-            $pageURL .= $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"];
-        $current_url = $pageURL;
+    if ($_SERVER["HTTPS"] == "on")
+        $pageURL .= "s";
+    $pageURL .= "://";
+    if ($_SERVER["SERVER_PORT"] != "80")
+        $pageURL .= $_SERVER["SERVER_NAME"] . ":" . $_SERVER["SERVER_PORT"] . $_SERVER["REQUEST_URI"];
+    else
+        $pageURL .= $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"];
+    $current_url = $pageURL;
     endif;
     $redirect = $current_url;
     
@@ -503,226 +494,137 @@ function pippin_change_password_form()
     
     // show any error messages after form submission
     pippin_show_error_messages();
-?>
+    ?>
 
     <?php
     if (isset($_GET['password-reset']) && $_GET['password-reset'] == 'true') {
-?>
-    <div class="pippin_message success">
-        <span><?php
-        _e('Password changed successfully', 'rcp');
-?></span>
-    </div>
-    <?php
-    }
-?>
-    <form id="pippin_password_form" method="POST" action="<?php
-    echo $current_url;
-?>">
+        ?>
+        <div class="pippin_message success">
+            <span><?php
+                _e('Password changed successfully', 'rcp');
+                ?></span>
+            </div>
+            <?php
+        }
+        ?>
+        <form id="pippin_password_form" method="POST" action="<?php
+        echo $current_url;
+        ?>">
         <fieldset>
             <p>
                 <label for="pippin_user_pass"><?php
-    _e('New Password', 'rcp');
-?></label>
-                <input name="pippin_user_pass" id="pippin_user_pass" class="required" type="password"/>
-            </p>
-            <p>
-                <label for="pippin_user_pass_confirm"><?php
-    _e('Password Confirm', 'rcp');
-?></label>
-                <input name="pippin_user_pass_confirm" id="pippin_user_pass_confirm" class="required" type="password"/>
-            </p>
-            <p>
-                <input type="hidden" name="pippin_action" value="reset-password"/>
-                <input type="hidden" name="pippin_redirect" value="<?php
-    echo $redirect;
-?>"/>
-                <input type="hidden" name="pippin_password_nonce" value="<?php
-    echo wp_create_nonce('rcp-password-nonce');
-?>"/>
-                <input id="pippin_password_submit" type="submit" value="<?php
-    _e('Change Password', 'pippin');
-?>"/>
-            </p>
-        </fieldset>
-    </form>
-    <?php
-    return ob_get_clean();
-}
+                    _e('New Password', 'rcp');
+                    ?></label>
+                    <input name="pippin_user_pass" id="pippin_user_pass" class="required" type="password"/>
+                </p>
+                <p>
+                    <label for="pippin_user_pass_confirm"><?php
+                        _e('Password Confirm', 'rcp');
+                        ?></label>
+                        <input name="pippin_user_pass_confirm" id="pippin_user_pass_confirm" class="required" type="password"/>
+                    </p>
+                    <p>
+                        <input type="hidden" name="pippin_action" value="reset-password"/>
+                        <input type="hidden" name="pippin_redirect" value="<?php
+                        echo $redirect;
+                        ?>"/>
+                        <input type="hidden" name="pippin_password_nonce" value="<?php
+                        echo wp_create_nonce('rcp-password-nonce');
+                        ?>"/>
+                        <input id="pippin_password_submit" type="submit" value="<?php
+                        _e('Change Password', 'pippin');
+                        ?>"/>
+                    </p>
+                </fieldset>
+            </form>
+            <?php
+            return ob_get_clean();
+        }
 
 // password reset form
-function pippin_reset_password_form()
-{
-    if (is_user_logged_in()) {
-        return pippin_change_password_form();
-    }
-}
-add_shortcode('password_form', 'pippin_reset_password_form');
+        function pippin_reset_password_form()
+        {
+            if (is_user_logged_in()) {
+                return pippin_change_password_form();
+            }
+        }
+        add_shortcode('password_form', 'pippin_reset_password_form');
 
 
-function pippin_reset_password()
-{
+        function pippin_reset_password()
+        {
     // reset a users password
-    if (isset($_POST['pippin_action']) && $_POST['pippin_action'] == 'reset-password') {
-        
-        global $user_ID;
-        
-        if (!is_user_logged_in())
-            return;
-        
-        if (wp_verify_nonce($_POST['pippin_password_nonce'], 'rcp-password-nonce')) {
-            
-            if ($_POST['pippin_user_pass'] == '' || $_POST['pippin_user_pass_confirm'] == '') {
+            if (isset($_POST['pippin_action']) && $_POST['pippin_action'] == 'reset-password') {
+
+                global $user_ID;
+
+                if (!is_user_logged_in())
+                    return;
+
+                if (wp_verify_nonce($_POST['pippin_password_nonce'], 'rcp-password-nonce')) {
+
+                    if ($_POST['pippin_user_pass'] == '' || $_POST['pippin_user_pass_confirm'] == '') {
                 // password(s) field empty
-                pippin_errors()->add('password_empty', __('Please enter a password, and confirm it', 'pippin'));
-            }
-            if ($_POST['pippin_user_pass'] != $_POST['pippin_user_pass_confirm']) {
+                        pippin_errors()->add('password_empty', __('Please enter a password, and confirm it', 'pippin'));
+                    }
+                    if ($_POST['pippin_user_pass'] != $_POST['pippin_user_pass_confirm']) {
                 // passwords do not match
-                pippin_errors()->add('password_mismatch', __('Passwords do not match', 'pippin'));
-            }
-            
+                        pippin_errors()->add('password_mismatch', __('Passwords do not match', 'pippin'));
+                    }
+
             // retrieve all error messages, if any
-            $errors = pippin_errors()->get_error_messages();
-            
-            if (empty($errors)) {
+                    $errors = pippin_errors()->get_error_messages();
+
+                    if (empty($errors)) {
                 // change the password here
-                $user_data = array(
-                    'ID' => $user_ID,
-                    'user_pass' => $_POST['pippin_user_pass']
-                );
-                wp_update_user($user_data);
+                        $user_data = array(
+                            'ID' => $user_ID,
+                            'user_pass' => $_POST['pippin_user_pass']
+                            );
+                        wp_update_user($user_data);
                 // send password change email here (if WP doesn't)
-                wp_redirect(add_query_arg('password-reset', 'true', $_POST['pippin_redirect']));
-                exit;
+                        wp_redirect(add_query_arg('password-reset', 'true', $_POST['pippin_redirect']));
+                        wp_redirect(home_url() . '/members/password-reset-success' );  // let's append some information (login=failed) 
+                        exit;
+                    }
+                }
             }
         }
-    }
-}
-add_action('init', 'pippin_reset_password');
+        add_action('init', 'pippin_reset_password');
 
-if (!function_exists('pippin_show_error_messages')) {
+        if (!function_exists('pippin_show_error_messages')) {
     // displays error messages from form submissions
-    function pippin_show_error_messages()
-    {
-        if ($codes = pippin_errors()->get_error_codes()) {
-            echo '<div class="pippin_message error">';
+            function pippin_show_error_messages()
+            {
+                if ($codes = pippin_errors()->get_error_codes()) {
+                    echo '<div class="pippin_message error">';
             // Loop error codes and display errors
-            foreach ($codes as $code) {
-                $message = pippin_errors()->get_error_message($code);
-                echo '<span class="pippin_error"><strong>' . __('Error', 'rcp') . '</strong>: ' . $message . '</span><br/>';
+                    foreach ($codes as $code) {
+                        $message = pippin_errors()->get_error_message($code);
+                        echo '<span class="pippin_error"><strong>' . __('Error', 'rcp') . '</strong>: ' . $message . '</span><br/>';
+                    }
+                    echo '</div>';
+                }
             }
-            echo '</div>';
         }
-    }
-}
 
-if (!function_exists('pippin_errors')) {
+        if (!function_exists('pippin_errors')) {
     // used for tracking error messages
-    function pippin_errors()
-    {
+            function pippin_errors()
+            {
         static $wp_error; // Will hold global variable safely
         return isset($wp_error) ? $wp_error : ($wp_error = new WP_Error(null, null, null));
     }
 }
-/*
- * Redirect non-admin users to home page
- *
- * This function is attached to the 'admin_init' action hook.
- 
- add_action( 'admin_init', 'redirect_non_admin_users' );
- 
- function redirect_non_admin_users() {
- if ( ! current_user_can( 'manage_options' ) && '/wp-admin/admin-ajax.php' != $_SERVER['PHP_SELF'] ) {
- wp_redirect( '/members');
- exit;
- }
- } */
 
-add_filter('wpmem_login_redirect', 'my_login_redirect', 1);
+add_action( 'admin_init', 'redirect_non_admin_users' );
 
-/**
- * Function for first-time login redirect
- *
- * @param $redirect_to
- * @return $redirect_to
- */
-
-function test()
-{
-    
-    echo "<script type='text/javascript'>alert('test');</script>";
-}
-add_filter('test', 'my_login_redirect', 1);
-
-function my_login_redirect($redirect_to)
-{
-    
-    /**
-     * Normally, the redirect process does not require login info as that 
-     * occurs in the login function that the redirect filter is hooking
-     * into. However, in this case, we have a db flag that is used to 
-     * indicate if this is a first-time login or not. In order to secure 
-     * that process, we need to check login info.
-     */
-    
-    /**
-     * Get the $user object using the username
-     */
-    $user = sanitize_user($_POST['log']);
-    $user = get_user_by('login', $user);
-    
-    /**
-     * Validate the user/pass combination
-     */
-    $pass = wp_check_password($_POST['pwd'], $user->user_pass, $user->ID);
-    if (!$pass) {
-        /**
-         * If it doesn't validate, we will just return the unfiltered 
-         * $redirect_to.  The login will fail in the login function.
-         */
-        return $redirect_to;
-    }
-    
-    /**
-     * Check for the presence of a flag if the user has logged in before.
-     */
-    $first_login = get_user_meta($user->ID, 'first_login', true);
-    
-    /**
-     * If no flag, then set one, and redirect to the password change page
-     */
-    if (!$first_login) {
-        
-        update_user_meta($user->ID, 'first_login', 'true', '');
-        
-        /**
-         * In setting the redirect url, use the wpmem_chk_qstr function  
-         * to apply the appropriate querystring for displaying password
-         * change.
-         */
-        
-        $url = '/members/password-reset';
-        
-        /**
-         * NOTE: this example assumes that you have set the members-area
-         * in the plugin settings.  if not, use this line instead
-         * and update for the location of your members-area page:
-         * $url = 'http://yoursite.com/members-area-page/?a=pwdchange';
-         */
-        
-        return $url;
-        
-    } else {
-        
-        /**
-         * If we are here, it's not a first-time login, so
-         * no redirect is needed.  Return $redirect_to unfiltered.
-         */
-        return $redirect_to;
-        
-    }
-}
-
+function redirect_non_admin_users() {
+   if ( ! current_user_can( 'manage_options' ) && '/wp-admin/admin-ajax.php' != $_SERVER['PHP_SELF'] ) {
+       wp_redirect( '/members');
+       exit;
+   }
+}  
 
 /* 
 

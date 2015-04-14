@@ -28,7 +28,8 @@
 				} 
 				else {
 					wp_get_current_user();
-					echo 'Welcome, ' . $current_user->display_name . '. You are logged in and have access to the full range of DPP documents in the <a href="/downloads">downloads</a> area.</p>';
+					echo 'Welcome, ' . $current_user->display_name . '.</p><p>You are logged in and have access to the full range of DPP documents in the <a href="/downloads">downloads</a> area.</p><p>&nbsp;</p>
+					<h2>Quick Links</h2><ul class="clean-list tertiary-nav"><li><a href="/">Homepage</a></li><li><a href="/members/password-reset">Change your password</a></li></ul>';
 				}
 
 				?>
