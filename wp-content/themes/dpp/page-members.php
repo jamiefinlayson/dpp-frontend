@@ -23,7 +23,7 @@
 				
 				<?php if ( !is_user_logged_in() ) {
 
-					echo '<p>Members have access to all DPP documents.</p><p>If you\'re a member please sign in below or <a href="/contact-us?membership">apply for membership</a>.</p>';
+					echo '<p>Members have access to all DPP documents.</p><p>If you\'re a member please sign in below or <a href="/contact-us?signup=membership">apply for membership</a>.</p>';
 					 wp_login_form();
 				} 
 				else {
