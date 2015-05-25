@@ -542,6 +542,18 @@ nav {
 	}
 } 
 
+
+	.button.button-primary {
+		background: #7f1734 !important;
+		padding: 8px 10px 7px;
+
+    line-height: 1em;
+		border: none;
+		@media #{$small-only} { 
+			padding: 7px 7px 8px;
+			font-size: 0.8em;
+		}
+	}
 .search-results {
 	article {
 		margin-bottom: 20px;
@@ -1333,3 +1345,40 @@ form .columns{
 @import "components/_print.scss";
 
 
+
+
+.wp-admin .username, 
+.wp-admin .display-name,
+.wp-admin h3,
+.wp-admin #adminmenumain,
+.wp-admin #adminmenuback,
+.wp-admin #adminmenuwrap,
+.wp-admin #wpfooter,
+.wp-admin #wppmUserProfilePwdRulesContainer p,
+.wp-admin #wp-admin-bar-menu-toggle
+ {display: none !important}
+ 
+  .wp-admin #wpcontent {
+  padding: 0;
+  margin: 0;
+ 
+}
+@media screen and (max-width: 600px) {
+#wpbody {
+  padding-top: 0;
+}
+}
+.wp-admin td span,
+  .description.indicator-hint {
+    clear: left;
+      font-size: 14px;
+  margin-top: 4px;
+    display: block !important;
+  }
+
+
+	@media #{$small-only} { 
+#wpadminbar {
+	position: relative
+}
+}

@@ -12,6 +12,51 @@ Version: 1
 /*
 * 	Resets, Variables, Mixins
 */
+.wp-admin .username, 
+.wp-admin .display-name,
+.wp-admin h3,
+.wp-admin #adminmenumain,
+.wp-admin #adminmenuback,
+.wp-admin #adminmenuwrap,
+.wp-admin #wpfooter,
+.wp-admin #wppmUserProfilePwdRulesContainer p,
+.wp-admin #wp-admin-bar-menu-toggle
+ {display: none !important}
+ 
+  .wp-admin #wpcontent {
+  padding: 0;
+  margin: 0;
+ 
+}
+.wp-admin td span,
+  .description.indicator-hint {
+    clear: left;
+      font-size: 14px;
+  margin-top: 4px;
+    display: block !important;
+  }
+  
+@media screen and (max-width: 600px) {
+#wpbody {
+  padding-top: 0;
+}
+}
+.button.button-primary {
+    background: #7f1734 !important;
+    padding: 8px 10px 7px;
+    border: none;
+    line-height: 1em;
+    @media #{$small-only} { 
+      padding: 7px 7px 8px;
+      font-size: 0.8em;
+    }
+  }
+
+ @media screen and (max-width: 600px) { 
+#wpadminbar {
+  position: relative
+}
+}
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/dpp-frontend\/wp-content\/themes\/dpp\/common\/sass\/components\/_normalize\.scss}line{font-family:\000031}}
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
   display: block;
