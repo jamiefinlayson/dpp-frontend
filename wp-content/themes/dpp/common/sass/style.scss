@@ -1353,15 +1353,26 @@ form .columns{
 .wp-admin #adminmenumain,
 .wp-admin #adminmenuback,
 .wp-admin #adminmenuwrap,
-.wp-admin #wpfooter,
 .wp-admin #wppmUserProfilePwdRulesContainer p,
-.wp-admin #wp-admin-bar-menu-toggle
- {display: none !important}
+.wp-admin #wp-admin-bar-menu-toggle,
+.wp-admin #footer-left,
+.wp-admin #footer-thankyou
+{display: none !important}
+
  
   .wp-admin #wpcontent {
   padding: 0;
   margin: 0;
  
+}
+
+.wp-admin #wpfooter {
+  width: 100% !important;
+  padding: 0;
+  margin:0;
+  clear: both;
+  display: block;
+  position: relative;
 }
 @media screen and (max-width: 600px) {
 #wpbody {

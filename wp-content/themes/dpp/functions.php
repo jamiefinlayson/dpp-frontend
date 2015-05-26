@@ -470,52 +470,43 @@ function wp_admin_bar_my_custom_account_menu($wp_admin_bar)
     }
 }
  
-/*
-add_action( 'admin_init', 'redirect_non_admin_users' );
-
-function redirect_non_admin_users() {
-   if ( ! current_user_can( 'manage_options' ) && '/wp-admin/admin-ajax.php' != $_SERVER['PHP_SELF'] ) {
-       wp_redirect( '/members');
-       exit;
-   }
-}  
-*/
-
-add_action( 'admin_print_styles_2', 'non_admin_css' );
-add_action( 'wp_enqueue_scripts_2', 'non_admin_css' );
-
-function non_admin_css(){
-   if( is_admin() ) {
-    if (!current_user_can('administrator')) {
-        
-    wp_enqueue_style(
-        "media_upload", 
-        get_bloginfo('template_directory')."/non-admin.css", 
-        false, 
-        false, 
-        "all"
-    ); 
-   }
-}
-}
 add_action( 'admin_print_styles', 'my_admin_css' );
 add_action( 'wp_enqueue_scripts', 'my_admin_css' );
 
 function my_admin_css(){
    if( is_admin() ) {
-    if (!current_user_can('administrator')) {
-        
-    wp_enqueue_style(
-        "media_upload", 
-        get_bloginfo('template_directory')."/style.css", 
-        false, 
-        false, 
-        "all"
-    ); 
-   }
-}
+           
+if (!current_user_can('administrator')) { 
+        wp_enqueue_style(
+            "media_upload", 
+            get_bloginfo('template_directory')."/style.css", 
+            false, 
+            false, 
+            "all"
+        );  
+    }
+    }
 }
 
+add_action('in_admin_header', 'head_nav');
+function head_nav(){
+if (!current_user_can('administrator')) {
+    get_template_part( 'includes/inc/head', 'core');  
+  }
+}
+
+add_action('in_admin_footer', 'foot_nav');
+function foot_nav(){
+if (!current_user_can('administrator')) {
+    get_template_part( 'includes/inc/foot', 'core');  
+  }
+}
+
+function edit_contactmethods( $contactmethods ) { 
+       unset($contactmethods['yim']);   unset($contactmethods['aim']);   unset($contactmethods['jabber']); return $contactmethods; 
+   } 
+       add_filter('user_contactmethods','edit_contactmethods',10,1);
+ 
 add_action('admin_init', 'user_profile_fields_disable');
  
 function user_profile_fields_disable() {
@@ -545,7 +536,7 @@ function user_profile_fields_disable_js() {
 ?>
     <script>
         jQuery(document).ready( function($) {
-            var fields_to_disable = ['email', 'role', 'url', 'first_name', 'last_name', 'nickname', 'display_name', 'aim', 'yim', 'jabber', 'description'];
+            var fields_to_disable = ['email', 'role', 'url', 'first_name', 'last_name', 'nickname', 'display_name', 'description'];
             for(i=0; i<fields_to_disable.length; i++) {
                 if ( $('#'+ fields_to_disable[i]).length ) {
                     $('#'+ fields_to_disable[i]).attr("disabled", "disabled");
@@ -558,8 +549,8 @@ function user_profile_fields_disable_js() {
                     
                 }
             }
-            $('#wpbody').before('<div class="primary-header"> <header role="banner"> <div class="dpp-background"> <div class="row"> <div class="small-4 medium-3 large-3 x-large-3 columns"> <div class="logo"> <a href="/"> <h1> Digital Production Partnership </h1> </a> </div> </div> <div class="small-8 medium-9 large-9 xlarge-9 columns last"> <div class="header-copy"> <h2>The Digital Production Partnership Ltd (DPP) is a not for profit company founded by ITV, BBC and Channel 4 to enable the media industry to maximise the potential of digital in the creation and exploitation of content.</h2> </div> <form method="get" id="searchform" action="http://www.digitalproductionpartnership.co.uk/"><div><input type="text" size="18" value="" name="s" id="s"><input type="submit" id="searchsubmit" value="Search" class="btn"></div></form> </div> </div> </div> <nav class="primary-nav"> <div class="row"> <div class="small-12 medium-12 xlarge-12"> <div class="menu-primary-navigation-container"><ul id="menu-primary-navigation" class="menu"><li id="menu-item-129" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-129"><a href="/who-we-are/">Who we are</a></li> <li id="menu-item-107" class="workstream-menu-item menu-item menu-item-type-custom menu-item-object-custom menu-item-107"><a href="/what-we-do">What we do</a></li> <li id="menu-item-122" class="news-menu-item menu-item menu-item-type-custom menu-item-object-custom menu-item-122"><a href="/news/2015">News</a></li> <li id="menu-item-173" class="events-menu-item menu-item menu-item-type-post_type menu-item-object-page menu-item-173"><a href="/events/upcoming-events">Events</a></li> <li id="menu-item-187" class="downloads-menu-item download-categories-menu-item menu-item menu-item-type-post_type menu-item-object-page menu-item-187"><a href="/downloads/">Downloads</a></li> <li id="menu-item-3416" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3416"><a href="/members">Members</a></li> </ul></div> </div> </div> </nav> </header> </div> <div class="primary-content row"><div class="small-12 medium-12 large-9 xlarge-9 columns">');                 
-            $('#wpbody').after('<div class="primary-footer dashed-top"> <footer> <div class="row"> <div class="small-12 medium-5 xlarge-5 columns"> <p class="small-text">DPP is a registered trademark.<br>Digital Production Partnership Limited © 2013</p> <div class="menu-footer-navigation-container"><ul id="menu-footer-navigation" class="menu clean-list"><li id="menu-item-3349" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3349"><a href="/contact-us/?signup=membership">Become a member</a></li> <li id="menu-item-3470" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3470"><a href="/contact-us/?signup=newsletter">Sign up for our newsletter</a></li> <li id="menu-item-33" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33"><a href="http://www.digitalproductionpartnership.co.uk/privacy-policy/">Privacy Policy</a></li> </ul></div> </div> <div class="small-12 medium-7 xlarge-7 columns"> <ul class="clean-list footer-logos"> <li class="first-item"><a target="_blank" href="http://www.bbc.co.uk"><img src="http://www.digitalproductionpartnership.co.uk/wp-content/themes/dpp/common/img/logos/bbc.png" alt="BBC"></a></li> <li><a target="_blank" href="http://www.itv.com/"><img src="http://www.digitalproductionpartnership.co.uk/wp-content/themes/dpp/common/img/logos/itv.png" alt="ITV"></a></li> <li><a target="_blank" href="http://www.channel4.com"><img src="http://www.digitalproductionpartnership.co.uk/wp-content/themes/dpp/common/img/logos/channel4.png" alt="Channel 4"></a></li> </ul> </div> </div> </footer> </div>');                 
+            //$('#wpbody').before('<div class="primary-header"> <header role="banner"> <div class="dpp-background"> <div class="row"> <div class="small-4 medium-3 large-3 x-large-3 columns"> <div class="logo"> <a href="/"> <h1> Digital Production Partnership </h1> </a> </div> </div> <div class="small-8 medium-9 large-9 xlarge-9 columns last"> <div class="header-copy"> <h2>The Digital Production Partnership Ltd (DPP) is a not for profit company founded by ITV, BBC and Channel 4 to enable the media industry to maximise the potential of digital in the creation and exploitation of content.</h2> </div> <form method="get" id="searchform" action="http://www.digitalproductionpartnership.co.uk/"><div><input type="text" size="18" value="" name="s" id="s"><input type="submit" id="searchsubmit" value="Search" class="btn"></div></form> </div> </div> </div> <nav class="primary-nav"> <div class="row"> <div class="small-12 medium-12 xlarge-12"> <div class="menu-primary-navigation-container"><ul id="menu-primary-navigation" class="menu"><li id="menu-item-129" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-129"><a href="/who-we-are/">Who we are</a></li> <li id="menu-item-107" class="workstream-menu-item menu-item menu-item-type-custom menu-item-object-custom menu-item-107"><a href="/what-we-do">What we do</a></li> <li id="menu-item-122" class="news-menu-item menu-item menu-item-type-custom menu-item-object-custom menu-item-122"><a href="/news/2015">News</a></li> <li id="menu-item-173" class="events-menu-item menu-item menu-item-type-post_type menu-item-object-page menu-item-173"><a href="/events/upcoming-events">Events</a></li> <li id="menu-item-187" class="downloads-menu-item download-categories-menu-item menu-item menu-item-type-post_type menu-item-object-page menu-item-187"><a href="/downloads/">Downloads</a></li> <li id="menu-item-3416" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3416"><a href="/members">Members</a></li> </ul></div> </div> </div> </nav> </header> </div> <div class="primary-content row"><div class="small-12 medium-12 large-9 xlarge-9 columns">');                 
+            //$('#wpbody').after('<div class="primary-footer dashed-top"> <footer> <div class="row"> <div class="small-12 medium-5 xlarge-5 columns"> <p class="small-text">DPP is a registered trademark.<br>Digital Production Partnership &copy; 2013</p> <div class="menu-footer-navigation-container"><ul id="menu-footer-navigation" class="menu clean-list"><li id="menu-item-3349" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3349"><a href="/contact-us/?signup=membership">Become a member</a></li> <li id="menu-item-3470" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3470"><a href="/contact-us/?signup=newsletter">Sign up for our newsletter</a></li> <li id="menu-item-33" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33"><a href="http://www.digitalproductionpartnership.co.uk/privacy-policy/">Privacy Policy</a></li> </ul></div> </div> <div class="small-12 medium-7 xlarge-7 columns"> <ul class="clean-list footer-logos"> <li class="first-item"><a target="_blank" href="http://www.bbc.co.uk"><img src="http://www.digitalproductionpartnership.co.uk/wp-content/themes/dpp/common/img/logos/bbc.png" alt="BBC"></a></li> <li><a target="_blank" href="http://www.itv.com/"><img src="http://www.digitalproductionpartnership.co.uk/wp-content/themes/dpp/common/img/logos/itv.png" alt="ITV"></a></li> <li><a target="_blank" href="http://www.channel4.com"><img src="http://www.digitalproductionpartnership.co.uk/wp-content/themes/dpp/common/img/logos/channel4.png" alt="Channel 4"></a></li> </ul> </div> </div> </footer> </div>');                 
             //$('.username').add('.display-name').add('h3').add('#adminmenuback').add('#adminmenuwrap').add('#wpfooter').add('#wppmUserProfilePwdRulesContainer p').add('#wp-admin-bar-menu-toggle').css("display", "none");
         });
     </script>
