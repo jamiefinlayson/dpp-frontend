@@ -18,6 +18,7 @@ function create_post_types() {
         'supports' => array('title', 'editor', 'thumbnail', 'excerpt','page-attributes', 'revisions'),
         'exclude_from_search' => false,
         'hierarchical' => true,
+        'taxonomies' => array('category'), 
         'capability_type' => 'page'
     ));
 
@@ -44,7 +45,7 @@ function create_post_types() {
         'public' => true,
         'has_archive' => true,
         'rewrite' => array('slug' => 'news'),
-        'supports' => array('title', 'editor', 'thumbnail', 'excerpt','revisions'),
+        'supports' => array('title', 'editor', 'thumbnail', 'excerpt','revisions', 'page-attributes'),
         'exclude_from_search' => false
     ));
 

@@ -81,6 +81,8 @@
 						// Find connected downloads
 						$connected = new WP_Query( array(
 						  'connected_type' => 'workstream_to_downloads',
+		                'order' => 'DESC',
+		                'orderby' => 'menu_order ID', 
 						  'connected_items' => get_queried_object(),
 						  'nopaging' => true
 						) );

@@ -7,7 +7,9 @@
 
 			$newsSliderArgs = array(
 				'post_type' => 'news',
-				'showposts'  => 3
+				'showposts'  => 3,
+                'order' => 'DESC',
+                'orderby' => 'menu_order ID' 
 			);
 
 			$newsSlider = new WP_Query($newsSliderArgs);
