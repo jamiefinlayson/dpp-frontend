@@ -377,12 +377,24 @@ function custom_login_logo()
         background: #7f1734 !important;
         border: none;                
         border-radius: 4px;
+    }
+    #backtoblog a:hover {
+        color: #fff !important;
+        text-decoration: underline;
     } 
 </style>';
 }
 
 add_action('login_head', 'custom_login_logo');
+function my_login_logo_url() {
+    return home_url();
+}
+add_filter( 'login_headerurl', 'my_login_logo_url' );
 
+function my_login_logo_url_title() {
+    return 'Your Site Name and Info';
+}
+add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 
 /* Display user roles in buddypress */
 
@@ -541,17 +553,10 @@ function user_profile_fields_disable_js() {
                 if ( $('#'+ fields_to_disable[i]).length ) {
                     $('#'+ fields_to_disable[i]).attr("disabled", "disabled");
                     $('#'+ fields_to_disable[i]).closest('tr').css("display", "none");
-                    
-
                     $('#wpbody').addClass('row'); 
                     $('#wpbody-content').addClass('small-12 medium-12 large-9 xlarge-9 columns visible').removeAttr('id');    
-                    //$('#wpcontent').addClass('small-12 medium-12 large-9 xlarge-9 columns').removeAttr('id');   
-                    
                 }
-            }
-            //$('#wpbody').before('<div class="primary-header"> <header role="banner"> <div class="dpp-background"> <div class="row"> <div class="small-4 medium-3 large-3 x-large-3 columns"> <div class="logo"> <a href="/"> <h1> Digital Production Partnership </h1> </a> </div> </div> <div class="small-8 medium-9 large-9 xlarge-9 columns last"> <div class="header-copy"> <h2>The Digital Production Partnership Ltd (DPP) is a not for profit company founded by ITV, BBC and Channel 4 to enable the media industry to maximise the potential of digital in the creation and exploitation of content.</h2> </div> <form method="get" id="searchform" action="http://www.digitalproductionpartnership.co.uk/"><div><input type="text" size="18" value="" name="s" id="s"><input type="submit" id="searchsubmit" value="Search" class="btn"></div></form> </div> </div> </div> <nav class="primary-nav"> <div class="row"> <div class="small-12 medium-12 xlarge-12"> <div class="menu-primary-navigation-container"><ul id="menu-primary-navigation" class="menu"><li id="menu-item-129" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-129"><a href="/who-we-are/">Who we are</a></li> <li id="menu-item-107" class="workstream-menu-item menu-item menu-item-type-custom menu-item-object-custom menu-item-107"><a href="/what-we-do">What we do</a></li> <li id="menu-item-122" class="news-menu-item menu-item menu-item-type-custom menu-item-object-custom menu-item-122"><a href="/news/2015">News</a></li> <li id="menu-item-173" class="events-menu-item menu-item menu-item-type-post_type menu-item-object-page menu-item-173"><a href="/events/upcoming-events">Events</a></li> <li id="menu-item-187" class="downloads-menu-item download-categories-menu-item menu-item menu-item-type-post_type menu-item-object-page menu-item-187"><a href="/downloads/">Downloads</a></li> <li id="menu-item-3416" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3416"><a href="/members">Members</a></li> </ul></div> </div> </div> </nav> </header> </div> <div class="primary-content row"><div class="small-12 medium-12 large-9 xlarge-9 columns">');                 
-            //$('#wpbody').after('<div class="primary-footer dashed-top"> <footer> <div class="row"> <div class="small-12 medium-5 xlarge-5 columns"> <p class="small-text">DPP is a registered trademark.<br>Digital Production Partnership &copy; 2013</p> <div class="menu-footer-navigation-container"><ul id="menu-footer-navigation" class="menu clean-list"><li id="menu-item-3349" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3349"><a href="/contact-us/?signup=membership">Become a member</a></li> <li id="menu-item-3470" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3470"><a href="/contact-us/?signup=newsletter">Sign up for our newsletter</a></li> <li id="menu-item-33" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33"><a href="http://www.digitalproductionpartnership.co.uk/privacy-policy/">Privacy Policy</a></li> </ul></div> </div> <div class="small-12 medium-7 xlarge-7 columns"> <ul class="clean-list footer-logos"> <li class="first-item"><a target="_blank" href="http://www.bbc.co.uk"><img src="http://www.digitalproductionpartnership.co.uk/wp-content/themes/dpp/common/img/logos/bbc.png" alt="BBC"></a></li> <li><a target="_blank" href="http://www.itv.com/"><img src="http://www.digitalproductionpartnership.co.uk/wp-content/themes/dpp/common/img/logos/itv.png" alt="ITV"></a></li> <li><a target="_blank" href="http://www.channel4.com"><img src="http://www.digitalproductionpartnership.co.uk/wp-content/themes/dpp/common/img/logos/channel4.png" alt="Channel 4"></a></li> </ul> </div> </div> </footer> </div>');                 
-            //$('.username').add('.display-name').add('h3').add('#adminmenuback').add('#adminmenuwrap').add('#wpfooter').add('#wppmUserProfilePwdRulesContainer p').add('#wp-admin-bar-menu-toggle').css("display", "none");
+            } 
         });
     </script>
 <?php
