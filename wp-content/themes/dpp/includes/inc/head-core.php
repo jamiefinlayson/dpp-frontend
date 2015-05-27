@@ -33,7 +33,7 @@
 							    <input type="submit" id="searchsubmit" value="Search" class="btn" />
 							</div>
 						</form>
-					</div>
+					</div> 
 				</div> <!-- /row -->
 			</div>
 
