@@ -20,8 +20,8 @@
     define('DB_USER', 'root');
     define('DB_PASSWORD', 'root');
     define('DB_HOST', 'localhost'); 
-define('DB_CHARSET', 'utf8'); 
-define('DB_COLLATE', '');
+	define('DB_CHARSET', 'utf8'); 
+	define('DB_COLLATE', '');
  
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
@@ -32,6 +32,8 @@ define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST'] . '/wordpress');
 define('WP_CONTENT_DIR', realpath(ABSPATH . '../wp-content/'));
 define('WP_CONTENT_URL', WP_HOME . '/wp-content');
 define('UPLOADS', '../uploads');
+
+define( 'AUTOMATIC_UPDATER_DISABLED', true );
  
 /* Multisite 
 define( 'WP_ALLOW_MULTISITE', true );
