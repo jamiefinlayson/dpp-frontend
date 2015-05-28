@@ -25,9 +25,24 @@ Version: 1
 .wp-admin #wppmUserProfilePwdRulesContainer p,
 .wp-admin #wp-admin-bar-menu-toggle,
 .wp-admin #footer-left,
-.wp-admin #footer-thankyou
+.wp-admin #footer-thankyou,
+.wp-admin #footer-upgrade
 {display: none !important}
  
+ .wp-admin #wpbody {
+   max-width: 62.5rem;
+  margin: 0 auto;
+ }
+ 
+.wp-admin #wpfooter,
+.wp-admin .primary-footer,
+.wp-admin .viewport  { 
+  background: #fafafa url("common/img/body-noise.jpg") repeat 0 0;
+}
+
+.wp-admin .primary-footer {
+  margin-top: 0;
+}
   .wp-admin #wpcontent {
   padding: 0;
   margin: 0;
@@ -3185,7 +3200,7 @@ select {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/dpp-frontend\/wp-content\/themes\/dpp\/common\/sass\/style\.scss}line{font-family:\00003120}}
 .primary-header .header-copy {
   text-align: right;
-  padding: 40px 0 0 0;
+  padding: 44px 0 0 0;
 }
 @media only screen and (max-width: 481px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/dpp-frontend\/wp-content\/themes\/dpp\/common\/sass\/style\.scss}line{font-family:\00003120}}
@@ -3197,7 +3212,7 @@ select {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/dpp-frontend\/wp-content\/themes\/dpp\/common\/sass\/style\.scss}line{font-family:\00003129}}
 .primary-header .header-copy h2 {
   color: #fff;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   font-family: LatoLight, Arial, sans-serif;
   font-size: 1em;
 }
@@ -4141,7 +4156,8 @@ html[xmlns] .slides {
 @media only screen and (max-width: 481px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/dpp-frontend\/wp-content\/themes\/dpp\/common\/sass\/style\.scss}line{font-family:\00003679}}
   .footer-logos li {
-    margin: 0 30px 25px 0;
+    margin: 0 5% 25px 0;
+  width: 25%;
   }
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/dpp-frontend\/wp-content\/themes\/dpp\/common\/sass\/style\.scss}line{font-family:\00003686}}
@@ -4152,6 +4168,8 @@ html[xmlns] .slides {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/dpp-frontend\/wp-content\/themes\/dpp\/common\/sass\/style\.scss}line{font-family:\00003689}}
   .footer-logos li img {
     width: 75%;
+    max-height: 40px;
+    width: auto;
   }
 }
 
@@ -4213,6 +4231,11 @@ html[xmlns] .slides {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/dpp-frontend\/wp-content\/themes\/dpp\/common\/sass\/style\.scss}line{font-family:\00003738}}
   .block-content .thumbnail-wrap {
     width: 100%;
+  }
+   .page-template-page-group-members-php .block-content .thumbnail-wrap {
+    width: auto;
+      padding: 5px;
+  margin-right: 10px;
   }
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/dpp-frontend\/wp-content\/themes\/dpp\/common\/sass\/style\.scss}line{font-family:\00003748}}
@@ -4761,6 +4784,7 @@ form input[type="submit"] {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/dpp-frontend\/wp-content\/themes\/dpp\/common\/sass\/style\.scss}line{font-family:\000031277}}
 .form-item {
   margin-bottom: 1em;
+  overflow: hidden;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/dpp-frontend\/wp-content\/themes\/dpp\/common\/sass\/style\.scss}line{font-family:\000031280}}
 .form-item label,
@@ -5341,3 +5365,33 @@ body span.wpcf7-not-valid-tip {
     page-break-after: avoid;
   }
 }
+
+.login .message {
+  border-left: 0 !important;
+}
+
+.login-register {
+  float: right;
+  color: white;
+  font-size: 12px;
+  margin-top: 10px;
+}
+.login-register a {
+  color: #eee;
+  text-decoration: none;
+}
+.login-register a:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+ .wpcf7-form .columns input[type="text"].wpcf7-form-control.wpcf7-captchar{ 
+  width: 25%;
+  float: left;
+}
+.wpcf7-form-control.wpcf7-captchac.wpcf7-captcha-captcha-12 {
+float: left;
+}
+ .wpcf7-form br {
+    display: none !important;
+ }

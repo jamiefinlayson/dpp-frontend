@@ -119,7 +119,7 @@ Version: 1
 	}
 	.header-copy {
 		text-align: right;
-		padding: 40px 0 0 0; 
+		padding: 44px 0 0 0; 
 
 		@media #{$small-only} { 
 			text-align: left;
@@ -137,7 +137,7 @@ Version: 1
 				display: none;
 			}
 			color:#fff;
-			margin-bottom: 25px;
+			margin-bottom: 20px;
 			font-family: #{$latoLightStack};
 			font-size: 1em;
 		}
@@ -692,8 +692,9 @@ nav {
 		display: inline-block;
 		vertical-align: middle;
 		margin:0 0 25px 45px;
-		@media #{$small-only} {
-			margin:0 30px 25px 0;
+		@media #{$medium-down} {
+			margin: 0 5% 25px 0;
+			  width: 25%;
 		}
 		a {
 			display: block;
@@ -701,6 +702,8 @@ nav {
 		img {
 			@media #{$small-only} {
 				width: 75%
+				  max-height: 40px;
+				  width: auto;
 			}
 		}
 	}
@@ -754,6 +757,13 @@ nav {
 			width: 100%; 
 		}
 	}
+@media screen and (max-width: 320px) {
+   .page-template-page-group-members-php .block-content .thumbnail-wrap {
+   		 width: auto;
+   		   padding: 5px;
+  margin-right: 10px;
+  }
+  }
 	// Side thumbnail version (shared)
 	&.thumbnail-on-left  {
 
@@ -1288,6 +1298,7 @@ form {
 }
 .form-item {
 	margin-bottom: 1em;
+	overflow: hidden;
 
 	label,
 	p.label {
@@ -1356,10 +1367,14 @@ form .columns{
 .wp-admin #wppmUserProfilePwdRulesContainer p,
 .wp-admin #wp-admin-bar-menu-toggle,
 .wp-admin #footer-left,
-.wp-admin #footer-thankyou
+.wp-admin #footer-thankyou,
+.wp-admin #footer-upgrade
 {display: none !important}
 
- 
+ .wp-admin #wpbody {
+   max-width: 62.5rem;
+  margin: 0 auto;
+ }
   .wp-admin #wpcontent {
   padding: 0;
   margin: 0;
@@ -1392,4 +1407,43 @@ form .columns{
 #wpadminbar {
 	position: relative
 }
+} 
+.wp-admin #wpfooter,
+.wp-admin .primary-footer,
+.wp-admin .viewport  { 
+  background: #fafafa url("common/img/body-noise.jpg") repeat 0 0;
 }
+
+.wp-admin .primary-footer {
+	margin-top: 0;
+}
+
+.login .message {
+  border-left: 0 !important;
+}
+
+.login-register {
+  float: right;
+  color: white;
+  font-size: 12px;
+  margin-top: 10px;
+}
+.login-register a {
+  color: #eee;
+  text-decoration: none;
+}
+.login-register a:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+ .wpcf7-form .columns input[type="text"].wpcf7-form-control.wpcf7-captchar{ 
+  width: 25%;
+  float: left;
+}
+.wpcf7-form-control.wpcf7-captchac.wpcf7-captcha-captcha-12 {
+float: left;
+}
+ .wpcf7-form br {
+    display: none !important;
+ }

@@ -46,6 +46,16 @@ if (!function_exists(core_mods)) {
 }
 
 /*
+ * Require user to log back in after 10 mins   
+*/
+
+function myplugin_cookie_expiration( $expiration, $user_id, $remember ) {
+    return $remember ? $expiration : 600;
+}
+add_filter( 'auth_cookie_expiration', 'myplugin_cookie_expiration', 99, 3 );
+
+
+/*
  * Clean up the <head>
  */
 function removeHeadLinks()

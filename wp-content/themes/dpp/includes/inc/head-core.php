@@ -24,6 +24,9 @@
 					</div> <!-- /grid-4 -->
 
 					<div class="small-8 medium-9 large-9 xlarge-9 columns last">
+						<?php if ( !is_user_logged_in() ) { echo '<div class="login-register"><a href="/members/">Login</a> | <a hef="/contact-us?membership">Register</a></div>'; } ?> 	
+
+						
 						<div class="header-copy">
 							<h2>The Digital Production Partnership Ltd (DPP) is a not for profit company founded by ITV, BBC and Channel 4 to enable the media industry to maximise the potential of digital in the creation and exploitation of content.</h2>
 						</div>
