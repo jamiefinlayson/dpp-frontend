@@ -558,7 +558,7 @@ function user_profile_fields_disable_js() {
 ?>
     <script>
         jQuery(document).ready( function($) {
-            var fields_to_disable = ['email', 'role', 'url', 'first_name', 'last_name', 'nickname', 'display_name', 'description'];
+            var fields_to_disable = ['role', 'url', 'first_name', 'last_name', 'display_name', 'description'];
             for(i=0; i<fields_to_disable.length; i++) {
                 if ( $('#'+ fields_to_disable[i]).length ) {
                     $('#'+ fields_to_disable[i]).attr("disabled", "disabled");
