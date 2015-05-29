@@ -33,7 +33,9 @@ Version: 1
    max-width: 62.5rem;
   margin: 0 auto;
  }
- 
+ #wp-admin-bar-my-account .ab-item {
+  display: none !important
+}
 .wp-admin #wpfooter,
 .wp-admin .primary-footer,
 .wp-admin .viewport  { 
@@ -4232,7 +4234,7 @@ html[xmlns] .slides {
   .block-content .thumbnail-wrap {
     width: 100%;
   }
-   .page-template-page-group-members-php .block-content .thumbnail-wrap {
+   .page-id-137 .block-content .thumbnail-wrap {
     width: auto;
       padding: 5px;
   margin-right: 10px;
