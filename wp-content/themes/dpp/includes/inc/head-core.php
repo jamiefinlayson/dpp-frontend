@@ -24,7 +24,7 @@
 					</div> <!-- /grid-4 -->
 
 					<div class="small-8 medium-9 large-9 xlarge-9 columns last">
-						<?php if ( !is_user_logged_in() ) { echo '<div class="login-register"><a href="/members/">Login</a> | <a hef="/contact-us?membership">Register</a></div>'; } ?> 	
+						<?php if ( !is_user_logged_in() ) { echo '<div class="login-register"><a href="/members/">Login</a> | <a href="/contact-us?membership">Register</a></div>'; } ?> 	
 
 						
 						<div class="header-copy">
