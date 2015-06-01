@@ -50,7 +50,7 @@ if (!function_exists(core_mods)) {
 */
 
 function myplugin_cookie_expiration( $expiration, $user_id, $remember ) {
-    return $remember ? $expiration : 600;
+    return $remember ? $expiration : 3600;
 }
 add_filter( 'auth_cookie_expiration', 'myplugin_cookie_expiration', 99, 3 );
 
