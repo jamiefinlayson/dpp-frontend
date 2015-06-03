@@ -92,11 +92,12 @@ Version: 1
 		} 
 	}
 	.logo {
-		width: 157px;
-		height: 105px;
+		width: 172px;
+		height: 115px;
 		float: left;
 		margin: 30px 0 36px;
-		background: url("common/img/dpp-logo.jpg") no-repeat top left;
+		background: url("common/img/dpp-logo.png") no-repeat top left;
+		background-size: cover;
 		text-indent: -9999px;
 		@media #{$small-only} { 
 			width: 100%;
@@ -171,7 +172,9 @@ Version: 1
 	}
 	.menu {
 		@include inline-block-list;
-
+		position: relative;
+		display: block;
+		z-index: 999;
 		li {
 
 			a {
@@ -196,18 +199,31 @@ Version: 1
 					text-indent: -9999px; 
 				}
 			}
-			&.menu-item-129 {
+			&.menu-item-129,
+			&.menu-item-53 {
 				margin-left: 6%;
 
 				@media (max-width: 900px) { 
 					margin-left: 15%;
 				}
 			}
+			ul {
+				display: none;
+				position: absolute;
+				top: 55px;
+				background: #ededed; 
+			}
+			&:hover ul {
+				display: block;
+				li {
+				display: block;
+
+				}
+			}
 
 		}
 	}
-}
-
+} 
 
 // active/hover menu item (show border)
 .primary-nav .menu li.current-menu-item a,
@@ -1450,3 +1466,18 @@ float: left;
 #wp-admin-bar-my-account .ab-item {
 	display: none !important
 }
+
+.quick-links {
+	margin-top: 62px;
+	@media #{$medium-down} { 
+		margin-top: 0;
+	}
+}
+#displaytweetswidget-3 h2{
+	height: 34px;
+	@media #{$medium-down} { 
+		height: auto;
+	}
+}
+
+
