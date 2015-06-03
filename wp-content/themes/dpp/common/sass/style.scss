@@ -701,7 +701,7 @@ nav {
 		}
 		img {
 			@media #{$small-only} {
-				width: 75%
+				width: 75%;
 				  max-height: 40px;
 				  width: auto;
 			}

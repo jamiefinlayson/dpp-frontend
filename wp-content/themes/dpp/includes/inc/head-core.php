@@ -45,6 +45,70 @@
 					<div class="small-12 medium-12 xlarge-12">
 						<!-- Navigation -->
 						<?php wp_nav_menu( array( 'theme_location' =>'top-menu' )); ?>
+						<ul id="menu-primary-navigation" class="menu">
+						<?php
+
+						$parent_page_id = 53;
+							echo '<li class="menu-item menu-item-type-post_type menu-item-object-page page_item menu-item-53"><a href="/who-we-are">Who we are</a>';
+							echo '<ul>';
+								wp_list_pages( array(
+								    'child_of' => $parent_page_id,
+								    'title_li' => ''
+								));
+							echo '</li>';
+							echo '</ul>';
+
+
+							echo '<li class="menu-item menu-item-type-post_type menu-item-object-page page_item menu-item-"><a href="/what-we-do">What we do</a>';
+					 
+							$args2 = array(
+								'post_type'    => 'workstream',
+								'post_status'  => 'publish',
+								'orderby' => 'menu_order',
+								'post_parent' => 0,
+								'order' => 'ASC',
+								'posts_per_page' => 8
+							); 
+
+							echo '<ul>';
+
+							query_posts($args2);
+							 if (have_posts()) : while (have_posts()) : the_post(); ?>
+
+								<li>
+									<!-- Block style content -->
+									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+								</li>
+
+
+								<?php endwhile;  
+								  endif;  
+
+										echo '</ul>'; ?>
+
+								<?php
+
+										echo '<li class="menu-item menu-item-type-post_type menu-item-object-page page_item menu-item-"><a href="/news">News</a>';
+										echo '<ul>';
+										wp_get_post_type_archives('news', array('type' => 'yearly', 'show_post_count' => false));
+
+										echo '</li>';	
+										echo '</ul>';
+
+										echo '<li class="menu-item menu-item-type-post_type menu-item-object-page page_item menu-item-"><a href="/events">Events</a>';
+								 		wp_nav_menu( array('menu_id' =>'test', 'class' => 'test', 'container' => false)); 
+										echo '</li>'; 		
+
+								echo '<li class="menu-item menu-item-type-post_type menu-item-object-page page_item menu-item-"><a href="/downloads">Downloads</a>';
+										echo '</li>'; 		
+
+								echo '<li class="menu-item menu-item-type-post_type menu-item-object-page page_item menu-item-"><a href="/members">Members</a>';
+								 		 
+										echo '</li>'; 		
+								 
+								?>
+						</ul>
+
 					</div>
 				</div>
  
