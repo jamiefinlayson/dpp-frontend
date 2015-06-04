@@ -1470,18 +1470,15 @@ form .columns{
 }
 .wpcf7-form-control.wpcf7-captchac.wpcf7-captcha-captcha-12 {
 float: left;
-}
+} 
  .wpcf7-form br {
     display: none !important;
- }
-#wp-admin-bar-my-account .ab-item {
-	display: none !important
-}
+ } 
 
 .quick-links {
 	margin-top: 62px;
 	@media #{$medium-down} { 
-		margin-top: 0;
+		margin-top: 0; 
 	}
 }
 #displaytweetswidget-3 h2{
@@ -1490,5 +1487,8 @@ float: left;
 		height: auto;
 	}
 }
-
+#wp-admin-bar-my-account>.ab-item:before {
+  content: "";
+  display: none;
+}
 
