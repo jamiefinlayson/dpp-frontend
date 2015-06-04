@@ -247,3 +247,27 @@ var getParameter = {
 	}
 
 	*/
+$(function() {
+  var loc = window.location.href; // returns the full URL
+  if(/who-we-are/.test(loc)) {
+    $('nav #who-we-are-links').addClass('current-menu-item'); 
+  }
+  if(/what-we-do/.test(loc)) {
+    $('nav #what-we-do-links').addClass('current-menu-item'); 
+  }
+  if(/news/.test(loc)) {
+    $('nav #news-links').addClass('current-menu-item'); 
+  }
+  if(/events/.test(loc)) {
+    $('nav #events-links').addClass('current-menu-item'); 
+  }
+  if(/downloads/.test(loc)) {
+    $('nav #downloads-links').addClass('current-menu-item'); 
+  }
+  if(/members/.test(loc)) {
+    $('nav #members-links').addClass('current-menu-item'); 
+  }
+  if(/contact-us/.test(loc)) {
+    $('nav #contact-us-links').addClass('current-menu-item'); 
+  } 
+});

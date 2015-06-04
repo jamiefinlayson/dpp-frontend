@@ -210,8 +210,9 @@ Version: 1
 			ul {
 				display: none;
 				position: absolute;
-				top: 55px;
+				top: 58px;
 				background: #ededed; 
+				padding-bottom: 20px;
 			}
 			&:hover ul {
 				display: block;
@@ -219,6 +220,9 @@ Version: 1
 				display: block;
 
 				}
+			}
+			li a {
+				padding-bottom: 0;
 			}
 
 		}
@@ -231,7 +235,7 @@ Version: 1
 .home .menu-item-home a,
 .home .menu-item-951 a {
 	border-bottom:4px solid $dppHighlight;
-	padding-bottom: pxtoem(16, 18);
+	padding-bottom: 14px;
 	@media #{$small-only} { 
 		border-bottom: none;
 		a.shiftnav-target {
@@ -241,6 +245,10 @@ Version: 1
 }
 
 
+.primary-nav .menu li.current-menu-item li a,
+.home .menu-item-home li a {
+		border-bottom: none; 
+	}
 /*
 * Secondary Nav
 */
