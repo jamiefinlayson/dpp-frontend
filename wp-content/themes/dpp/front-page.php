@@ -11,9 +11,9 @@
  						 
 		<div class="primary-content row">
 			<div class="small-12 medium-12 large-9 xlarge-9 columns">
-				<section >
+				<section class="quick-links">
 
-					<h2 class="likeh1">Quick Links</h2>
+					
 					<?php $quickLinks = array(
 						'showposts' => 4,
 						'post_type' => array( 'workstream', 'page', 'news' ),
