@@ -15,7 +15,7 @@
 
 					
 					<?php $quickLinks = array(
-						'showposts' => 4,
+						'showposts' => 6,
 						'post_type' => array( 'workstream', 'page', 'news' ),
 						'orderby' => 'meta_value',
 						'order' => 'ASC',
