@@ -213,6 +213,9 @@ Version: 1
 				top: 58px;
 				background: #ededed; 
 				padding-bottom: 20px;
+				@media screen and (max-width: 900px){ 
+					top: 53px;
+				} 
 			}
 			&:hover ul {
 				display: block;
