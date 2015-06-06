@@ -38,7 +38,7 @@
 							<?php
 							// Get the id of the top level parent post
 							if ($post->post_parent)	{
-								$ancestors=get_post_ancestors($post->ID);
+								$ancestors=get_post_ancestors($post->ID, 'dpp-board');
 								$root=count($ancestors)-1;
 								$parent = $ancestors[$root];
 							} else {
@@ -63,7 +63,7 @@
 								'link_before'  => '',
 								'link_after'   => '',
 								'walker'       => '',
-								'post_type'    => 'page',
+								'post_type'    => 'page', 
 							    'post_status'  => 'publish'
 							);
 
@@ -81,6 +81,7 @@
 				<?php $groupMembers = array(
 						'showposts' => -1,
 						'post_type' => 'members',
+						'category__in' => '28',
 						'orderby' => 'menu_order',
 						'order' => 'ASC',
 					); ?>
