@@ -205,6 +205,22 @@ function my_connection_types()
         'from' => 'downloads',
         'to' => 'workstream'
         ));
+    p2p_register_connection_type(array(
+        'name' => 'news_to_downloads',
+        'from' => 'downloads',
+        'to' => 'news'
+        ));
+    p2p_register_connection_type(array(
+        'name' => 'events_to_downloads',
+        'from' => 'downloads',
+        'to' => 'events'
+        ));
+    p2p_register_connection_type(array(
+        'connected_type' => 'posts_to_pages',
+        'name' => 'pages_to_downloads',
+        'from' => 'downloads',
+        'to' => 'page'
+        ));
 }
 add_action('p2p_init', 'my_connection_types');
 

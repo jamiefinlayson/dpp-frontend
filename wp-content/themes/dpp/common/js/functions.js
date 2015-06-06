@@ -264,7 +264,7 @@ $(function() {
   if(/downloads/.test(loc)) {
     $('nav #downloads-links').addClass('current-menu-item'); 
   }
-  if(/members/.test(loc) && !/group-members/.test(loc)) {
+  if(/members/.test(loc) && !/group-members/.test(loc) && !/membership-benefits/.test(loc)) {
     $('nav #members-links').addClass('current-menu-item'); 
   }
   if(/group-members/.test(loc)) {

@@ -15,7 +15,7 @@
 
 		<div class="row">
 			<!-- Sidebar -->
-			<div class="side-bar small-12 medium-3 large-3 xlarge-3 columns">
+			<div class="side-bar small-12 medium-5 large-3 xlarge-3 columns">
 
 				<nav class="mini-menus small-12 medium-12 large-12 xlarge-12 columns"> 
 					<h3 class="submenu-title">Events</h3>
@@ -33,7 +33,7 @@
 
 
 			<!-- Main content -->
-			<div class="small-12 medium-9 large-9 xlarge-9 columns">
+			<div class="small-12 medium-7 large-6 xlarge-6 columns">
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 
@@ -57,7 +57,39 @@
 
 				<?php endwhile; endif; ?>
 			</div>
+			<div class="small-12 medium-7 large-3 xlarge-3 columns pull-right">
+				<aside>
+					<?php
+						// Find connected downloads
+						$connected = new WP_Query( array(
+						  'connected_type' => 'events_to_downloads',
+		                'order' => 'DESC',
+		                'orderby' => 'menu_order ID', 
+						  'connected_items' => get_queried_object(),
+						  'nopaging' => true
+						) );
+					?>
 
+
+								<?php if ( $connected->have_posts() ) : ?>
+									<div class="grey-header-box">
+										<h3>Related downloads</h3>
+											<ul class="clean-list download-list">
+
+											<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
+												<li><a href="<?php the_field('download_link'); ?>"><?php the_title(); ?></a></li>
+											<?php endwhile; ?>
+												<li class="more-downloads"><a href="/downloads" class="chevron-before"><span>More downloads</span></a></li>
+											</ul>
+									</div>
+								<?php
+								// Prevent weirdness
+								wp_reset_postdata();
+								endif;
+								?>
+
+				</aside>
+			</div>
 
 		</div>
 	</div>
