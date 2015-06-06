@@ -210,9 +210,9 @@ Version: 1
 			ul {
 				display: none;
 				position: absolute;
-				top: 58px;
-				background: #ededed; 
-				padding-bottom: 20px;
+				top: 58px; 
+				padding-bottom: 10px;
+				background: #ededed;  
 				@media screen and (max-width: 900px){ 
 					top: 53px;
 				} 
@@ -220,13 +220,18 @@ Version: 1
 			&:hover ul {
 				display: block;
 				li {
-				display: block;
-
+				display: block; 
 				}
 			}
 			li a {
-				padding-bottom: 0;
-			}
+				  padding-top: 12px;
+				  padding-bottom: 12px;
+				  &:hover {
+
+				  color: white;
+				  background: #999;	
+				  }
+				}
 
 		}
 	}

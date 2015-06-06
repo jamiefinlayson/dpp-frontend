@@ -264,8 +264,11 @@ $(function() {
   if(/downloads/.test(loc)) {
     $('nav #downloads-links').addClass('current-menu-item'); 
   }
-  if(/members/.test(loc)) {
+  if(/members/.test(loc) && !/group-members/.test(loc)) {
     $('nav #members-links').addClass('current-menu-item'); 
+  }
+  if(/group-members/.test(loc)) {
+    $('nav #who-we-are').addClass('current-menu-item'); 
   }
   if(/contact-us/.test(loc)) {
     $('nav #contact-us-links').addClass('current-menu-item'); 
