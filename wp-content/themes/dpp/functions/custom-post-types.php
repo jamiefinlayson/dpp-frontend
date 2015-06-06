@@ -33,6 +33,7 @@ function create_post_types() {
         'rewrite' => array('slug' => 'download'),
         'supports' => array('title', 'editor', 'excerpt', 'thumbnail', 'revisions','page-attributes'),
         'exclude_from_search' => false,
+        'taxonomies' => array('category'), 
         'hierarchical' => true
     ));
 
@@ -46,6 +47,7 @@ function create_post_types() {
         'has_archive' => true,
         'rewrite' => array('slug' => 'news'),
         'supports' => array('title', 'editor', 'thumbnail', 'excerpt','revisions', 'page-attributes'),
+        'taxonomies' => array('category'), 
         'exclude_from_search' => false
     ));
 
@@ -59,6 +61,7 @@ function create_post_types() {
         'has_archive' => true,
         'rewrite' => array('slug' => 'event'),
         'supports' => array('title', 'editor', 'thumbnail', 'excerpt','revisions'),
+        'taxonomies' => array('category'), 
         'exclude_from_search' => false
     ));
 
@@ -72,6 +75,7 @@ function create_post_types() {
         'has_archive' => true,
         'rewrite' => array('slug' => 'group-members'),
         'supports' => array('title', 'editor', 'thumbnail','revisions', 'page-attributes'),
+        'taxonomies' => array('category'), 
         'exclude_from_search' => false
     ));
 
