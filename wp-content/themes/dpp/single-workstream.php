@@ -64,7 +64,7 @@
 			<?php if ( $connected->have_posts() ) :  
 			echo "<div class=\"small-12 medium-7 large-6 xlarge-6 columns\">";
 			 else:  
-			echo "<div class=\"small-12 medium-12 large-9 xlarge-9 columns\">";
+			echo "<div class=\"small-12 medium-9 large-9 xlarge-9 columns\">";
 			 endif; ?>
 
 
