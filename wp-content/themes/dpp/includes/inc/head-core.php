@@ -95,7 +95,8 @@
 										echo '</ul>';
 
 										echo '<li id="events-links" class="menu-item menu-item-type-post_type menu-item-object-page page_item menu-item-"><a href="/events">Events</a>';
-								 		wp_nav_menu( array('menu_id' =>'test', 'class' => 'test', 'container' => false)); 
+								 		echo '<ul><li><a href="/events/upcoming-events">Upcoming Events</a></li>';
+								 		echo '<li><a href="/events/past-events">Previous Events</a></li></ul>';
 										echo '</li>'; 		
 
 								echo '<li id="downloads-links" class="menu-item menu-item-type-post_type menu-item-object-page page_item menu-item-"><a href="/downloads">Downloads</a>';
