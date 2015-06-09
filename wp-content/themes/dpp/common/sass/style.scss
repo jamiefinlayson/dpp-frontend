@@ -215,7 +215,7 @@ Version: 1
 				background: #ededed;  
 				@media screen and (max-width: 900px){ 
 					top: 53px;
-				} 
+				}  
 			}
 			&:hover ul {
 				display: block;
@@ -1500,3 +1500,11 @@ float: left;
   display: none;
 }
 
+.side-bar {
+	z-index: 1;
+}
+
+
+			ul.children {
+				display: none !important;
+			}
