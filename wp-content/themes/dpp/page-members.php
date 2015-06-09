@@ -34,16 +34,21 @@
 			echo "<div class=\"small-12 medium-12 large-9 xlarge-9 columns\">";
 			 endif; ?>
 
-				
+				 
 				<?php if ( !is_user_logged_in() ) {
-
-					echo '<p>Members have access to all DPP documents.</p><p>If you\'re a member please sign in below or <a href="/contact-us?membership">apply for membership</a>.</p>';
+				$recent = new WP_Query("page_id=3928"); while($recent->have_posts()) : $recent->the_post();
+				 
+				the_content(); 
+				endwhile; 
+					
 					 wp_login_form();
+
 				} 
 				else {
 					wp_get_current_user();
-					echo 'Welcome, ' . $current_user->display_name . '.</p><p>You are logged in and have access to the full range of DPP documents in the <a href="/downloads">downloads</a> area.</p><p>&nbsp;</p>
-					<h2>Quick Links</h2><ul class="clean-list tertiary-nav"><li><a href="/">Homepage</a></li><li><a href="/wordpress/wp-admin/profile.php">Change your password</a></li></ul>';
+					echo 'Welcome, ' . $current_user->display_name . '.</p>';
+
+					the_content();
 				}
 
 				?>
