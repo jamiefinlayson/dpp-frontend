@@ -100,6 +100,32 @@
 										echo '</li>'; 		
 
 								echo '<li id="downloads-links" class="menu-item menu-item-type-post_type menu-item-object-page page_item menu-item-"><a href="/downloads">Downloads</a>';
+
+						//list terms in a given taxonomy using wp_list_categories (also useful as a widget if using a PHP Code plugin)
+
+						$taxonomy     = 'download-categories';
+						$orderby      = 'name';
+						$show_count   = 0;      // 1 for yes, 0 for no
+						$pad_counts   = 0;      // 1 for yes, 0 for no
+						$hierarchical = 1;      // 1 for yes, 0 for no
+						$title        = '';
+						$hide_empty	  = 0;		// 1 for yes, 0 for no
+
+						$args = array(
+						  'taxonomy'     => $taxonomy,
+						  'orderby'      => $orderby,
+						  'show_count'   => $show_count,
+						  'pad_counts'   => $pad_counts,
+						  'exclude' 	=> 24,
+						  'hierarchical' => $hierarchical,
+						  'title_li'     => $title,
+						  'hide_empty'   => $hide_empty
+						);
+						 
+
+						echo '<ul>';
+						 wp_list_categories( $args );  
+						echo '</ul>';
 										echo '</li>'; 		
 
 								echo '<li id="members-links" class="menu-item menu-item-type-post_type menu-item-object-page page_item menu-item-"><a href="/members">Members</a>';
