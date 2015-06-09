@@ -190,6 +190,10 @@ Version: 1
 				text-decoration: none;
 				color:$dppBody;
 			}
+
+			ul.children {
+				display: none !important;
+			}
 			// Homepage link
 			&.menu-item-home,
 			&.menu-item-951 {
@@ -214,7 +218,7 @@ Version: 1
 				padding-bottom: 10px;
 				background: #ededed;  
 				@media screen and (max-width: 900px){ 
-					top: 53px;
+					top: 54px;
 				}  
 			}
 			&:hover ul {
@@ -243,7 +247,7 @@ Version: 1
 .home .menu-item-home a,
 .home .menu-item-951 a {
 	border-bottom:4px solid $dppHighlight;
-	padding-bottom: 14px;
+	padding-bottom: 15px;
 	@media #{$small-only} { 
 		border-bottom: none;
 		a.shiftnav-target {
@@ -1503,8 +1507,3 @@ float: left;
 .side-bar {
 	z-index: 1;
 }
-
-
-			ul.children {
-				display: none !important;
-			}
