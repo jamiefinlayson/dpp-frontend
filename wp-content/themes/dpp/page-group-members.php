@@ -93,10 +93,9 @@
 			 else:  
 			echo "<div class=\"small-12 medium-12 large-9 xlarge-9 columns\">";
 			 endif; ?>
-				<?php $groupMembers = array(
+			<?php $groupMembers = array(
 						'showposts' => -1,
 						'post_type' => 'members',
-						'category__in' => '29',
 						'orderby' => 'menu_order',
 						'order' => 'ASC',
 					); ?>
