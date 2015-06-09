@@ -1,5 +1,14 @@
 <?php get_header(); ?>
-
+<?php
+						// Find connected downloads
+						$connected = new WP_Query( array(
+						  'connected_type' => 'pages_to_downloads',
+		                'order' => 'DESC',
+		                'orderby' => 'menu_order ID', 
+						  'connected_items' => get_queried_object(),
+						  'nopaging' => true
+						) );
+					?>
 <div class="primary-content">
 
 		<div class="row">
@@ -18,8 +27,13 @@
 		<div class="row">
  
 
-			<!-- Main content -->
-			<div class="small-12 medium-7 large-6 xlarge-6 columns">
+						<!-- Main content -->
+			<?php if ( $connected->have_posts() ) :  
+			echo "<div class=\"small-12 medium-7 large-6 xlarge-6 columns\">";
+			 else:  
+			echo "<div class=\"small-12 medium-12 large-9 xlarge-9 columns\">";
+			 endif; ?>
+
 				
 				<?php if ( !is_user_logged_in() ) {
 
@@ -35,21 +49,13 @@
 				?>
 
 			</div>
+			<?php if ( $connected->have_posts() ) : ?>
 <div class="small-12 medium-7 large-3 xlarge-3 columns pull-right">
 		<aside>
-						<?php
-						// Find connected downloads
-						$connected = new WP_Query( array(
-						  'connected_type' => 'news_to_downloads',
-		                'order' => 'DESC',
-		                'orderby' => 'menu_order ID', 
-						  'connected_items' => get_queried_object(),
-						  'nopaging' => true
-						) );
-					?>
+						
 
 
-								<?php if ( $connected->have_posts() ) : ?>
+								 
 									<div class="grey-header-box">
 										<h3>Related downloads</h3>
 											<ul class="clean-list download-list">
@@ -60,14 +66,14 @@
 												<li class="more-downloads"><a href="/downloads" class="chevron-before"><span>More downloads</span></a></li>
 											</ul>
 									</div>
-								<?php
+								
+				</aside>
+			</div>
+<?php
 								// Prevent weirdness
 								wp_reset_postdata();
 								endif;
 								?>
-				</aside>
-			</div>
-
 
 		</div>
 	</div>
