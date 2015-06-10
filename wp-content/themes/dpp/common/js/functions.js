@@ -258,13 +258,13 @@ $(function() {
   if(/news/.test(loc)) {
     $('nav #news-links').addClass('current-menu-item'); 
   }
-  if(/events/.test(loc)) {
+  if(/event/.test(loc) || /events/.test(loc)) {
     $('nav #events-links').addClass('current-menu-item'); 
   }
   if(/downloads/.test(loc)) {
     $('nav #downloads-links').addClass('current-menu-item'); 
   }
-  if(/members/.test(loc) && !/group-members/.test(loc) && !/membership-benefits/.test(loc)) {
+  if(/members/.test(loc) && !/events/.test(loc) && !/news/.test(loc) && !/group-members/.test(loc) && !/membership-benefits/.test(loc)) {
     $('nav #members-links').addClass('current-menu-item'); 
   }
   if(/group-members/.test(loc)) {
