@@ -92,7 +92,7 @@ Version: 1
 		} 
 	}
 	.logo {
-		width: 172px;
+		width: 172px; 
 		height: 115px;
 		float: left;
 		margin: 30px 0 36px;
@@ -105,7 +105,7 @@ Version: 1
 			background-size: auto 100%;
 			height: auto;
 			margin: 10px 0;
-			@media screen and (max-width: 320px){
+			@media screen and (min-width: 321px){
 				width: 157px;
 				height: 105px;
 				background-size: auto;

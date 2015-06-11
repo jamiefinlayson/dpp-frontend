@@ -3109,7 +3109,7 @@ select {
     margin: 10px 0;
   }
 }
-@media only screen and (max-width: 481px) and (max-width: 320px) {
+@media only screen and (max-width: 481px) and (min-width: 321px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/dpp-frontend\/wp-content\/themes\/dpp\/common\/sass\/style\.scss}line{font-family:\0000394}}
   .primary-header .logo {
     width: 157px;
